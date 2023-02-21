@@ -1,12 +1,12 @@
 project:
   type: website
-  title: "Julia Workshop, ISCB 2022, Madison"
+  title: "Logical analysis of Language"
   execute-dir: project
   output-dir: docs
   render: 
       - index.qmd
       - about.qmd
-      # - session1-get-started.qmd
+      - session1-get-started.qmd
       # - session2a-tables-and-arrow.qmd
       # - session2b-interval-overlap.qmd
       # - session2b-alt.qmd
@@ -17,7 +17,7 @@ project:
       # - session6-conclusions.qmd
 
 website:
-  title: "NTU course"
+  title: "語言的邏輯分析"
   # subtitle: "ISCB 2022, Madison"
   site-url: https://lopentu.github.io/lal/
   repo-url: https://github.com/lopentu
@@ -26,7 +26,7 @@ website:
     background: primary
     left:
       - href: index.qmd
-        text: Home
+        text: 首頁
       - about.qmd
     right:
       - icon: github

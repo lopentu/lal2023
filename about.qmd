@@ -28,6 +28,9 @@ http://www.alexbellos.com/language
 > This book presents 56 problems, with solutions, created for high school students competing in a computational linguistics olympiad. … The interesting, elegant, and very diverse problems are fun to read and solve, and may be enjoyed not only by high school students, but also by current, future, or potential system thinkers, including programmers, analysts, or linguists.” (H. I. Kilov, Computing Reviews, April, 2014)
 :::
 
+- **The Language Construction Kit**
+
+
 - **What makes us smart: the computational logic of human cognition**
 
 ![](pics/smart.jpeg)

@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="謝舒凱 臺大語言學研究所">
 <meta name="dcterms.date" content="2023-02-21">
 
-<title>語言的邏輯分析 - LING5503 語言的邏輯分析</title>
+<title>語言的邏輯分析 - 1: 暖身練習</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./session1-get-started.html" rel="next">
+<link href="./session2a-tables-and-arrow.qmd" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">LING5503 語言的邏輯分析</h1>
+      <h1 class="quarto-secondary-nav-title">1: 暖身練習</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -124,12 +124,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">LING5503 語言的邏輯分析</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">LING5503 語言的邏輯分析</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./session1-get-started.html" class="sidebar-item-text sidebar-link">1: 暖身練習</a>
+  <a href="./session1-get-started.html" class="sidebar-item-text sidebar-link active">1: 暖身練習</a>
   </div>
 </li>
     </ul>
@@ -141,16 +141,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#歡迎" id="toc-歡迎" class="nav-link active" data-scroll-target="#歡迎">歡迎</a>
-  <ul class="collapse">
-  <li><a href="#課程網站" id="toc-課程網站" class="nav-link" data-scroll-target="#課程網站">課程網站</a></li>
-  </ul></li>
-  <li><a href="#課程目的" id="toc-課程目的" class="nav-link" data-scroll-target="#課程目的">課程目的</a></li>
-  <li><a href="#時程" id="toc-時程" class="nav-link" data-scroll-target="#時程">時程</a></li>
-  <li><a href="#要求-requirement" id="toc-要求-requirement" class="nav-link" data-scroll-target="#要求-requirement">🐇 要求 | Requirement</a></li>
-  <li><a href="#成績-grading" id="toc-成績-grading" class="nav-link" data-scroll-target="#成績-grading">🏆 成績 | Grading</a></li>
-  <li><a href="#學術倫理-plagiarism" id="toc-學術倫理-plagiarism" class="nav-link" data-scroll-target="#學術倫理-plagiarism">😢 學術倫理 | Plagiarism</a></li>
-  <li><a href="#期末報告-term-project" id="toc-期末報告-term-project" class="nav-link" data-scroll-target="#期末報告-term-project">🧠 期末報告 | Term project</a></li>
+  <li><a href="#自然語言" id="toc-自然語言" class="nav-link active" data-scroll-target="#自然語言">自然語言</a></li>
+  <li><a href="#人造語言" id="toc-人造語言" class="nav-link" data-scroll-target="#人造語言">人造語言</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lopentu/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -159,20 +151,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">LING5503 語言的邏輯分析</h1>
-<p class="subtitle lead">LING5503 Logical Analysis of Language</p>
+<h1 class="title d-none d-lg-block">1: 暖身練習</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>謝舒凱 臺大語言學研究所 </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -187,202 +172,12 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="歡迎" class="level1">
-<h1>歡迎</h1>
-<ul>
-<li><p>Room: 綜 603 (部分內容剪輯上線)</p></li>
-<li><p>Office hours: By appointment</p></li>
-<li><p>Email: <code>shukaihsieh@ntu.edu.tw</code></p></li>
-<li><p>Time: 14:20-17:10, Wed.</p></li>
-</ul>
-<section id="課程網站" class="level2">
-<h2 class="anchored" data-anchor-id="課程網站">課程網站</h2>
-<ul>
-<li><p><a href="https://cool.ntu.edu.tw/courses/26600">NTU COOL</a>：指定教材、作業繳交</p></li>
-<li><p><a href="lopentu.github.io/lal/">課程網站</a></p></li>
-</ul>
+<section id="自然語言" class="level1">
+<h1>自然語言</h1>
+<p><img src="./pics/abma.png" class="img-fluid"></p>
 </section>
-</section>
-<section id="課程目的" class="level1">
-<h1>課程目的</h1>
-<ul>
-<li><p>瞭解語言分析的方式</p></li>
-<li><p>認識世界語言的多樣性</p></li>
-<li><p>學習不插電的計算語言思維</p></li>
-</ul>
-</section>
-<section id="時程" class="level1">
-<h1>時程</h1>
-<table class="table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 42%">
-<col style="width: 28%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">時間</th>
-<th style="text-align: center;">主題</th>
-<th style="text-align: center;">課堂練習</th>
-<th style="text-align: left;">TOL training</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">W1: 02/22</td>
-<td style="text-align: center;">課程介紹</td>
-<td style="text-align: center;">test</td>
-<td style="text-align: left;">2/25-26 歷史語言、語言變異（林智凱教授）</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W2: 03/01</td>
-<td style="text-align: center;">語言類型與文化邏輯</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">3/4-5 類型學與南島語言（江豪文博士）</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W3: 03/08</td>
-<td style="text-align: center;">語音</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">3/11-12 阿爾泰語系（蕭素英教授）</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W4: 03/15</td>
-<td style="text-align: center;">語音</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">3/18-19 語音變化（郭貞秀教授）</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W5: 03/22</td>
-<td style="text-align: center;">構詞與句法</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">3/25-26 構詞句法（許展嘉教授）</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W6: 03/29</td>
-<td style="text-align: center;">構詞與句法</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">4/1-2 語意與文化想像（謝舒凱教授）</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W7: 04/05</td>
-<td style="text-align: center;">清明節放假</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W8: 04/12</td>
-<td style="text-align: center;">期中考**</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W9: 04/19</td>
-<td style="text-align: center;">構詞句法</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W10: 04/26</td>
-<td style="text-align: center;">語意與文化</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W11: 05/03</td>
-<td style="text-align: center;">語意與文化：數字</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">二階國手培訓互動</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W12: 05/10</td>
-<td style="text-align: center;">語意與文化：關係</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">二階國手培訓互動</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W13: 05/17</td>
-<td style="text-align: center;">世界文字系統</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">二階國手培訓互動</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W14: 05/24</td>
-<td style="text-align: center;">世界文字系統</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">二階國手培訓互動/中小學生語言解謎鐵人賽（林口康橋，5/28）</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W15: 05/31</td>
-<td style="text-align: center;">語言謎題設計</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">國際語奧命題委員會演講</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W16: 06/07</td>
-<td style="text-align: center;">期末專題報告</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">二階國手培訓互動 (6:30-8:30)</td>
-</tr>
-</tbody>
-</table>
-<div class="callout-tip callout callout-style-simple callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-APLO (https://aplo.asia/) Asia Pacific Linguistics Olympiad (APLO)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>a regional linguistics olympiad with the aim of escalating attention to language and linguistics in the Asia Pacific region. The upcoming APLO will be held on&nbsp;April 9th, 2023.</p>
-</div>
-</div>
-<div class="callout-important callout callout-style-simple">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>爲了培訓臺灣選手參加亞太語奧決選，同時安排了週末日線上課程。課堂同學有興趣者可以登記加入旁聽。5 月份有機會與決選出之臺灣代表隊互動。</p>
-</div>
-</div>
-</div>
-</section>
-<section id="要求-requirement" class="level1">
-<h1>🐇 要求 | Requirement</h1>
-<ul>
-<li><p>原則上第二週開始有一份課後練習作業 (見網站)，截止日爲隔週一晚上12:00， 上傳至 NTU COOL。</p></li>
-<li><p><code>4/12</code> 有期中考。(從 <strong>APLO 2023</strong> 挑一題，可以團體形式進行答題。)</p></li>
-<li><p>除閱讀指定閱讀之外，須完成一個期末報告或專案。</p></li>
-</ul>
-</section>
-<section id="成績-grading" class="level1">
-<h1>🏆 成績 | Grading</h1>
-<ul>
-<li>課堂參與 | Participation: 10%</li>
-<li>平時作業 | Assignments: 30%</li>
-<li>期中考 | Midterm: 20%</li>
-<li>期末專題與發表 | Final Project/Presentation: 40%</li>
-</ul>
-<p><strong>遲交作業處理</strong></p>
-<p>截止時間起，每天扣 5% 。有特殊事宜應該事先告知老師或助教。</p>
-</section>
-<section id="學術倫理-plagiarism" class="level1">
-<h1>😢 學術倫理 | Plagiarism</h1>
-<p>請大家自重自愛，不用別人要求。</p>
-</section>
-<section id="期末報告-term-project" class="level1">
-<h1>🧠 期末報告 | Term project</h1>
-<ul>
-<li><p>可以個人或團體完成 (3 人以內)</p>
-<ul>
-<li><p>設計類似語奧題目，並附上清楚的語料來源與解題說明。</p></li>
-<li><p>設計與實作語言遊戲，不拘形式。</p></li>
-</ul></li>
-</ul>
+<section id="人造語言" class="level1">
+<h1>人造語言</h1>
 
 
 </section>
@@ -521,12 +316,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">LING5503 語言的邏輯分析</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./session1-get-started.html" class="pagination-link">
-        <span class="nav-page-text">1: 暖身練習</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./session2a-tables-and-arrow.qmd" class="pagination-link">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
