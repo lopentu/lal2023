@@ -1,5 +1,5 @@
 ---
-title: "1: 暖身練習"
+title: "Lab1: 暖身練習"
 # author: "SK"
 # subtitle: ""
 ---

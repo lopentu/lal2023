@@ -6,6 +6,7 @@ project:
   render: 
       - index.qmd
       - about.qmd
+      - w1.qmd
       - session1-get-started.qmd
       # - session2a-tables-and-arrow.qmd
       # - session2b-interval-overlap.qmd
@@ -30,12 +31,13 @@ website:
       - about.qmd
     right:
       - icon: github
-        href: https://github.com/crsl4/julia-workshop
+        href: https://github.com/lopentu
   sidebar:
     style: "docked"
     search: true
     contents:
       - index.qmd
+      - w1.qmd
       - session1-get-started.qmd
       - session2a-tables-and-arrow.qmd
       - session2b-interval-overlap.qmd
