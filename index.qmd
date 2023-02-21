@@ -1,0 +1,93 @@
+---
+title: "LING5503 語言的邏輯分析"
+author: "謝舒凱 臺大語言學研究所"
+subtitle: "LING5503 Logical Analysis of Language"
+---
+
+# Welcome
+
+
+- Room: 綜 603 (部分內容剪輯上線)
+
+- Office hours: By appointment
+
+- Email: `shukaihsieh@ntu.edu.tw`
+
+- Lecture: 14:20-17:10am, Wed.
+
+## Course website:
+
+- [NTU COOL](https://cool.ntu.edu.tw/courses/26600)：指定教材、作業繳交
+
+- [課程網站](lopentu.github.io/lal/)
+
+
+
+## 課程目的
+
+- 瞭解語言分析的方式
+
+- 認識世界語言的多樣性
+
+- 學習不插電的計算語言思維
+
+
+# Schedule
+
+| 時間           | 主題                                     | 課堂練習                   | TOL training            |
+|:-------------:|:----------------------------------------:|:--------------------------:|:--------------|
+| W1: 02/22  | 課程介紹             | test         |  2/25-26 歷史語言、語言變異（林智凱教授）|
+| W2: 03/01 | 語言類型與文化邏輯     |                 | 3/4-5 類型學與南島語言（江豪文博士）|
+| W3: 03/08  | 語音               |               |3/11-12 阿爾泰語系（蕭素英教授） |
+| W4: 03/15   | 語音 |                             |3/18-19 語音變化（郭貞秀教授） |
+| W5: 03/22   | 構詞與句法 |                |3/25-26 構詞句法（許展嘉教授）|
+| W6: 03/29   | 構詞與句法           |        | 4/1-2 語意與文化想像（謝舒凱教授）|
+| W7: 04/05  | 清明節放假                |  ||
+| W8: 04/12   | 期中考**       |            |                  |
+| W9: 04/19   | 構詞句法                     | |                             |
+| W10: 04/26   | 語意與文化     |          ||
+| W11: 05/03   | 語意與文化：數字     |         | 二階國手培訓互動|
+| W12: 05/10  |語意與文化：關係 ||二階國手培訓互動|
+| W13: 05/17  |世界文字系統||二階國手培訓互動|
+| W14: 05/24 |世界文字系統||二階國手培訓互動/中小學生語言解謎鐵人賽（林口康橋，5/28）|
+| W15: 05/31 |語言謎題設計||國際語奧命題委員會演講|
+| W16: 06/07 |期末專題報告||二階國手培訓互動 (6:30-8:30)|
+
+
+::: {.callout-tip}
+## APLO (https://aplo.asia/) Asia Pacific Linguistics Olympiad (APLO) 
+a regional linguistics olympiad with the aim of escalating attention to language and linguistics in the Asia Pacific region. The upcoming APLO will be held on April 9th, 2023.  
+:::
+
+::: {.callout-important}
+爲了培訓臺灣選手參加亞太語奧決選，同時安排了週末日線上課程。課堂同學有興趣者可以登記加入旁聽。5 月份有機會與決選出之臺灣代表隊互動。
+:::
+
+# 🐇 作業 | Homework
+
+- 原則上每週有一份課後練習作業 (見網站)，截止日前上傳至 NTU COOL。
+- 4/12 有期中考。除閱讀指定閱讀之外，須完成一個期末報告或專案。
+
+
+# 🏆 成績 | Grading
+### Breakdown
+
+- Participation: 10%
+- Assignments: 30%
+- Midterm: 20% 
+- Final Project/Presentation: 40%
+
+**Late Assignments**
+
+Late work will be deducted 5% per twenty-four hour period that elapses after the due date. If foreseen or unforeseen circumstances prevent you from completing an assignment on time, you may request an extension. Extensions must be requested in advance of the due date. If the situation warrants an extension, we will determine a new due date for the essay based on your individual circumstances.
+
+# 😢 學術倫理 | Plagiarism
+
+Presenting someone else’s ideas as your own, either verbatim or recast in your own words – is a serious academic offense with serious consequences. Please familiarize yourself with the discussion of plagiarism in our campus policies.
+
+# 🧠 期末報告 | Term project
+
+- 可以個人或團體完成 (3 人以內)
+    - 設計類似語奧題目，並附上清楚的語料來源與解題說明。
+    - 設計與實作語言遊戲，不拘形式。
+

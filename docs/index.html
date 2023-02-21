@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="謝舒凱 臺大語言學研究所">
+<meta name="dcterms.date" content="2023-02-21">
+
+<title>NTU course - LING5503 語言的邏輯分析</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./session1-get-started.qmd" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">NTU course</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">關於</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/crsl4/julia-workshop"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">LING5503 語言的邏輯分析</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">LING5503 語言的邏輯分析</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <ul class="collapse">
+  <li><a href="#course-website" id="toc-course-website" class="nav-link" data-scroll-target="#course-website">Course website:</a></li>
+  <li><a href="#課程目的" id="toc-課程目的" class="nav-link" data-scroll-target="#課程目的">課程目的</a></li>
+  </ul></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#作業-homework" id="toc-作業-homework" class="nav-link" data-scroll-target="#作業-homework">🐇 作業 | Homework</a></li>
+  <li><a href="#成績-grading" id="toc-成績-grading" class="nav-link" data-scroll-target="#成績-grading">🏆 成績 | Grading</a>
+  <ul class="collapse">
+  <li><a href="#breakdown" id="toc-breakdown" class="nav-link" data-scroll-target="#breakdown">Breakdown</a></li>
+  </ul></li>
+  <li><a href="#學術倫理-plagiarism" id="toc-學術倫理-plagiarism" class="nav-link" data-scroll-target="#學術倫理-plagiarism">😢 學術倫理 | Plagiarism</a></li>
+  <li><a href="#期末報告-term-project" id="toc-期末報告-term-project" class="nav-link" data-scroll-target="#期末報告-term-project">🧠 期末報告 | Term project</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lopentu/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">LING5503 語言的邏輯分析</h1>
+<p class="subtitle lead">LING5503 Logical Analysis of Language</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>謝舒凱 臺大語言學研究所 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023-02-21</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="welcome" class="level1">
+<h1>Welcome</h1>
+<ul>
+<li><p>Room: 綜 603 (部分內容剪輯上線)</p></li>
+<li><p>Office hours: By appointment</p></li>
+<li><p>Email: <code>shukaihsieh@ntu.edu.tw</code></p></li>
+<li><p>Lecture: 14:20-17:10am, Wed.</p></li>
+</ul>
+<section id="course-website" class="level2">
+<h2 class="anchored" data-anchor-id="course-website">Course website:</h2>
+<ul>
+<li><p><a href="https://cool.ntu.edu.tw/courses/26600">NTU COOL</a>：指定教材、作業繳交</p></li>
+<li><p><a href="lopentu.github.io/lal/">課程網站</a></p></li>
+</ul>
+</section>
+<section id="課程目的" class="level2">
+<h2 class="anchored" data-anchor-id="課程目的">課程目的</h2>
+<ul>
+<li><p>瞭解語言分析的方式</p></li>
+<li><p>認識世界語言的多樣性</p></li>
+<li><p>學習不插電的計算語言思維</p></li>
+</ul>
+</section>
+</section>
+<section id="schedule" class="level1">
+<h1>Schedule</h1>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 42%">
+<col style="width: 28%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">時間</th>
+<th style="text-align: center;">主題</th>
+<th style="text-align: center;">課堂練習</th>
+<th style="text-align: left;">TOL training</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">W1: 02/22</td>
+<td style="text-align: center;">課程介紹</td>
+<td style="text-align: center;">test</td>
+<td style="text-align: left;">2/25-26 歷史語言、語言變異（林智凱教授）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W2: 03/01</td>
+<td style="text-align: center;">語言類型與文化邏輯</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">3/4-5 類型學與南島語言（江豪文博士）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">W3: 03/08</td>
+<td style="text-align: center;">語音</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">3/11-12 阿爾泰語系（蕭素英教授）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W4: 03/15</td>
+<td style="text-align: center;">語音</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">3/18-19 語音變化（郭貞秀教授）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">W5: 03/22</td>
+<td style="text-align: center;">構詞與句法</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">3/25-26 構詞句法（許展嘉教授）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W6: 03/29</td>
+<td style="text-align: center;">構詞與句法</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">4/1-2 語意與文化想像（謝舒凱教授）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">W7: 04/05</td>
+<td style="text-align: center;">清明節放假</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W8: 04/12</td>
+<td style="text-align: center;">期中考**</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">W9: 04/19</td>
+<td style="text-align: center;">構詞句法</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W10: 04/26</td>
+<td style="text-align: center;">語意與文化</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">W11: 05/03</td>
+<td style="text-align: center;">語意與文化：數字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">二階國手培訓互動</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W12: 05/10</td>
+<td style="text-align: center;">語意與文化：關係</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">二階國手培訓互動</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">W13: 05/17</td>
+<td style="text-align: center;">世界文字系統</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">二階國手培訓互動</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W14: 05/24</td>
+<td style="text-align: center;">世界文字系統</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">二階國手培訓互動/中小學生語言解謎鐵人賽（林口康橋，5/28）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">W15: 05/31</td>
+<td style="text-align: center;">語言謎題設計</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">國際語奧命題委員會演講</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W16: 06/07</td>
+<td style="text-align: center;">期末專題報告</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">二階國手培訓互動 (6:30-8:30)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout-tip callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+APLO (https://aplo.asia/) Asia Pacific Linguistics Olympiad (APLO)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>a regional linguistics olympiad with the aim of escalating attention to language and linguistics in the Asia Pacific region. The upcoming APLO will be held on&nbsp;April 9th, 2023.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>爲了培訓臺灣選手參加亞太語奧決選，同時安排了週末日線上課程。課堂同學有興趣者可以登記加入旁聽。5 月份有機會與決選出之臺灣代表隊互動。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="作業-homework" class="level1">
+<h1>🐇 作業 | Homework</h1>
+<ul>
+<li>原則上每週有一份課後練習作業 (見網站)，截止日前上傳至 NTU COOL。</li>
+<li>4/12 有期中考。除閱讀指定閱讀之外，須完成一個期末報告或專案。</li>
+</ul>
+</section>
+<section id="成績-grading" class="level1">
+<h1>🏆 成績 | Grading</h1>
+<section id="breakdown" class="level3">
+<h3 class="anchored" data-anchor-id="breakdown">Breakdown</h3>
+<ul>
+<li>Participation: 10%</li>
+<li>Assignments: 30%</li>
+<li>Midterm: 20%</li>
+<li>Final Project/Presentation: 40%</li>
+</ul>
+<p><strong>Late Assignments</strong></p>
+<p>Late work will be deducted 5% per twenty-four hour period that elapses after the due date. If foreseen or unforeseen circumstances prevent you from completing an assignment on time, you may request an extension. Extensions must be requested in advance of the due date. If the situation warrants an extension, we will determine a new due date for the essay based on your individual circumstances.</p>
+</section>
+</section>
+<section id="學術倫理-plagiarism" class="level1">
+<h1>😢 學術倫理 | Plagiarism</h1>
+<p>Presenting someone else’s ideas as your own, either verbatim or recast in your own words – is a serious academic offense with serious consequences. Please familiarize yourself with the discussion of plagiarism in our campus policies.</p>
+</section>
+<section id="期末報告-term-project" class="level1">
+<h1>🧠 期末報告 | Term project</h1>
+<ul>
+<li>可以個人或團體完成 (3 人以內)
+<ul>
+<li>設計類似語奧題目，並附上清楚的語料來源與解題說明。</li>
+<li>設計與實作語言遊戲，不拘形式。</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./session1-get-started.qmd" class="pagination-link">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

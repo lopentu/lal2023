@@ -1,0 +1,474 @@
+---
+title: "2b: Determining Interval Overlap"
+author: "Douglas Bates and Claudia Solis-Lemus"
+jupyter: julia-1.8
+---
+
+## Load packages to be used
+
+```{julia}
+#| code-fold: show
+using Arrow          # Arrow storage and file format
+using BenchmarkTools # tools for benchmarking code
+using DataFrames     # versatile tabular data format
+using IntervalTrees  # interval trees from BioJulia
+using RangeTrees     # a bespoke implementation of interval trees
+using Tables         # row- or column-oriented tabular data
+
+using Base: intersect! # not exported from Base
+
+datadir = joinpath(@__DIR__, "biofast-data-v1");
+```
+
+# Strategy for computing overlaps
+
+  - Split the data in the Arrow data tables into a dictionary where the keys are the chromosome tag and values are the `start-stop` pairs expressed as a `Vector{UnitRange}`.  For the reference ranges, sort the vectors by increasing `first` value.
+
+  - For the reference ranges create two other dictionaries with values from [RangeTrees.jl](https://github.com/dmbates/RangeTrees.jl) and from [IntervalTrees.jl](https://github.com/BioJulia/IntervalTrees.jl), respectively.
+  - Benchmark the intersection with a target `UnitRange` from each of the representations of the reference ranges. Do this in two ways: `intersect`, which allocates the storage for the result, and `intersect!`, which modifies one of its arguments with the result.
+  - Compute the coverage from the vector of intersections.
+  - Apply the methods to the complete set of targets.
+
+## Creating dictionaries of Vector{UnitRange}
+
+  - A `UnitRange`, such as `2:10`, includes the end points, accessed by `first` and `last` methods.
+
+```{julia}
+typeof(2:10), length(2:10), first(2:10), last(2:10)
+```
+
+  - However, the positions in the `start` and `stop` columns in a `.bed` file are not both included in the range they represent.  The positions correspond to base pairs in the range `start:(stop - 1)` as 0-based indices on the chromosome or `(start + 1):stop` as 1-based indices.
+
+  - It doesn't matter which one we use as long as we are consistent in creating ranges from the reference intervals and the target intervals.
+  - We choose to start counting from 1, just as the [world's foremost expert on counting](https://twitter.com/CountVonCount) does.
+  - We wrap this conversion in a utility function to help ensure consistency.
+
+```{julia}
+asrange(start, stop) = (start+one(start)):stop
+```
+
+::: {.callout-note collapse="true"}
+
+### "One-liner" function (actually method) definitions
+
+This method definition uses the compact "one-liner" form, like the math notation `f(x) = x + 1`.
+:::
+
+::: {.callout-note collapse="true"}
+
+### `one(x)` versus literal `1`
+
+`one(x)` is used instead of the literal `1` in `asrange` to preserve the integer type (see also `?oneunit`, which is slighly more general).
+
+```{julia}
+st = Int32(2314)
+typeof(st + 1)       # type gets promoted to Int64
+```
+
+```{julia}
+typeof(st + one(st)) # type not promoted
+```
+
+:::
+
+  - Create a utility, `chromodict` to read an `Arrow.Table` and convert it to a `Dict{Symbol, Vector{UnitRange{T}}}`, assuming that the table contains columns named `:chromo`, `:start`, and `:stop`.
+
+  - We define two methods, one that takes a "row-table", which is a vector of named tuples, and one that takes the file name of the arrow file, reads the (column oriented)table, converts it to a row table, and then calls the first method.
+
+```{julia}
+function chromodict(rtbl::Vector{<:NamedTuple})
+  r1 = first(rtbl)
+  itype = promote_type(typeof(r1.start), typeof(r1.stop))
+  vtype = Vector{UnitRange{itype}}
+  dict = Dict{Symbol,vtype}()
+  for (; chromo, start, stop) in rtbl
+    push!(get!(dict, Symbol(chromo), vtype()), asrange(start, stop))
+  end
+  return dict
+end
+function chromodict(fnm::AbstractString)
+  return chromodict(rowtable(Arrow.Table(joinpath(datadir, fnm))))
+end
+tarrngvecs = chromodict("ex-rna.arrow")
+refrngvecs = chromodict("ex-anno.arrow")
+```
+
+::: {.callout-note collapse="true"}
+
+### Mutating `get!` for a `Dict`
+
+The call `get!(dict, Symbol(chromo), vtype())` in `chromodict` returns `dict[Symbol(chromo)]` or the default value, which is an empty `Vector{UnitRange{T}}`.
+For the case of the default, it also installs that key/value pair in `dict`.
+:::
+
+::: {.callout-note collapse="true"}
+
+### `Symbol`s versus `String`s for `Dict` keys
+
+We use `Symbol`s for the keys in these `Dict`s because they are easier to type and because symbol table lookup is very fast, although that doesn't really matter when we only have 24 distinct keys.
+:::
+
+::: {.callout-note collapse="true"}
+
+### Destructuring a struct or NamedTuple
+
+The expression `for (; chromo, start, stop) in rtbl` is equivalent to three local assignments
+
+```julia
+for r in rtbl
+  chromo = r.chromo
+  start = r.start
+  stop = r.stop
+  ...
+end
+```
+
+In other words, it is equivalent to taking the named fields of a `NamedTuple` or a `struct` and making them available in the local namespace under the same names.
+:::
+
+::: {.callout-note collapse="true"}
+
+### Interfaces to row- and column-oriented tables in `Tables.jl`
+
+[Tables.jl](https://github.com/JuliaData/Tables.jl) provides interfaces for row- and column-oriented tables, allowing for one orientation to be viewed as the other.  In this case an `Arrow.Table` is column-oriented but `rowtable` of this table returns a `Vector{NamedTuple{(:chromo, :start, :stop), Tuple{String, Int32, Int32}}}` to iterate over the rows.  When a "method instance" of `chromodict` is compiled for such a table, the schema of the rows will be known.
+
+```{julia}
+@code_warntype chromodict(
+  rowtable(Arrow.Table("biofast-data-v1/ex-anno.arrow")),
+)
+```
+
+:::
+
+  - In `refrngvecs`, each of the values, a `Vector{UnitRange}`, should be sorted by the `first` element of the `UnitRange`.
+
+  - Creating an `IntervalTree` requires the ranges to be sorted by `first` element **and** by `last` element when the `first` elements are equal.
+  - Define a custom `lt` comparison for this.
+
+```{julia}
+let
+  function lt(x::UnitRange{T}, y::UnitRange{T}) where {T}
+    fx, fy = first(x), first(y)
+    return fx == fy ? last(x) < last(y) : fx < fy
+  end
+  for v in values(refrngvecs)
+    sort!(v; lt)
+  end
+end
+refrngvecs  # note changes in refrngvecs[:chr01]
+```
+
+::: {.callout-note collapse="true"}
+
+### `let` blocks
+
+A `let/end` block provides a local namespace.  The custom `lt` comparison method will not be visible outside the scope of the block.
+
+:::
+
+  - We will use the ranges on chromsome 1 for our timing benchmarks.  The target for tests of intersection with a single target range will be the last range on chromosome 1 in "ex-rna.arrow".
+
+```{julia}
+refrngvec01 = refrngvecs[:chr01]
+tarrngvec01 = tarrngvecs[:chr01]
+target = last(tarrngvec01)
+```
+
+# Intersecting reference ranges with a target
+
+  - Create a method to intersect a target range with a `Vector{UnitRange}` returning the intersections as another `Vector{UnitRange}`.
+
+  - A common Julia programming idiom for such cases is to create two methods: one for `intersect!`, which modifies an argument that will hold the result, and one for `intersect`, which allocates the result then calls the `intersect!` method.
+  - For the `intersect!` method we first `empty!` the result vector, which zeros the vector length but does not shrink the memory chunk allocated to the vector, then `push!` intersections onto it.  If there are many calls to an `intersect!` method like this only a few will cause memory allocations.
+  - The elements of our vectors of reference ranges, like `refrngvec01`, are sorted by their `first` element but globally the `last` elements do not have any special relationships.  The best we can do to determine all intersections is a sequential scan of the sorted vector of ranges with an early exit when `last(target) < first(vectorelement)`.
+
+```{julia}
+function Base.intersect!(
+  result::Vector{UnitRange{T}},
+  target::AbstractUnitRange{<:Integer},
+  refs::Vector{UnitRange{T}},
+) where {T}
+  empty!(result)
+  target = UnitRange{T}(target)  # coerce the type, if necessary
+  lastt = last(target)
+  for rng in refs
+    lastt < first(rng) && break
+    isect = intersect(target, rng)
+    !isempty(isect) && push!(result, isect)
+  end
+  return result
+end
+function Base.intersect(
+  target::AbstractUnitRange{<:Integer},
+  refs::Vector{UnitRange{T}},
+) where {T}
+  return intersect!(similar(refs, 0), target, refs)
+end
+savedresult = intersect(target, refrngvec01)  # will use for comparisons
+```
+
+```{julia}
+result = similar(refrngvec01, 0)  # 0-length vector of same type
+isequal(intersect!(result, target, refrngvec01), savedresult)
+```
+
+# Dictionaries of RangeTrees and IntervalTrees
+
+## RangeTrees
+
+  - [RangeTrees.jl](https://github.com/dmbates/RangeTrees.jl) provides an implementation of [interval trees](https://en.wikipedia.org/wiki/Interval_tree) using the [augmented binary tree](https://en.wikipedia.org/wiki/Interval_tree#Augmented_tree) formulation.
+
+  - Because the tree is represented by its root node, there is no `RangeTree` type or constructor, only a `RangeNode`.
+
+```{julia}
+refrngtrees = Dict(k => RangeNode(v) for (k, v) in refrngvecs)
+rangetree01 = refrngtrees[:chr01]
+treesize(rangetree01), treeheight(rangetree01), treebreadth(rangetree01)
+```
+
+```{julia}
+print_tree(rangetree01; maxdepth = 3)
+```
+
+::: {.callout-note collapse="true"}
+
+### Augmented interval trees
+
+A smaller example may help to understand how this type of interval tree.
+Consider the first 7 `UnitRange`s in `refrngvecs[:chr01]`
+
+```{julia}
+smallrngvec = refrngvecs[:chr01][1:15]
+```
+
+```{julia}
+rn = RangeNode(smallrngvec)
+print_tree(rn)
+```
+
+  - The `UnitRange` in the root node is the 7th out of the 15 sorted ranges from which the tree was constructed.
+  - Each of the nodes in the tree can have 0, 1, or 2 child nodes.  Those with 0 children are called the "leaves" of the tree.
+
+```{julia}
+collect(Leaves(rn))
+```
+
+  - In addition to the `UnitRange` it represents, each `RangeNode` stores `maxlast`, the maximum value of `last(rng)` for any `UnitRange` in the tree rooted at this node.  For a leaf `maxlast` is simply `last` of its `UnitRange`.
+  - For other nodes, `maxlast` can be larger than `last` of its `UnitRange`.
+  - In particular, for the root node `maxlast` is the maximum of all the `last` values of the `UnitRange`s that generated the tree.
+
+```{julia}
+maximum(last.(smallrngvec))
+```
+
+[RangeTrees.jl](https://github.com/dmbates/RangeTrees.jl) defines methods for generics like `children`, `getroot`, and `nodevalue` from [AbstractTrees.jl](https://github.com/JuliaCollections/AbstractTrees.jl) and these allow for many other generics to be applied to a `RangeNode`.
+
+```{julia}
+children(rangetree01)
+```
+
+The root of the tree can be obtained from any node using `getroot`.  The combination of `getroot` and `children` allows traversal of the tree.
+
+```{julia}
+getroot(first(children(first(children(rangetree01))))) # get the root from its grandchild
+```
+
+Several methods for generic functions are exported from [RangeTrees.jl](https://github.com/dmbates/RangeTrees.jl)
+
+```{julia}
+varinfo(RangeTrees)
+```
+
+but most of these are defined in [AbstractTrees.jl](https://github.com/JuliaCollections/AbstractTrees.jl).
+
+:::
+
+  - Evaluating and storing `maxlast` in the nodes allows for overlap searchs to be truncated at nodes for which `maxlast < first(target)`.  The sorting by `first` allows for skipping the right subtree whenever `last(target) < first(thisnode)` (as in the `intersect!` method for `Vector{UnitRange}`).
+
+  - `intersect` and `intersect!` methods are already defined in [RangeTrees.jl](https://github.com/dmbates/RangeTrees.jl).
+  - Check that their results agree with the saved result.
+
+```{julia}
+isequal(intersect(target, rangetree01), savedresult)
+```
+
+```{julia}
+isequal(intersect!(result, target, rangetree01), savedresult)
+```
+
+## IntervalTrees
+
+  - Create a dictionary of `IntervalTree`s.  It is somewhat tedious to get the type of the result correct and we create a function to hide the details.
+
+```{julia}
+function toitrees(rngdict::Dict{S,Vector{UnitRange{T}}}) where {S,T}
+  return Dict(
+    k => IntervalTree{T,Interval{T}}(Interval.(v)) for (k, v) in rngdict
+  )
+end
+refintvltrees = toitrees(refrngvecs)
+intvltree01 = refintvltrees[:chr01]
+show(intvltree01)
+```
+
+  - Creating an `intersect!` method is also tedious because the package has its own `Interval` data type and defines `intersect(itr::IntervalTree, (frst, lst))` to return an iterator of `Interval`s in the tree, not the intersection
+
+```{julia}
+Interval(target)
+```
+
+```{julia}
+function Base.intersect!(
+  res::Vector{UnitRange{T}},
+  target::AbstractUnitRange,
+  refs::IntervalTree{T},
+) where {T}
+  empty!(res)
+  firstt, lastt = first(target), last(target)
+  for isect in intersect(refs, (firstt, lastt))
+    push!(res, max(first(isect), firstt):min(last(isect), lastt))
+  end
+  return res
+end
+isequal(intersect!(result, target, intvltree01), savedresult)
+```
+
+# Time for a shootout
+
+### Vector{UnitRange}
+
+```{julia}
+@benchmark intersect!(res, tar, ref) setup =
+  (res = result; tar = target; ref = refrngvec01)
+```
+
+```{julia}
+@benchmark intersect(tar, ref) setup = (tar = target; ref = refrngvec01)
+```
+
+### RangeTree
+
+```{julia}
+@benchmark intersect!(res, tar, ref) setup =
+  (res = result; tar = target; ref = rangetree01)
+```
+
+```{julia}
+@benchmark intersect(tar, ref) setup = (tar = target; ref = rangetree01)
+```
+
+### IntervalTree
+
+```{julia}
+@benchmark intersect!(res, tar, ref) setup =
+  (res = result; tar = target; ref = intvltree01)
+```
+
+  - In what follows we will use the `RangeTree` method for `intersect!` to obtain the intersections.
+
+# Determining coverage
+
+  - The `coverage` of a target by a set of reference ranges is the proportion of the base pairs in the target that intersect with one or more of the reference ranges.
+
+  - We need to somehow count the number of elements in the union of the ranges returned from `intersect!`.
+  - This could be done using the `union!` method for a [BitSet](https://docs.julialang.org/en/v1/base/collections/#Base.BitSet) but that approach has two problems: it is comparatively slow and, in Julia versions up to 1.8.0-rc1, it can be wrong.
+
+::: {.callout-note collapse="true"}
+
+### Bug in `union!` for `BitSet`
+
+  - While creating these notes we discovered a [bug](https://github.com/JuliaLang/julia/pull/45574) in the `union!` method for a `BitSet` and a `UnitRange`.
+
+  - There was a [PR](https://github.com/JuliaLang/julia/pull/45578) to fix it the next morning.
+  - Versions of Julia prior to 1.8.0-rc2 can (and probably will) return incorrect values of coverage.
+  - Replacing `union!(bs, isect)` by `union!(bs, BitSet(isect))` avoids this "infelicity" at the expense of more memory usage and compute time.
+
+:::
+
+  - There is a better method that takes advantage of the intersecting ranges being sorted by `first`
+
+  - The idea is to "keep moving the goalposts". When evaluating the coverage count, add the length of the current reference range's intersection with only the part to the right of what has already been covered.  The thing we know about the intersecting ranges is that each successive ranges's `first` position is greater than or equal to the `first` position of all the ranges preceding it.  That is, the ranges can't "move left" as we iterate through them.
+
+```{julia}
+function coveragecount(
+  target::AbstractUnitRange,
+  isects::Vector{UnitRange{T}},
+) where {T}
+  leftpost, rightpost = T(first(target)), T(last(target))
+  coverage = 0
+  for isect in isects
+    coverage += length(intersect(isect, leftpost:rightpost))
+    leftpost = max(leftpost, last(isect) + one(T))
+  end
+  return coverage
+end
+coveragecount(target, savedresult)
+```
+
+# Iterating over a collection of targets
+
+```{julia}
+function overlaps(targets::Vector{UnitRange{T}}, refs::RangeNode{T}) where {T}
+  nover = similar(targets, Int)
+  covcount = similar(targets, T)
+  result = empty!(similar(targets, ceil(Int, sqrt(treesize(refs)))))
+  @inbounds for (i, tar) in enumerate(targets)
+    nover[i] = length(intersect!(result, tar, refs))
+    covcount[i] = coveragecount(tar, result)
+  end
+  DataFrame(targets = targets, nover = nover, covcount = covcount)
+end
+overlaps(tarrngvec01, rangetree01)
+```
+
+```{julia}
+@benchmark overlaps(targets, refs) setup =
+  (targets = tarrngvec01; refs = rangetree01)
+```
+
+# The whole shootin' match
+
+  - The computations on different chromosome are independent of each other and can be assigned to different threads when Julia is started with multiple threads.
+
+```{julia}
+function overlaps(
+  tardict::Dict{Symbol,Vector{UnitRange{T}}},
+  refdict::Dict{Symbol,RangeNode{T,R}},
+) where {T,R}
+  matchedkeys = intersect(keys(tardict), keys(refdict))
+  result = Dict(k => DataFrame() for k in matchedkeys) # pre-assign key/value pairs
+  @sync for k in matchedkeys
+    Threads.@spawn result[k] = overlaps(tardict[k], refdict[k])
+  end
+  return result
+end
+bigresult = overlaps(tarrngvecs, refrngtrees);
+bigresult[:chrX]
+```
+
+::: {.callout-note collapse="true"}
+
+### Pre-assigning dictionary entries to avoid thread conflict
+
+  - The `result` is initialized with all the keys that will be in the result and with values that are empty `DataFrame`s.
+  - Individual tasks that are `@spawn`ed allocate their `DataFrame` value and merely update the pointer in `result` to that value, eliminating the possibility of collisions with other tasks.
+
+:::
+
+```{julia}
+@benchmark overlaps(targets, refs) setup =
+  (targets = tarrngvecs; refs = refrngtrees)
+```
+
+# Conclusions
+
+  - The ability to work in the REPL (or VS Code or Jupyter notebooks) encourages iterative refinement of algorithms.
+  - "Trust but verify" - when making a change or introducing new methods it helps to have results from previous methods for comparison.  In general, continuous integration (CI) testing is straightforward for Julia packages and is strongly encouraged.
+  - There are many tools for benchmarking function execution or storage allocation, allowing a developer to concentrate on where the "real problem" is.
+  - In certain cases, enhancements like multi-threading can be achieved with very little effort.
+
+# Version information
+
+```{julia}
+versioninfo()
+```
