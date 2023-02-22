@@ -97,8 +97,10 @@ What do you know when you (say) you know a language?
 
 > 語言與邏輯是彼此密切相關的，語言就是由一系列符號（詞語、標記、符號）和它們之間的規則組成的系統，可以用來表達思想或溝通。邏輯是一門對推理進行分析和評估的科學，它提供了一個框架，用來檢查推理的合理性，以及推理中涉及的假設的清楚性和有效性。因此，語言的邏輯分析就是對語言的結構和語言中推理的合理性進行分析和評估的過程。它是利用邏輯的原則對語言表達的概念及其關系進行分析的過程，以探索語言的正確性和有效性，并確定語言表達中的推理是否符合邏輯規則。
 
-(這段是 AI 生成的)
 
+::: {.incremental}
+(這段是 AI 生成的)
+:::
 
 ## 邏輯有很多意義
 
@@ -198,8 +200,9 @@ What do you know when you (say) you know a language?
 
 
 # 好玩！
-[]`Recreational linguistics`](https://www.wikiwand.com/en/Logology_(linguistics)
- a discipline which stimulates language learning through word games and lexical combinations.
+[`Recreational linguistics`](https://www.wikiwand.com/en/Logology_(linguistics)
+ 
+ > a discipline which stimulates language learning through word games and lexical combinations. The method includes acrostics, mesostichs, tongue twisters, crossword puzzles, word searches, riddles, which Mollica advocates to teach language (vocabulary and grammar) as well as culture. 
 
 
 
@@ -272,12 +275,13 @@ Linguistic Education, Flipped
 # 我們怎麼實作這門課？
 Linguistic problem solving with small data
 
+::: {.incremental}
 - 用少量的知識當基礎
 
 - 用自然語言與人造語言的例子來練習
 
 > 解碼、辨識與推導 (Decoding, Recognition and Inference) 到編碼 (Encoding)
-
+:::
 
 
 
