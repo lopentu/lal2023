@@ -1,0 +1,250 @@
+---
+title: "Week1 Orientation"
+author: "謝舒凱"
+format: 
+    revealjs:
+      slide-number: true
+      preview-links: auto
+      chalkboard: true
+      multiplex: true
+      logo: /pics/logo_round.png
+---
+
+# 歡迎加入語言解謎的世界
+
+
+## 我是
+
+![](pics/me.png)
+
+
+<!-- ---
+測試 -->
+
+# 語言的邏輯分析
+
+- 語言是什麼？
+
+- 邏輯？
+
+- 分析？
+
+- [語言的邏輯]分析？ [語言]的[邏輯分析]？
+<!-- 課名的語言邏輯分析 -->
+
+
+
+
+
+
+
+
+
+# Languages and Linguistics
+
+::: {.incremental}
+- To uncover and describe what you know, and how you learned 
+
+- Form (sound and script) and Meaning
+
+    - Phonetics/Phonology; Morphology/Syntax; Semantics/Pragmatics
+    - Psycho-neuro-social-historical-cultural dimensions
+    - various applications : language pedagogy, natural language processing/understanding, language, speech therapy (language-speech-pathology)
+:::
+
+
+
+# Linguistics and Language Science(s)
+**Language Modalities**
+
+::: {.incremental}
+- Every language must have a mode of communication / modality
+    - Auditory-vocal
+    - visual-gestural
+
+- Importance of studying different modalities > toward **Language Science(s)**
+
+:::
+
+
+# World Languages
+我們<font color='red'>會</font>的語言，只是七千多種的幾個。以南島
+
+
+
+::: {.callout-tip}
+## 我就問：會是什麼意思？
+What do you know when you (say) you know a language?
+(BTW, Language is not Writing System) 5000-7000/1000－2000）
+
+:::
+
+
+# Natural Language, Constructed Language, Animal Language and ‘Others’
+
+- 【人造語言/constructed languages】
+
+- 【外星語言學 Xenolinguistics】
+
+- 【Linguistic Steganography 語言隱寫術】／ 【Algorithmic Deciperment (Voynich; Rovash), etc】
+    - non-verbal, non-symbolic communication system, ever possible? (electrocardiogram etc )
+
+
+
+
+# 邏輯
+
+
+
+
+## 語言文化與邏輯
+巴拉圭的 `Toba` 語言中的數字表達，你看出規則了嗎？
+
+|  阿拉伯數字   | 表達  |
+|  ----  | ----  |
+| 1  | nathedac |
+| 2  | cacayni 或 nivoca |
+| 3  | cacaynilia |
+| 4  | nalotapegat |
+| 5  | nivoca cacaynilia |
+| 6  | cacayni cacaynilia|
+| 7  | nathedac cacayni cacaynilia |
+| 8 |  nivoca nalotapegat |
+| 9 | nivoca nalotapegat nathedac |
+| 10 | cacayni nivoca nalotapegat |
+
+
+
+
+---
+`僅使用 1-4 的數字，其餘數字則需要大量重複使用這四個數字`
+
+|  阿拉伯數字   | 表達  |
+|  ----  | ----  |
+| 1  | nathedac |
+| 2  | cacayni 或 nivoca |
+| 3  | cacaynilia |
+| 4  | nalotapegat |
+| 5 = 2+3 | nivoca cacaynilia |
+| 6 = 2*3  | cacayni cacaynilia|
+| 7 = 1+2*3 | nathedac cacayni cacaynilia |
+| 8 = 2*4 |  nivoca nalotapegat |
+| 9 = 2*4 + 1| nivoca nalotapegat nathedac |
+| 10 = 2 + 2*4 | cacayni nivoca nalotapegat |
+
+
+
+
+## 原初邏輯與文化
+
+::: {.incremental}
+
+> 對抽象沒有興趣；矛盾也沒有關係。
+
+    - `Tasmanians` 沒有「樹」這個詞，但對於每一種灌木、橡膠樹都有專門的語詞；沒有抽象的方式表達硬的、軟的、圓的。會說「像石頭一樣」(硬)，「像大腿一樣」(長)，「像月亮一樣」(圓)。
+
+::: {.callout-tip}
+## 世界觀
+
+不去描寫感知者的主題所獲得之印象，而去描寫客體在生活空間中的 形狀、輪廓、位置、運動、作用方式等等。
+
+:::
+:::
+
+
+
+## affordance
+
+
+
+# 那，學習語言的邏輯分析能幹什麼？ {background-color="blue"}
+
+
+# 好玩！
+`Recreational linguistics`
+
+
+
+
+
+# 好用！
+
+
+## Linguistics in the real World
+
+- [Linguistics in Everyday Life](http://www.linguisticsociety.org/content/linguistics-everyday-life)
+- Linguistics in the real world:  Multi-modal and Multi-channel communication
+Revisiting Semiotics
+
+
+
+## Linguistics in the irreal World
+
+Heptapods in `Arrival`
+![](/pics/logogram.jpeg)
+
+![](/pics/arrival_plan.jpeg)
+
+
+
+# post-AI skills
+
+<font color='blue'>unplugged computational-linguistic thinking</font>
+
+大型語言模型下的時代意義
+
+- (Language) Game with a purpose
+
+- in-context learning and prompt engineering
+
+
+# 謝老師神預言 😄
+
+![](/pics/ai-pred.png)
+
+
+
+
+
+# Linguistic Analytics
+Linguistic Education, Flipped 
+
+- Linguistic analysis as an essential Problem Solving Skill ( used to be a mental process in psychology and a computerized process in computer science)
+
+- Core competence to reasoning with small data
+    - 大數據與統計計算不是人類的強項
+    - 基於小/厚數據的知識推理、直觀、解決問題、與文化想像的能力  情緒、多元價值與同理溝通
+
+- Computational Thinking, Storytelling and Creative Problem Solving
+
+
+
+
+
+
+
+
+# Linguistics Olympiad
+最有關聯的教育活動
+
+
+
+
+
+
+# 我們怎麼實作這門課？
+Linguistic problem solving with small data
+
+- 用少量的知識當基礎
+
+- 用自然語言與人造語言的例子來練習
+
+> 解碼、辨識與推導 (Decoding, Recognition and Inference) 到編碼 (Encoding)
+
+
+
+
+
+## 提醒
+
+- 記得帶筆記本、筆電之類。

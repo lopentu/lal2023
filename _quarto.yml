@@ -6,7 +6,7 @@ project:
   render: 
       - index.qmd
       - about.qmd
-      - w1.qmd
+      - week1.qmd
       - session1-get-started.qmd
       # - session2a-tables-and-arrow.qmd
       # - session2b-interval-overlap.qmd
@@ -37,7 +37,7 @@ website:
     search: true
     contents:
       - index.qmd
-      - w1.qmd
+      - week1.qmd
       - session1-get-started.qmd
       - session2a-tables-and-arrow.qmd
       - session2b-interval-overlap.qmd
