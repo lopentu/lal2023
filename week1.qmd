@@ -68,7 +68,7 @@ format:
 
 
 # World Languages
-我們<font color='red'>會</font>的語言，只是七千多種的幾個。以南島
+我們<font color='red'>會</font>的語言，只是七千多種的幾個。(對臺灣最具意義的南島語族約 1200+ 種，不斷流失中） 
 
 
 
@@ -80,7 +80,8 @@ What do you know when you (say) you know a language?
 :::
 
 
-# Natural Language, Constructed Language, Animal Language and ‘Others’
+## All Languages matter!
+`自然語言、動物語言、星際語言、人造語言、電腦語言、以及其他書寫文字溝通系統`
 
 - 【人造語言/constructed languages】
 
@@ -93,6 +94,23 @@ What do you know when you (say) you know a language?
 
 
 # 邏輯
+
+> 語言與邏輯是彼此密切相關的，語言就是由一系列符號（詞語、標記、符號）和它們之間的規則組成的系統，可以用來表達思想或溝通。邏輯是一門對推理進行分析和評估的科學，它提供了一個框架，用來檢查推理的合理性，以及推理中涉及的假設的清楚性和有效性。因此，語言的邏輯分析就是對語言的結構和語言中推理的合理性進行分析和評估的過程。它是利用邏輯的原則對語言表達的概念及其關系進行分析的過程，以探索語言的正確性和有效性，并確定語言表達中的推理是否符合邏輯規則。
+
+(這段是 AI 生成的)
+
+
+## 邏輯有很多意義
+
+- 邏輯是一個涵義很廣的概念，涵蓋的並不局限于形式邏輯或數理邏輯所表達的範圍 （參見康德【純理性批判】Critique of Pure Reason）
+
+
+
+## 這門課不這樣談語言 (可惜？慶幸？ 😄)
+
+![](pics/logic1.webp){width=500}
+![](pics/logic2.png){width=500}
+
 
 
 
@@ -153,7 +171,26 @@ What do you know when you (say) you know a language?
 
 
 
-## affordance
+## Affordance 
+從生態心理學來的這個概念也很有幫助理解語言的邏輯分析。
+
+- 任何對環境或物體的知覺，都提供了知覺者某種行動的可能。如: 可以用來支撐的地面、可以食用的物質等。
+
+- 語言通常也透過物體的名稱來反映了這種 affordance 的關係。
+
+
+## Affordance in Language
+
+![](/pics/affordance.png)
+
+
+# 小總結
+
+- 語言：世界語言與人造語言，只要是人類用來溝通的符碼系統，形意結合的符號系統，都是語言。
+
+- 邏輯分析：不帶文化偏見的規則與模型探究與推導。
+
+
 
 
 
@@ -161,8 +198,8 @@ What do you know when you (say) you know a language?
 
 
 # 好玩！
-`Recreational linguistics`
-
+[]`Recreational linguistics`](https://www.wikiwand.com/en/Logology_(linguistics)
+ a discipline which stimulates language learning through word games and lexical combinations.
 
 
 
@@ -206,18 +243,18 @@ Heptapods in `Arrival`
 
 
 
-# Linguistic Analytics
+# Linguistic Analytics {.smaller}
 Linguistic Education, Flipped 
 
-- Linguistic analysis as an essential Problem Solving Skill ( used to be a mental process in psychology and a computerized process in computer science)
+::: {.incremental}
 
-- Core competence to reasoning with small data
+- 任何與語言有關的問題，都是語言分析的範疇。Linguistic analysis as an essential Problem Solving Skill ( used to be a mental process in psychology and a computerized process in computer science)
+
+- Core competence to **reasoning with small and unseen data**
+
     - 大數據與統計計算不是人類的強項
-    - 基於小/厚數據的知識推理、直觀、解決問題、與文化想像的能力  情緒、多元價值與同理溝通
-
-- Computational Thinking, Storytelling and Creative Problem Solving
-
-
+    - 基於小/厚數據的知識推理、直觀、解決問題、與文化想像的能力\情緒、多元價值與同理溝通
+:::
 
 
 
