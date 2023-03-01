@@ -1,10 +1,10 @@
 ---
 title: "Week 2 語言類型與文化邏輯"
-author: "謝舒凱"
+author: "謝舒凱 台大語言所"
 format: 
     revealjs:
       slide-number: true
-      preview-links: auto
+      preview-links: true
       chalkboard: true
       multiplex: true
       logo: /pics/logo_round.png
@@ -171,11 +171,10 @@ The Waste Isolation Pilot Plant (WIPP) is designed as the final resting place fo
 
 ## An example: Sementria
 
-- 語意經驗 (semantic experience) 字詞聯想遊戲 `semantris`
+- 語意經驗 (semantic experience) 字詞聯想遊戲 [`semantris`](https://research.google.com/semantris/)
 
 <!-- ::: {.small; background-color:#d3d3d3; color:#000000; padding: 0.5em; margin: 0.5em; border-radius: 0.5em;} -->
-
-隨著 AR/VR 技術的快速發展，加上與 AI/IOT 的結合，可以想像一個有趣的人類意識的轉化。虛實難分的景況，人生如戲，戲如人生。遊戲產生了新的哲學高度。而遊戲所產生的人類反應資料，也成了機器學習的材料。以 Google 公開的「語意經驗」字詞聯想遊戲 `semantris` 為例，我們在玩遊戲中輸入的「答案」，正足以訓練與增強機器逼近人類的支持語意相似度判斷準確能力。
+> 隨著 AR/VR 技術的快速發展，加上與 AI/IOT 的結合，可以想像一個有趣的人類意識的轉化。虛實難分的景況，人生如戲，戲如人生。遊戲產生了新的哲學高度。而遊戲所產生的人類反應資料，也成了機器學習的材料。以 Google 公開的「語意經驗」字詞聯想遊戲 `semantris` 為例，我們在玩遊戲中輸入的「答案」，正足以訓練與增強機器逼近人類的支持語意相似度判斷準確能力。
 
 <!-- ::: -->
 
@@ -187,7 +186,11 @@ The Waste Isolation Pilot Plant (WIPP) is designed as the final resting place fo
 
 ## 多看看各種 AI 相關的遊戲設計可以嗅出一些端倪 
 
-- https://experiments.withgoogle.com/collection/ai
+- [Creatability](https://experiments.withgoogle.com/collection/creatability)
+
+
+
+
 
 
 
