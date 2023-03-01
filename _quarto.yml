@@ -7,6 +7,7 @@ project:
       - index.qmd
       - about.qmd
       - week1.qmd
+      - week2.qmd
       - session1-get-started.qmd
       # - session2a-tables-and-arrow.qmd
       # - session2b-interval-overlap.qmd
@@ -38,15 +39,16 @@ website:
     contents:
       - index.qmd
       - week1.qmd
+      - week2.qmd
       - session1-get-started.qmd
-      - session2a-tables-and-arrow.qmd
-      - session2b-interval-overlap.qmd
-      - session2b-alt.qmd
-      - session3a-linear-mixed-effects.qmd
-      - session3b-glmm.qmd
-      - session4-exercise.qmd
-      - session5-other-tools.qmd
-      - session6-conclusions.qmd
+      # - session2a-tables-and-arrow.qmd
+      # - session2b-interval-overlap.qmd
+      # - session2b-alt.qmd
+      # - session3a-linear-mixed-effects.qmd
+      # - session3b-glmm.qmd
+      # - session4-exercise.qmd
+      # - session5-other-tools.qmd
+      # - session6-conclusions.qmd
   page-navigation: true
 
 
@@ -61,4 +63,5 @@ callout-appearance: simple
 date: today
 date-format: iso
 
+from: markdown+emoji
 # jupyter: julia-1.8
