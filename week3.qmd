@@ -1,0 +1,271 @@
+---
+title: "Week 3 語音的世界 (1) "
+author: "謝舒凱 台大語言所"
+format: 
+    revealjs:
+      slide-number: true
+      preview-links: true
+      chalkboard: true
+      multiplex: true
+      logo: /pics/logo_round.png
+    html:
+      code-fold: true        
+bibliography: tol.bib
+---
+
+
+# 今天的主題
+
+- 上次的題目討論
+
+- 語音學入門
+
+
+# 聲音與語言
+
+## 聲音三要素
+Sound is a physical phenomenon that can be described in terms of three properties
+物理上來說：
+
+- 音量 (大小) loudness  	 《》 振幅大小
+- 音調 (高低) pitch	     《》振動頻率高低
+- 音色 (差異) quality      《》許多正弦波疊合而成的複雜波形
+
+
+## 聲音無所不在
+
+- [(Human) sounds of the world](http://www.audiomicro.com/free-sound-effects/free-human)
+
+- [Sound and Geography](https://aporee.org/maps/)
+
+## 語音（聲音）是什麼？
+Speech Sounds
+
+- 聲音是一種(縱)波：聲帶震動發出聲響，發音位置修飾在口／鼻腔產生共鳴，以空氣為介質，以波的形式傳遞，在耳中的鼓膜震動，訊號傳入大腦解析。
+
+## Speech Sounds: Phonemes
+
+- 音位（英語：[Phoneme]{.blue-text}），又譯音素，是人類語言中能夠區別意義的最小聲音單位。傳統上用 **Minimal pair** (最小音對) 方法來辨認。
+
+- 人類語言中平均的音素數目（大約）是 30（ranging from 141 phonemes in `!Xū` to 11 phonemes in `Pirahā`）
+ 
+## Speech Sounds: Some (Interesting) Facts
+
+
+- Vowelless word/sentence in Bella coola (`Nuxalk`): [聽看看](https://www.bilibili.com/video/av74640614/?from=search&seid=8899596122082178682)
+
+![](./pics/nuxalk.png)
+
+
+## Speech Sounds: Applications
+
+- 語音辨識  Speech-to-Text 
+
+- 語音合成  Text-to-Speech
+
+- 多模態 AI 的時代，Speech 可以跟 XXX (melody, emoji, ...) 各種互動轉換
+
+
+
+
+## Linguistic approach 
+
+- 語音學 (Phonetics) 
+
+    - 發音學 (Articulatory Phonetics)
+    - 語音聲學 (Acoustic Phonetics)
+    - 語音聽覺學 (Auditory Phonetics)
+
+- 音韻學 (Phonology)
+
+:::{.callout-note}
+聲與音的詞彙語意差異，已經透漏了古人的語音學觀念。
+:::
+
+
+## Sound Segments
+
+- Knowing a language includes knowing the sounds of that language 
+- Phonetics is the study of speech sounds 
+- We are able to segment a continuous stream of speech into distinct parts and recognize the parts in other words
+
+
+
+## Identity of Speech Sounds
+- Our linguistic knowledge allows us to *ignore nonlinguistic differences in speech* (such as individual pitch levels, rates of speed, coughs) 
+
+- We are capable of making sounds that are not speech sounds in English (but are in other languages) 
+    - The click tsk that signals disapproval in English is a speech sound in languages such as Zulu.
+
+
+## Identity of Speech Sounds
+
+The science of phonetics aims to describe all the sounds of all the world’s languages 
+
+- **Acoustic** phonetics: focuses on the physical properties of the sounds of language 
+- **Auditory** phonetics: focuses on how listeners perceive the sounds of language
+- **Articulatory** phonetics: focuses on how the vocal tract produces the sounds of language
+
+
+## 圖示
+![](./pics/speech.png)
+
+
+
+## Representing Sounds
+怎麼（科學的）描述/表示/轉寫語音？ 
+
+- Spelling, or orthography, does not consistently represent the sounds of language. Why?
+
+
+
+
+## Some Problems
+
+![](./pics/transcription.png)
+
+
+
+## Some Problems
+
+
+![](./pics/trans2.png)
+![](./pics/trans3.png)
+
+
+ 
+
+## The Phonetic Alphabet (IPA)
+
+In 1888 the International Phonetic Alphabet (IPA) was invented in order to have a system in which there was a one-to-one correspondence between each sound in language and each phonetic symbol 
+
+
+> Someone who knows the IPA knows (basically) how to pronounce any word in any language
+
+<!-- Ref: phonetics.tutorial.pdf (in class folder) -->
+
+
+## Practice with IPA (值得的投資)
+
+[IPA Chart](https://www.wikiwand.com/zh-tw/%E5%9C%8B%E9%9A%9B%E9%9F%B3%E6%A8%99)
+<!-- - [For language learners](http://www.languagebasecamp.com/linguistics-for-language-learners-what-is-the-ipa/) -->
+
+- [Mimic method](https://www.mimicmethod.com/ft101/place-of-articulation/#tab-con-3) 用英文來想像發音的位置
+
+- [照表發音](http://www.ipachart.com/) 是推薦的學習法，但是要先學會表格的意義
+
+- 如果妳對發音生理也有興趣，可以參考 [Articulatory information with ULTRASOUND-enhanced videos and animations](https://enunciate.arts.ubc.ca/linguistics/world-sounds/) 
+
+
+## In-class Exercise [1]: German
+
+[German IPA -enhanced Pronunciation 101](https://en.wikipedia.org/wiki/Help:IPA/Standard_German)
+
+
+## In-class Exercise [2]: Korean
+從微量數據先來試著推敲韓語的發音
+
+![](./pics/korean.png)
+
+
+
+
+
+
+
+## 語言系譜資料 
+
+
+- [世界語言結構地圖集 (WALS)](https://wals.info/) 涵蓋 2662 種語言、192 種結構特徵
+
+- `lingtypology` (`Python` 與 `R` 皆有套件)
+
+```{python}
+import lingtypology
+from pycldf import Dataset
+import pandas as pd
+pd.options.plotting.backend = "plotly"
+```
+
+
+## 子音數目分佈
+
+```{python}
+data = pd.read_csv(
+    'https://raw.githubusercontent.com/ropensci/lingtypology/master/database_creation/ejective_and_n_consonants.csv',
+    delimiter=',',
+    header=0,
+)
+m = lingtypology.LingMap(data.language)
+m.legend_title = 'Consonants'
+m.legend_position = 'bottomleft'
+m.add_tooltips(data.consonants)
+#If numeric is True, it will look like this
+m.add_features(data.consonants, numeric=True)
+m.create_map()
+```
+
+
+
+## 母音數目分佈
+
+```{python}
+m.legend_title = 'Vowels'
+m.legend_position = 'bottomright'
+m.add_tooltips(data.vowels)
+#If numeric is True, it will look like this
+m.add_features(data.vowels, numeric=True)
+m.create_map()
+```
+
+# 如何紀錄與分析語音
+
+- 辨音能力 ([挑戰]: [IOL 2016 team contest](https://ioling.org/booklets/iol-2016-team-prob.en.pdf))
+
+- 語音轉寫架構與工具
+
+- 語音參考資料庫與參考語法
+
+- 文化人類知識背景
+
+# 語音轉寫與挑戰
+以布農語爲例
+
+![](./pics/bunun.png)
+
+
+
+# 辨音練習
+- 以團體討論方式，來練習 **Turkish Bird Languages** (kuş dili) 的辨音能力。（請關掉電腦，只用耳朵）
+
+> Turkish bird language is a [whistled](https://www.wikiwand.com/en/Whistled_language) register of Turkish, which is currently used by around 10,000 people in the mountainous regions of Turkey.
+[介紹](https://youtu.be/l117wfB0g3o?t=14)
+
+
+<!-- {{< video https://youtu.be/l117wfB0g3o >}} -->
+
+
+## 
+
+[題目](https://onling.org/contests/2021/online/eng/)
+
+
+
+
+
+
+
+# 本週作業在 **NTU COOL** 上，請同時做兩件事：
+- 瞭解 `IPA`。
+- 安裝 [`Praat` 軟體](https://www.fon.hum.uva.nl/praat/)。
+
+
+<!-- ## 語音轉寫 -->
+
+
+
+
+
+
+
+

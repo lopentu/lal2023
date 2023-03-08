@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.2.335">
+
+  <meta name="author" content="謝舒凱 台大語言所">
+  <meta name="dcterms.date" content="2023-03-08">
+  <title>語言的邏輯分析 - Week 3 語音的世界 (1)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Week 3 語音的世界 (1)</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+謝舒凱 台大語言所 
+</div>
+</div>
+</div>
+
+  <p class="date">2023-03-08</p>
+</section>
+<section id="今天的主題" class="title-slide slide level1 center">
+<h1>今天的主題</h1>
+<ul>
+<li><p>上次的題目討論</p></li>
+<li><p>語音學入門</p></li>
+</ul>
+</section>
+
+<section>
+<section id="聲音與語言" class="title-slide slide level1 center">
+<h1>聲音與語言</h1>
+
+</section>
+<section id="聲音三要素" class="slide level2">
+<h2>聲音三要素</h2>
+<p>Sound is a physical phenomenon that can be described in terms of three properties 物理上來說：</p>
+<ul>
+<li>音量 (大小) loudness 《》 振幅大小</li>
+<li>音調 (高低) pitch 《》振動頻率高低</li>
+<li>音色 (差異) quality 《》許多正弦波疊合而成的複雜波形</li>
+</ul>
+</section>
+<section id="聲音無所不在" class="slide level2">
+<h2>聲音無所不在</h2>
+<ul>
+<li><p><a href="http://www.audiomicro.com/free-sound-effects/free-human">(Human) sounds of the world</a></p></li>
+<li><p><a href="https://aporee.org/maps/">Sound and Geography</a></p></li>
+</ul>
+</section>
+<section id="語音聲音是什麼" class="slide level2">
+<h2>語音（聲音）是什麼？</h2>
+<p>Speech Sounds</p>
+<ul>
+<li>聲音是一種(縱)波：聲帶震動發出聲響，發音位置修飾在口／鼻腔產生共鳴，以空氣為介質，以波的形式傳遞，在耳中的鼓膜震動，訊號傳入大腦解析。</li>
+</ul>
+</section>
+<section id="speech-sounds-phonemes" class="slide level2">
+<h2>Speech Sounds: Phonemes</h2>
+<ul>
+<li><p>音位（英語：<span class="blue-text">Phoneme</span>），又譯音素，是人類語言中能夠區別意義的最小聲音單位。傳統上用 <strong>Minimal pair</strong> (最小音對) 方法來辨認。</p></li>
+<li><p>人類語言中平均的音素數目（大約）是 30（ranging from 141 phonemes in <code>!Xū</code> to 11 phonemes in <code>Pirahā</code>）</p></li>
+</ul>
+</section>
+<section id="speech-sounds-some-interesting-facts" class="slide level2">
+<h2>Speech Sounds: Some (Interesting) Facts</h2>
+<ul>
+<li>Vowelless word/sentence in Bella coola (<code>Nuxalk</code>): <a href="https://www.bilibili.com/video/av74640614/?from=search&amp;seid=8899596122082178682">聽看看</a></li>
+</ul>
+
+<img data-src="./pics/nuxalk.png" class="r-stretch"></section>
+<section id="speech-sounds-applications" class="slide level2">
+<h2>Speech Sounds: Applications</h2>
+<ul>
+<li><p>語音辨識 Speech-to-Text</p></li>
+<li><p>語音合成 Text-to-Speech</p></li>
+<li><p>多模態 AI 的時代，Speech 可以跟 XXX (melody, emoji, …) 各種互動轉換</p></li>
+</ul>
+</section>
+<section id="linguistic-approach" class="slide level2">
+<h2>Linguistic approach</h2>
+<ul>
+<li><p>語音學 (Phonetics)</p>
+<ul>
+<li>發音學 (Articulatory Phonetics)</li>
+<li>語音聲學 (Acoustic Phonetics)</li>
+<li>語音聽覺學 (Auditory Phonetics)</li>
+</ul></li>
+<li><p>音韻學 (Phonology)</p></li>
+</ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>聲與音的詞彙語意差異，已經透漏了古人的語音學觀念。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sound-segments" class="slide level2">
+<h2>Sound Segments</h2>
+<ul>
+<li>Knowing a language includes knowing the sounds of that language</li>
+<li>Phonetics is the study of speech sounds</li>
+<li>We are able to segment a continuous stream of speech into distinct parts and recognize the parts in other words</li>
+</ul>
+</section>
+<section id="identity-of-speech-sounds" class="slide level2">
+<h2>Identity of Speech Sounds</h2>
+<ul>
+<li><p>Our linguistic knowledge allows us to <em>ignore nonlinguistic differences in speech</em> (such as individual pitch levels, rates of speed, coughs)</p></li>
+<li><p>We are capable of making sounds that are not speech sounds in English (but are in other languages)</p>
+<ul>
+<li>The click tsk that signals disapproval in English is a speech sound in languages such as Zulu.</li>
+</ul></li>
+</ul>
+</section>
+<section id="identity-of-speech-sounds-1" class="slide level2">
+<h2>Identity of Speech Sounds</h2>
+<p>The science of phonetics aims to describe all the sounds of all the world’s languages</p>
+<ul>
+<li><strong>Acoustic</strong> phonetics: focuses on the physical properties of the sounds of language</li>
+<li><strong>Auditory</strong> phonetics: focuses on how listeners perceive the sounds of language</li>
+<li><strong>Articulatory</strong> phonetics: focuses on how the vocal tract produces the sounds of language</li>
+</ul>
+</section>
+<section id="圖示" class="slide level2">
+<h2>圖示</h2>
+
+<img data-src="./pics/speech.png" class="r-stretch"></section>
+<section id="representing-sounds" class="slide level2">
+<h2>Representing Sounds</h2>
+<p>怎麼（科學的）描述/表示/轉寫語音？</p>
+<ul>
+<li>Spelling, or orthography, does not consistently represent the sounds of language. Why?</li>
+</ul>
+</section>
+<section id="some-problems" class="slide level2">
+<h2>Some Problems</h2>
+
+<img data-src="./pics/transcription.png" class="r-stretch"></section>
+<section id="some-problems-1" class="slide level2">
+<h2>Some Problems</h2>
+<p><img data-src="./pics/trans2.png"> <img data-src="./pics/trans3.png"></p>
+</section>
+<section id="the-phonetic-alphabet-ipa" class="slide level2">
+<h2>The Phonetic Alphabet (IPA)</h2>
+<p>In 1888 the International Phonetic Alphabet (IPA) was invented in order to have a system in which there was a one-to-one correspondence between each sound in language and each phonetic symbol</p>
+<blockquote>
+<p>Someone who knows the IPA knows how to pronounce any word in any language</p>
+</blockquote>
+<!-- Ref: phonetics.tutorial.pdf (in class folder) -->
+</section>
+<section id="practice-with-ipa-值得的投資" class="slide level2">
+<h2>Practice with IPA (值得的投資)</h2>
+<ul>
+<li><p><a href="http://www.languagebasecamp.com/linguistics-for-language-learners-what-is-the-ipa/">For language learners</a></p></li>
+<li><p><a href="https://www.mimicmethod.com/ft101/place-of-articulation/#tab-con-3">Mimic method</a></p></li>
+<li><p><a href="http://www.ipachart.com/">照表發音</a></p></li>
+<li><p><a href="https://enunciate.arts.ubc.ca/linguistics/world-sounds/">Articulatory information with ULTRASOUND-enhanced videos and animations</a></p></li>
+</ul>
+</section>
+<section id="in-class-exercise-1-german" class="slide level2">
+<h2>In-class Exercise [1]: German</h2>
+<p>German IPA -enhanced Pronunciation 101</p>
+</section>
+<section id="in-class-exercise-2-korean" class="slide level2">
+<h2>In-class Exercise [2]: Korean</h2>
+<p>從微量數據先來試著推敲韓語的發音</p>
+
+<img data-src="./pics/korean.png" class="r-stretch"></section>
+<section id="語言系譜資料" class="slide level2">
+<h2>語言系譜資料</h2>
+<ul>
+<li><p><a href="https://wals.info/">世界語言結構地圖集 (WALS)</a> 涵蓋 2662 種語言、192 種結構特徵</p></li>
+<li><p><code>lingtypology</code> (<code>Python</code> 與 <code>R</code> 皆有套件)</p></li>
+</ul>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> lingtypology</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> pycldf <span class="im">import</span> Dataset</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4"></a>pd.options.plotting.backend <span class="op">=</span> <span class="st">"plotly"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="子音數目分佈" class="slide level2">
+<h2>子音數目分佈</h2>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>data <span class="op">=</span> pd.read_csv(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="st">'https://raw.githubusercontent.com/ropensci/lingtypology/master/database_creation/ejective_and_n_consonants.csv'</span>,</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    delimiter<span class="op">=</span><span class="st">','</span>,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    header<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a>m <span class="op">=</span> lingtypology.LingMap(data.language)</span>
+<span id="cb2-7"><a href="#cb2-7"></a>m.legend_title <span class="op">=</span> <span class="st">'Consonants'</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>m.legend_position <span class="op">=</span> <span class="st">'bottomleft'</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>m.add_tooltips(data.consonants)</span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#If numeric is True, it will look like this</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>m.add_features(data.consonants, numeric<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-12"><a href="#cb2-12"></a>m.create_map()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
+    <script src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;></script>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
+    
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
+            <style>
+                #map_e61306a94235d0b3d3e3abf0cff833eb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_e61306a94235d0b3d3e3abf0cff833eb&quot; ></div>
+        
+    
+<!-- Based on the template from here: https://nbviewer.jupyter.org/gist/talbertc-usgs/18f8901fc98f109f2b71156cf3ac81cd -->
+<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css&quot;>
+
+  <script src=&quot;https://code.jquery.com/jquery-1.12.4.js&quot;></script>
+  <script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;></script>
+  
+  <script>
+    $(function(){
+        $(&quot;#maplegend0&quot;).draggable({
+            start: function (event, ui) {
+                $(this).css({
+                    right: &quot;auto&quot;,
+                    top: &quot;auto&quot;,
+                    bottom: &quot;auto&quot;
+                });
+            }
+        });
+    });
+  </script>
+</head>
+<body>
+
+
+<div id='maplegend0' class='maplegend' 
+    style='position: absolute; z-index:9999; border:2px solid grey; background-color:rgba(255, 255, 255, 0.8);
+     border-radius:6px; padding: 10px; font-size:14px; left: 20px; bottom: 40px;'>
+
+
+<div class='legend-title'>Consonants</div>
+
+<div class='legend-scale'>
+  <ul class='legend-labels'>
+
+    <svg height=&quot;163&quot; width=&quot;20&quot;><line x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;20&quot; y2=&quot;0&quot;style=&quot;stroke:#ffffffff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;2&quot; x2=&quot;20&quot; y2=&quot;2&quot;style=&quot;stroke:#fefffeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;3&quot; x2=&quot;20&quot; y2=&quot;3&quot;style=&quot;stroke:#fdfefdff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;4&quot; x2=&quot;20&quot; y2=&quot;4&quot;style=&quot;stroke:#fcfefcff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;5&quot; x2=&quot;20&quot; y2=&quot;5&quot;style=&quot;stroke:#fafdfaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;6&quot; x2=&quot;20&quot; y2=&quot;6&quot;style=&quot;stroke:#f9fcf9ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;7&quot; x2=&quot;20&quot; y2=&quot;7&quot;style=&quot;stroke:#f8fcf8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;8&quot; x2=&quot;20&quot; y2=&quot;8&quot;style=&quot;stroke:#f7fbf7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;9&quot; x2=&quot;20&quot; y2=&quot;9&quot;style=&quot;stroke:#f5faf5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;10&quot; x2=&quot;20&quot; y2=&quot;10&quot;style=&quot;stroke:#f4faf4ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;11&quot; x2=&quot;20&quot; y2=&quot;11&quot;style=&quot;stroke:#f3f9f3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;12&quot; x2=&quot;20&quot; y2=&quot;12&quot;style=&quot;stroke:#f1f8f1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;13&quot; x2=&quot;20&quot; y2=&quot;13&quot;style=&quot;stroke:#f0f8f0ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;14&quot; x2=&quot;20&quot; y2=&quot;14&quot;style=&quot;stroke:#eff7efff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;15&quot; x2=&quot;20&quot; y2=&quot;15&quot;style=&quot;stroke:#eef7eeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;16&quot; x2=&quot;20&quot; y2=&quot;16&quot;style=&quot;stroke:#ecf6ecff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;17&quot; x2=&quot;20&quot; y2=&quot;17&quot;style=&quot;stroke:#ebf5ebff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;18&quot; x2=&quot;20&quot; y2=&quot;18&quot;style=&quot;stroke:#eaf5eaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;18&quot; x2=&quot;20&quot; y2=&quot;18&quot;style=&quot;stroke:#e6f3e6ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;20&quot; x2=&quot;20&quot; y2=&quot;20&quot;style=&quot;stroke:#e5f2e5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;21&quot; x2=&quot;20&quot; y2=&quot;21&quot;style=&quot;stroke:#e3f1e3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;22&quot; x2=&quot;20&quot; y2=&quot;22&quot;style=&quot;stroke:#e2f1e2ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;23&quot; x2=&quot;20&quot; y2=&quot;23&quot;style=&quot;stroke:#e1f0e1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;24&quot; x2=&quot;20&quot; y2=&quot;24&quot;style=&quot;stroke:#dff0dfff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;25&quot; x2=&quot;20&quot; y2=&quot;25&quot;style=&quot;stroke:#deefdeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;26&quot; x2=&quot;20&quot; y2=&quot;26&quot;style=&quot;stroke:#ddeeddff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;27&quot; x2=&quot;20&quot; y2=&quot;27&quot;style=&quot;stroke:#dceedcff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;28&quot; x2=&quot;20&quot; y2=&quot;28&quot;style=&quot;stroke:#daeddaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;29&quot; x2=&quot;20&quot; y2=&quot;29&quot;style=&quot;stroke:#d9ecd9ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;30&quot; x2=&quot;20&quot; y2=&quot;30&quot;style=&quot;stroke:#d8ecd8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;31&quot; x2=&quot;20&quot; y2=&quot;31&quot;style=&quot;stroke:#d7ebd7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;32&quot; x2=&quot;20&quot; y2=&quot;32&quot;style=&quot;stroke:#d5ead5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;33&quot; x2=&quot;20&quot; y2=&quot;33&quot;style=&quot;stroke:#d4ead4ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;34&quot; x2=&quot;20&quot; y2=&quot;34&quot;style=&quot;stroke:#d3e9d3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;35&quot; x2=&quot;20&quot; y2=&quot;35&quot;style=&quot;stroke:#d1e9d1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;36&quot; x2=&quot;20&quot; y2=&quot;36&quot;style=&quot;stroke:#d0e8d0ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;36&quot; x2=&quot;20&quot; y2=&quot;36&quot;style=&quot;stroke:#cce6ccff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;38&quot; x2=&quot;20&quot; y2=&quot;38&quot;style=&quot;stroke:#cbe5cbff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;39&quot; x2=&quot;20&quot; y2=&quot;39&quot;style=&quot;stroke:#cae5caff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;40&quot; x2=&quot;20&quot; y2=&quot;40&quot;style=&quot;stroke:#c8e4c8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;41&quot; x2=&quot;20&quot; y2=&quot;41&quot;style=&quot;stroke:#c7e3c7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;42&quot; x2=&quot;20&quot; y2=&quot;42&quot;style=&quot;stroke:#c6e3c6ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;43&quot; x2=&quot;20&quot; y2=&quot;43&quot;style=&quot;stroke:#c5e2c5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;44&quot; x2=&quot;20&quot; y2=&quot;44&quot;style=&quot;stroke:#c3e2c3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;45&quot; x2=&quot;20&quot; y2=&quot;45&quot;style=&quot;stroke:#c2e1c2ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;46&quot; x2=&quot;20&quot; y2=&quot;46&quot;style=&quot;stroke:#c1e0c1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;47&quot; x2=&quot;20&quot; y2=&quot;47&quot;style=&quot;stroke:#bfe0bfff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;48&quot; x2=&quot;20&quot; y2=&quot;48&quot;style=&quot;stroke:#bedfbeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;49&quot; x2=&quot;20&quot; y2=&quot;49&quot;style=&quot;stroke:#bddebdff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;50&quot; x2=&quot;20&quot; y2=&quot;50&quot;style=&quot;stroke:#bcdebcff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;51&quot; x2=&quot;20&quot; y2=&quot;51&quot;style=&quot;stroke:#baddbaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;52&quot; x2=&quot;20&quot; y2=&quot;52&quot;style=&quot;stroke:#b9dcb9ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;53&quot; x2=&quot;20&quot; y2=&quot;53&quot;style=&quot;stroke:#b8dcb8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;54&quot; x2=&quot;20&quot; y2=&quot;54&quot;style=&quot;stroke:#b7dbb7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;54&quot; x2=&quot;20&quot; y2=&quot;54&quot;style=&quot;stroke:#b3d9b3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;56&quot; x2=&quot;20&quot; y2=&quot;56&quot;style=&quot;stroke:#b1d9b1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;57&quot; x2=&quot;20&quot; y2=&quot;57&quot;style=&quot;stroke:#b0d8b0ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;58&quot; x2=&quot;20&quot; y2=&quot;58&quot;style=&quot;stroke:#afd7afff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;59&quot; x2=&quot;20&quot; y2=&quot;59&quot;style=&quot;stroke:#aed7aeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;60&quot; x2=&quot;20&quot; y2=&quot;60&quot;style=&quot;stroke:#acd6acff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;61&quot; x2=&quot;20&quot; y2=&quot;61&quot;style=&quot;stroke:#abd5abff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;62&quot; x2=&quot;20&quot; y2=&quot;62&quot;style=&quot;stroke:#aad5aaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;63&quot; x2=&quot;20&quot; y2=&quot;63&quot;style=&quot;stroke:#a8d4a8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;64&quot; x2=&quot;20&quot; y2=&quot;64&quot;style=&quot;stroke:#a7d4a7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;65&quot; x2=&quot;20&quot; y2=&quot;65&quot;style=&quot;stroke:#a6d3a6ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;66&quot; x2=&quot;20&quot; y2=&quot;66&quot;style=&quot;stroke:#a5d2a5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;67&quot; x2=&quot;20&quot; y2=&quot;67&quot;style=&quot;stroke:#a3d2a3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;68&quot; x2=&quot;20&quot; y2=&quot;68&quot;style=&quot;stroke:#a2d1a2ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;69&quot; x2=&quot;20&quot; y2=&quot;69&quot;style=&quot;stroke:#a1d0a1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;70&quot; x2=&quot;20&quot; y2=&quot;70&quot;style=&quot;stroke:#9fd09fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;71&quot; x2=&quot;20&quot; y2=&quot;71&quot;style=&quot;stroke:#9ecf9eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;72&quot; x2=&quot;20&quot; y2=&quot;72&quot;style=&quot;stroke:#9dce9dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;72&quot; x2=&quot;20&quot; y2=&quot;72&quot;style=&quot;stroke:#99cd99ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;74&quot; x2=&quot;20&quot; y2=&quot;74&quot;style=&quot;stroke:#98cc98ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;75&quot; x2=&quot;20&quot; y2=&quot;75&quot;style=&quot;stroke:#97cb97ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;76&quot; x2=&quot;20&quot; y2=&quot;76&quot;style=&quot;stroke:#95cb95ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;77&quot; x2=&quot;20&quot; y2=&quot;77&quot;style=&quot;stroke:#94ca94ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;78&quot; x2=&quot;20&quot; y2=&quot;78&quot;style=&quot;stroke:#93c993ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;79&quot; x2=&quot;20&quot; y2=&quot;79&quot;style=&quot;stroke:#91c991ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;80&quot; x2=&quot;20&quot; y2=&quot;80&quot;style=&quot;stroke:#90c890ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;81&quot; x2=&quot;20&quot; y2=&quot;81&quot;style=&quot;stroke:#8fc78fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;82&quot; x2=&quot;20&quot; y2=&quot;82&quot;style=&quot;stroke:#8ec78eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;83&quot; x2=&quot;20&quot; y2=&quot;83&quot;style=&quot;stroke:#8cc68cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;84&quot; x2=&quot;20&quot; y2=&quot;84&quot;style=&quot;stroke:#8bc58bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;85&quot; x2=&quot;20&quot; y2=&quot;85&quot;style=&quot;stroke:#8ac58aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;86&quot; x2=&quot;20&quot; y2=&quot;86&quot;style=&quot;stroke:#88c488ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;87&quot; x2=&quot;20&quot; y2=&quot;87&quot;style=&quot;stroke:#87c487ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;88&quot; x2=&quot;20&quot; y2=&quot;88&quot;style=&quot;stroke:#86c386ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;89&quot; x2=&quot;20&quot; y2=&quot;89&quot;style=&quot;stroke:#85c285ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;90&quot; x2=&quot;20&quot; y2=&quot;90&quot;style=&quot;stroke:#83c283ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;90&quot; x2=&quot;20&quot; y2=&quot;90&quot;style=&quot;stroke:#7fc07fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;92&quot; x2=&quot;20&quot; y2=&quot;92&quot;style=&quot;stroke:#7ebf7eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;93&quot; x2=&quot;20&quot; y2=&quot;93&quot;style=&quot;stroke:#7dbe7dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;94&quot; x2=&quot;20&quot; y2=&quot;94&quot;style=&quot;stroke:#7cbe7cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;95&quot; x2=&quot;20&quot; y2=&quot;95&quot;style=&quot;stroke:#7abd7aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;96&quot; x2=&quot;20&quot; y2=&quot;96&quot;style=&quot;stroke:#79bd79ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;97&quot; x2=&quot;20&quot; y2=&quot;97&quot;style=&quot;stroke:#78bc78ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;98&quot; x2=&quot;20&quot; y2=&quot;98&quot;style=&quot;stroke:#77bb77ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;99&quot; x2=&quot;20&quot; y2=&quot;99&quot;style=&quot;stroke:#75bb75ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;100&quot; x2=&quot;20&quot; y2=&quot;100&quot;style=&quot;stroke:#74ba74ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;101&quot; x2=&quot;20&quot; y2=&quot;101&quot;style=&quot;stroke:#73b973ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;102&quot; x2=&quot;20&quot; y2=&quot;102&quot;style=&quot;stroke:#71b971ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;103&quot; x2=&quot;20&quot; y2=&quot;103&quot;style=&quot;stroke:#70b870ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;104&quot; x2=&quot;20&quot; y2=&quot;104&quot;style=&quot;stroke:#6fb76fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;105&quot; x2=&quot;20&quot; y2=&quot;105&quot;style=&quot;stroke:#6eb76eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;106&quot; x2=&quot;20&quot; y2=&quot;106&quot;style=&quot;stroke:#6cb66cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;107&quot; x2=&quot;20&quot; y2=&quot;107&quot;style=&quot;stroke:#6bb66bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;108&quot; x2=&quot;20&quot; y2=&quot;108&quot;style=&quot;stroke:#6ab56aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;108&quot; x2=&quot;20&quot; y2=&quot;108&quot;style=&quot;stroke:#66b366ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;110&quot; x2=&quot;20&quot; y2=&quot;110&quot;style=&quot;stroke:#65b265ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;111&quot; x2=&quot;20&quot; y2=&quot;111&quot;style=&quot;stroke:#63b263ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;112&quot; x2=&quot;20&quot; y2=&quot;112&quot;style=&quot;stroke:#62b162ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;113&quot; x2=&quot;20&quot; y2=&quot;113&quot;style=&quot;stroke:#61b061ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;114&quot; x2=&quot;20&quot; y2=&quot;114&quot;style=&quot;stroke:#5fb05fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;115&quot; x2=&quot;20&quot; y2=&quot;115&quot;style=&quot;stroke:#5eaf5eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;116&quot; x2=&quot;20&quot; y2=&quot;116&quot;style=&quot;stroke:#5daf5dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;117&quot; x2=&quot;20&quot; y2=&quot;117&quot;style=&quot;stroke:#5cae5cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;118&quot; x2=&quot;20&quot; y2=&quot;118&quot;style=&quot;stroke:#5aad5aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;119&quot; x2=&quot;20&quot; y2=&quot;119&quot;style=&quot;stroke:#59ad59ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;120&quot; x2=&quot;20&quot; y2=&quot;120&quot;style=&quot;stroke:#58ac58ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;121&quot; x2=&quot;20&quot; y2=&quot;121&quot;style=&quot;stroke:#57ab57ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;122&quot; x2=&quot;20&quot; y2=&quot;122&quot;style=&quot;stroke:#55ab55ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;123&quot; x2=&quot;20&quot; y2=&quot;123&quot;style=&quot;stroke:#54aa54ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;124&quot; x2=&quot;20&quot; y2=&quot;124&quot;style=&quot;stroke:#53a953ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;125&quot; x2=&quot;20&quot; y2=&quot;125&quot;style=&quot;stroke:#51a951ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;126&quot; x2=&quot;20&quot; y2=&quot;126&quot;style=&quot;stroke:#50a850ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;126&quot; x2=&quot;20&quot; y2=&quot;126&quot;style=&quot;stroke:#4ca64cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;128&quot; x2=&quot;20&quot; y2=&quot;128&quot;style=&quot;stroke:#4ba64bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;129&quot; x2=&quot;20&quot; y2=&quot;129&quot;style=&quot;stroke:#4aa54aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;130&quot; x2=&quot;20&quot; y2=&quot;130&quot;style=&quot;stroke:#48a448ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;131&quot; x2=&quot;20&quot; y2=&quot;131&quot;style=&quot;stroke:#47a447ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;132&quot; x2=&quot;20&quot; y2=&quot;132&quot;style=&quot;stroke:#46a346ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;133&quot; x2=&quot;20&quot; y2=&quot;133&quot;style=&quot;stroke:#45a245ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;134&quot; x2=&quot;20&quot; y2=&quot;134&quot;style=&quot;stroke:#43a243ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;135&quot; x2=&quot;20&quot; y2=&quot;135&quot;style=&quot;stroke:#42a142ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;136&quot; x2=&quot;20&quot; y2=&quot;136&quot;style=&quot;stroke:#41a141ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;137&quot; x2=&quot;20&quot; y2=&quot;137&quot;style=&quot;stroke:#3fa03fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;138&quot; x2=&quot;20&quot; y2=&quot;138&quot;style=&quot;stroke:#3e9f3eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;139&quot; x2=&quot;20&quot; y2=&quot;139&quot;style=&quot;stroke:#3d9f3dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;140&quot; x2=&quot;20&quot; y2=&quot;140&quot;style=&quot;stroke:#3c9e3cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;141&quot; x2=&quot;20&quot; y2=&quot;141&quot;style=&quot;stroke:#3a9d3aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;142&quot; x2=&quot;20&quot; y2=&quot;142&quot;style=&quot;stroke:#399d39ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;143&quot; x2=&quot;20&quot; y2=&quot;143&quot;style=&quot;stroke:#389c38ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;144&quot; x2=&quot;20&quot; y2=&quot;144&quot;style=&quot;stroke:#379b37ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;144&quot; x2=&quot;20&quot; y2=&quot;144&quot;style=&quot;stroke:#339a33ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;146&quot; x2=&quot;20&quot; y2=&quot;146&quot;style=&quot;stroke:#319931ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;147&quot; x2=&quot;20&quot; y2=&quot;147&quot;style=&quot;stroke:#309830ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;148&quot; x2=&quot;20&quot; y2=&quot;148&quot;style=&quot;stroke:#2f982fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;149&quot; x2=&quot;20&quot; y2=&quot;149&quot;style=&quot;stroke:#2e972eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;150&quot; x2=&quot;20&quot; y2=&quot;150&quot;style=&quot;stroke:#2c962cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;151&quot; x2=&quot;20&quot; y2=&quot;151&quot;style=&quot;stroke:#2b962bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;152&quot; x2=&quot;20&quot; y2=&quot;152&quot;style=&quot;stroke:#2a952aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;153&quot; x2=&quot;20&quot; y2=&quot;153&quot;style=&quot;stroke:#289428ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;154&quot; x2=&quot;20&quot; y2=&quot;154&quot;style=&quot;stroke:#279427ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;155&quot; x2=&quot;20&quot; y2=&quot;155&quot;style=&quot;stroke:#269326ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;156&quot; x2=&quot;20&quot; y2=&quot;156&quot;style=&quot;stroke:#259225ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;157&quot; x2=&quot;20&quot; y2=&quot;157&quot;style=&quot;stroke:#239223ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;158&quot; x2=&quot;20&quot; y2=&quot;158&quot;style=&quot;stroke:#229122ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;159&quot; x2=&quot;20&quot; y2=&quot;159&quot;style=&quot;stroke:#219121ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;160&quot; x2=&quot;20&quot; y2=&quot;160&quot;style=&quot;stroke:#1f901fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;161&quot; x2=&quot;20&quot; y2=&quot;161&quot;style=&quot;stroke:#1e8f1eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;162&quot; x2=&quot;20&quot; y2=&quot;162&quot;style=&quot;stroke:#1d8f1dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;162&quot; x2=&quot;20&quot; y2=&quot;162&quot;style=&quot;stroke:#198d19ff;stroke-width:3;&quot; /></svg><svg height=&quot;163&quot; width=&quot;50&quot;><text x=&quot;5&quot; y=&quot;19&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 5</text><text x=&quot;5&quot; y=&quot;37&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 10</text><text x=&quot;5&quot; y=&quot;55&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 15</text><text x=&quot;5&quot; y=&quot;73&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 20</text><text x=&quot;5&quot; y=&quot;91&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 25</text><text x=&quot;5&quot; y=&quot;109&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 30</text><text x=&quot;5&quot; y=&quot;127&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 35</text><text x=&quot;5&quot; y=&quot;145&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 40</text><text x=&quot;5&quot; y=&quot;163&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 45</text></svg>
+
+  </ul>
+</div>
+</div>
+
+</body>
+</html>
+
+<style type='text/css'>
+  .maplegend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .maplegend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .maplegend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+  .maplegend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    
+    border: 1px solid #999;
+    
+    }
+  .maplegend .legend-source {
+    font-size: 80%;
+    color: #777;
+    clear: both;
+    }
+  .maplegend a {
+    color: #777;
+    }
+</style>
+</body>
+<script>
+    
+    
+            var map_e61306a94235d0b3d3e3abf0cff833eb = L.map(
+                &quot;map_e61306a94235d0b3d3e3abf0cff833eb&quot;,
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_e61306a94235d0b3d3e3abf0cff833eb);
+
+            
+
+        
+    
+            var tile_layer_c6129c417e2c732d1cbe697f76c1b037 = L.tileLayer(
+                &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {&quot;attribution&quot;: &quot;Data by \u0026copy; \u003ca target=\&quot;_blank\&quot; href=\&quot;http://openstreetmap.org\&quot;\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\&quot;_blank\&quot; href=\&quot;http://www.openstreetmap.org/copyright\&quot;\u003eODbL\u003c/a\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
+            ).addTo(map_e61306a94235d0b3d3e3abf0cff833eb);
+        
+    
+            var feature_group_4d3add9be97a6c33c4b403ff6c15535a = L.featureGroup(
+                {}
+            ).addTo(map_e61306a94235d0b3d3e3abf0cff833eb);
+        
+    
+            var circle_marker_25f90012eab3e408afa4f3b4b97d6911 = L.circleMarker(
+                [19.6297, -155.43],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_b50068885c7e70ce0685f04fdf5b11dd = L.circleMarker(
+                [35.0, 135.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_db408dc34484bc05993840d8c6aefbe4 = L.circleMarker(
+                [64.7628, 25.5577],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_5f8efa35393dd309cc787a045e7c1203 = L.circleMarker(
+                [7.15345, 3.67225],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_23b7e5d7d77129697ecc4f1550838e97 = L.circleMarker(
+                [-38.7392, -71.277],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_0c5ed2b645a3b6a22f906729bd4a2b9e = L.circleMarker(
+                [18.7757, -88.9567],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_5c9e974a91396e477c06c3e3a833e229 = L.circleMarker(
+                [37.5, 128.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_58bcb739b24a9191c79d166f1116d28c = L.circleMarker(
+                [-11.6308, 130.94899999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_00ca3c05ce905f4421a762a4d1854098 = L.circleMarker(
+                [6.92048, -9.96128],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_f2d15e288897b933efa1d080995c155a = L.circleMarker(
+                [34.9403, -98.9042],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_2cb6154b4d7d7f5643c9dd8e62b592e6 = L.circleMarker(
+                [12.8114, 75.2651],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_6474d378a48bb11246cedde1c83a683c = L.circleMarker(
+                [-25.60551, -57.088159999999995],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_0ee06026bfab738688db9ff19d0eb75f = L.circleMarker(
+                [39.8667, 32.8667],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_4a6ac93c32f72527d32d816b5f75e513 = L.circleMarker(
+                [46.9068585714, 19.6555271429],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_07fe2c40ac66832e1781d46e6fe16752 = L.circleMarker(
+                [41.850396999999994, 43.78613],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_67a405a2ce850c14a9d6668b26fa2a72 = L.circleMarker(
+                [46.3699, -103.95],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_eff2b69a2742da735e654aa09301d9b6 = L.circleMarker(
+                [11.708182, 39.543456],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_498e024b33dd1a8f4ba69bfc2f7174f0 = L.circleMarker(
+                [59.4447, -135.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_8257ff33682ea2adc2372baf7cb201c3 = L.circleMarker(
+                [-5.26918, 35.4808],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+            var circle_marker_735983c23cb708514f7aee5243169b19 = L.circleMarker(
+                [19.6297, -155.43],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#d7ebd7ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_fd72a6fa2d6935eb716f7a3f9e17d172 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_ab0c802684bfd010595f13da6b5677fd = $(`<div id=&quot;html_ab0c802684bfd010595f13da6b5677fd&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/hawa1245&quot; onclick=&quot;this.target='_blank';&quot;>Hawaiian</a><br></div>`)[0];
+                popup_fd72a6fa2d6935eb716f7a3f9e17d172.setContent(html_ab0c802684bfd010595f13da6b5677fd);
+            
+        
+
+        circle_marker_735983c23cb708514f7aee5243169b19.bindPopup(popup_fd72a6fa2d6935eb716f7a3f9e17d172)
+        ;
+
+        
+    
+    
+            circle_marker_735983c23cb708514f7aee5243169b19.bindTooltip(
+                `<div>
+                     8
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_ff247d90f0e5dd4087dece71aab4ce3d = L.circleMarker(
+                [35.0, 135.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#b3d9b3ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_90e5c0c4a166e41844b1af07032cdec4 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_f7c2eb3dbbd2d2406424e43985511e16 = $(`<div id=&quot;html_f7c2eb3dbbd2d2406424e43985511e16&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/nucl1643&quot; onclick=&quot;this.target='_blank';&quot;>Japanese</a><br></div>`)[0];
+                popup_90e5c0c4a166e41844b1af07032cdec4.setContent(html_f7c2eb3dbbd2d2406424e43985511e16);
+            
+        
+
+        circle_marker_ff247d90f0e5dd4087dece71aab4ce3d.bindPopup(popup_90e5c0c4a166e41844b1af07032cdec4)
+        ;
+
+        
+    
+    
+            circle_marker_ff247d90f0e5dd4087dece71aab4ce3d.bindTooltip(
+                `<div>
+                     15
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_4f95f4b62e26a4f5ff2be793af4617f1 = L.circleMarker(
+                [64.7628, 25.5577],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#a8d4a8ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_5e0dd14006463908b62b4ce0e78ae622 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_88b6df4f31c7b38dd11f31ef12764d47 = $(`<div id=&quot;html_88b6df4f31c7b38dd11f31ef12764d47&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/finn1318&quot; onclick=&quot;this.target='_blank';&quot;>Finnish</a><br></div>`)[0];
+                popup_5e0dd14006463908b62b4ce0e78ae622.setContent(html_88b6df4f31c7b38dd11f31ef12764d47);
+            
+        
+
+        circle_marker_4f95f4b62e26a4f5ff2be793af4617f1.bindPopup(popup_5e0dd14006463908b62b4ce0e78ae622)
+        ;
+
+        
+    
+    
+            circle_marker_4f95f4b62e26a4f5ff2be793af4617f1.bindTooltip(
+                `<div>
+                     17
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_45a9c73c5e33f6849c80a138abfa97b2 = L.circleMarker(
+                [7.15345, 3.67225],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#a3d2a3ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_eba0c2cd81d1c35070961aa14e53775d = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_cf5307497de858155893bb154c4fcb47 = $(`<div id=&quot;html_cf5307497de858155893bb154c4fcb47&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/yoru1245&quot; onclick=&quot;this.target='_blank';&quot;>Yoruba</a><br></div>`)[0];
+                popup_eba0c2cd81d1c35070961aa14e53775d.setContent(html_cf5307497de858155893bb154c4fcb47);
+            
+        
+
+        circle_marker_45a9c73c5e33f6849c80a138abfa97b2.bindPopup(popup_eba0c2cd81d1c35070961aa14e53775d)
+        ;
+
+        
+    
+    
+            circle_marker_45a9c73c5e33f6849c80a138abfa97b2.bindTooltip(
+                `<div>
+                     18
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_5017d8777a3aa192e4df7f433008f05a = L.circleMarker(
+                [-38.7392, -71.277],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#99cd99ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_b263f6c0506cfd4ac7c5bafcd2d3904c = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_ee37c870738b49aa8393baca54a07890 = $(`<div id=&quot;html_ee37c870738b49aa8393baca54a07890&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/mapu1245&quot; onclick=&quot;this.target='_blank';&quot;>Mapudungun</a><br></div>`)[0];
+                popup_b263f6c0506cfd4ac7c5bafcd2d3904c.setContent(html_ee37c870738b49aa8393baca54a07890);
+            
+        
+
+        circle_marker_5017d8777a3aa192e4df7f433008f05a.bindPopup(popup_b263f6c0506cfd4ac7c5bafcd2d3904c)
+        ;
+
+        
+    
+    
+            circle_marker_5017d8777a3aa192e4df7f433008f05a.bindTooltip(
+                `<div>
+                     20
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_5ed4abf08d8af6db04f12e0807499033 = L.circleMarker(
+                [18.7757, -88.9567],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#99cd99ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_a2135d0ed01d0dd63d2e0e0aef97de1c = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_c52149b1fd2fa5642e2d0e37cb8e023e = $(`<div id=&quot;html_c52149b1fd2fa5642e2d0e37cb8e023e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/yuca1254&quot; onclick=&quot;this.target='_blank';&quot;>Yucatec Maya</a><br></div>`)[0];
+                popup_a2135d0ed01d0dd63d2e0e0aef97de1c.setContent(html_c52149b1fd2fa5642e2d0e37cb8e023e);
+            
+        
+
+        circle_marker_5ed4abf08d8af6db04f12e0807499033.bindPopup(popup_a2135d0ed01d0dd63d2e0e0aef97de1c)
+        ;
+
+        
+    
+    
+            circle_marker_5ed4abf08d8af6db04f12e0807499033.bindTooltip(
+                `<div>
+                     20
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_01a52cee312e1030ff7e3bf10a60860c = L.circleMarker(
+                [37.5, 128.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#94ca94ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_5947f3a79298475b32678e052e504a0f = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_79b20cb850623d1f70493a773ecb91e5 = $(`<div id=&quot;html_79b20cb850623d1f70493a773ecb91e5&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/kore1280&quot; onclick=&quot;this.target='_blank';&quot;>Korean</a><br></div>`)[0];
+                popup_5947f3a79298475b32678e052e504a0f.setContent(html_79b20cb850623d1f70493a773ecb91e5);
+            
+        
+
+        circle_marker_01a52cee312e1030ff7e3bf10a60860c.bindPopup(popup_5947f3a79298475b32678e052e504a0f)
+        ;
+
+        
+    
+    
+            circle_marker_01a52cee312e1030ff7e3bf10a60860c.bindTooltip(
+                `<div>
+                     21
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_5b281c67151002a06b0a1fd1f863d490 = L.circleMarker(
+                [-11.6308, 130.94899999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#8fc78fff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_6eccdb4e1af2213cd7fa19384713ce64 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_edcf00aa9d30134726957d779bf6fef6 = $(`<div id=&quot;html_edcf00aa9d30134726957d779bf6fef6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/tiwi1244&quot; onclick=&quot;this.target='_blank';&quot;>Tiwi</a><br></div>`)[0];
+                popup_6eccdb4e1af2213cd7fa19384713ce64.setContent(html_edcf00aa9d30134726957d779bf6fef6);
+            
+        
+
+        circle_marker_5b281c67151002a06b0a1fd1f863d490.bindPopup(popup_6eccdb4e1af2213cd7fa19384713ce64)
+        ;
+
+        
+    
+    
+            circle_marker_5b281c67151002a06b0a1fd1f863d490.bindTooltip(
+                `<div>
+                     22
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_d0c153d03579de252fb3cca8a373e60a = L.circleMarker(
+                [6.92048, -9.96128],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#8fc78fff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_278c4a34e3a1f0fbd3689e8c22e2dbd7 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_17eace4525f49329615ccea408d7eeea = $(`<div id=&quot;html_17eace4525f49329615ccea408d7eeea&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/libe1247&quot; onclick=&quot;this.target='_blank';&quot;>Liberia Kpelle</a><br></div>`)[0];
+                popup_278c4a34e3a1f0fbd3689e8c22e2dbd7.setContent(html_17eace4525f49329615ccea408d7eeea);
+            
+        
+
+        circle_marker_d0c153d03579de252fb3cca8a373e60a.bindPopup(popup_278c4a34e3a1f0fbd3689e8c22e2dbd7)
+        ;
+
+        
+    
+    
+            circle_marker_d0c153d03579de252fb3cca8a373e60a.bindTooltip(
+                `<div>
+                     22
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_23e1238c9e29bdec62872db14240079c = L.circleMarker(
+                [34.9403, -98.9042],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#8fc78fff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_a43ad2ac0cbe86e0d49a523cf27a0ae6 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_c543b426fbaf55f4f5c30b5f803702b6 = $(`<div id=&quot;html_c543b426fbaf55f4f5c30b5f803702b6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/kiow1266&quot; onclick=&quot;this.target='_blank';&quot;>Kiowa</a><br></div>`)[0];
+                popup_a43ad2ac0cbe86e0d49a523cf27a0ae6.setContent(html_c543b426fbaf55f4f5c30b5f803702b6);
+            
+        
+
+        circle_marker_23e1238c9e29bdec62872db14240079c.bindPopup(popup_a43ad2ac0cbe86e0d49a523cf27a0ae6)
+        ;
+
+        
+    
+    
+            circle_marker_23e1238c9e29bdec62872db14240079c.bindTooltip(
+                `<div>
+                     22
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_1746ea9fca520ed65582388c18913491 = L.circleMarker(
+                [12.8114, 75.2651],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#85c285ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_a4959e6b98fdc8721cef57bcc57c4d9f = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_ba31e3761c773103b527b9581f8c9a04 = $(`<div id=&quot;html_ba31e3761c773103b527b9581f8c9a04&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/tulu1258&quot; onclick=&quot;this.target='_blank';&quot;>Tulu</a><br></div>`)[0];
+                popup_a4959e6b98fdc8721cef57bcc57c4d9f.setContent(html_ba31e3761c773103b527b9581f8c9a04);
+            
+        
+
+        circle_marker_1746ea9fca520ed65582388c18913491.bindPopup(popup_a4959e6b98fdc8721cef57bcc57c4d9f)
+        ;
+
+        
+    
+    
+            circle_marker_1746ea9fca520ed65582388c18913491.bindTooltip(
+                `<div>
+                     24
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_2da9866c80a1fc0cc5e91153f004c2b4 = L.circleMarker(
+                [-25.60551, -57.088159999999995],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#85c285ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_f41bf51d7ec4886f95d0c18dfd096879 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_364e8fda34e42592c34abe1b9fdca62e = $(`<div id=&quot;html_364e8fda34e42592c34abe1b9fdca62e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/para1311&quot; onclick=&quot;this.target='_blank';&quot;>Paraguayan Guaraní</a><br></div>`)[0];
+                popup_f41bf51d7ec4886f95d0c18dfd096879.setContent(html_364e8fda34e42592c34abe1b9fdca62e);
+            
+        
+
+        circle_marker_2da9866c80a1fc0cc5e91153f004c2b4.bindPopup(popup_f41bf51d7ec4886f95d0c18dfd096879)
+        ;
+
+        
+    
+    
+            circle_marker_2da9866c80a1fc0cc5e91153f004c2b4.bindTooltip(
+                `<div>
+                     24
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_e3df9fa2ebf5f3820eff1ae84a3a20ca = L.circleMarker(
+                [39.8667, 32.8667],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#7fc07fff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_c3d124cc145aecaae8deca530a7b055b = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_b33afab16e4082198284c720acccfa17 = $(`<div id=&quot;html_b33afab16e4082198284c720acccfa17&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/nucl1301&quot; onclick=&quot;this.target='_blank';&quot;>Turkish</a><br></div>`)[0];
+                popup_c3d124cc145aecaae8deca530a7b055b.setContent(html_b33afab16e4082198284c720acccfa17);
+            
+        
+
+        circle_marker_e3df9fa2ebf5f3820eff1ae84a3a20ca.bindPopup(popup_c3d124cc145aecaae8deca530a7b055b)
+        ;
+
+        
+    
+    
+            circle_marker_e3df9fa2ebf5f3820eff1ae84a3a20ca.bindTooltip(
+                `<div>
+                     25
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_40729b19ee86b2b218fcb5acd625e30c = L.circleMarker(
+                [46.9068585714, 19.6555271429],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#7abd7aff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_a79908cc4bee6a723bca911c01a6d128 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_80bcb30906d0bf3c4ffc76f4813bfacd = $(`<div id=&quot;html_80bcb30906d0bf3c4ffc76f4813bfacd&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/hung1274&quot; onclick=&quot;this.target='_blank';&quot;>Hungarian</a><br></div>`)[0];
+                popup_a79908cc4bee6a723bca911c01a6d128.setContent(html_80bcb30906d0bf3c4ffc76f4813bfacd);
+            
+        
+
+        circle_marker_40729b19ee86b2b218fcb5acd625e30c.bindPopup(popup_a79908cc4bee6a723bca911c01a6d128)
+        ;
+
+        
+    
+    
+            circle_marker_40729b19ee86b2b218fcb5acd625e30c.bindTooltip(
+                `<div>
+                     26
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_fbbb1c94d836a89b3bdf57ab9b8fcbf5 = L.circleMarker(
+                [41.850396999999994, 43.78613],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#70b870ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_b2421a9e0a41a60ee29d08a4d4e9ecb7 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_0baf062759e0ce6f3403667b8fd34a44 = $(`<div id=&quot;html_0baf062759e0ce6f3403667b8fd34a44&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/nucl1302&quot; onclick=&quot;this.target='_blank';&quot;>Georgian</a><br></div>`)[0];
+                popup_b2421a9e0a41a60ee29d08a4d4e9ecb7.setContent(html_0baf062759e0ce6f3403667b8fd34a44);
+            
+        
+
+        circle_marker_fbbb1c94d836a89b3bdf57ab9b8fcbf5.bindPopup(popup_b2421a9e0a41a60ee29d08a4d4e9ecb7)
+        ;
+
+        
+    
+    
+            circle_marker_fbbb1c94d836a89b3bdf57ab9b8fcbf5.bindTooltip(
+                `<div>
+                     28
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_9467bd0e610996298362ed5fb6ff018e = L.circleMarker(
+                [46.3699, -103.95],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#70b870ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_e03202389f1b0c7a1ca7f23d55cafe7d = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_0b1cb9a5dc4099fc9d434b8f91dc4fd1 = $(`<div id=&quot;html_0b1cb9a5dc4099fc9d434b8f91dc4fd1&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/lako1247&quot; onclick=&quot;this.target='_blank';&quot;>Lakota</a><br></div>`)[0];
+                popup_e03202389f1b0c7a1ca7f23d55cafe7d.setContent(html_0b1cb9a5dc4099fc9d434b8f91dc4fd1);
+            
+        
+
+        circle_marker_9467bd0e610996298362ed5fb6ff018e.bindPopup(popup_e03202389f1b0c7a1ca7f23d55cafe7d)
+        ;
+
+        
+    
+    
+            circle_marker_9467bd0e610996298362ed5fb6ff018e.bindTooltip(
+                `<div>
+                     28
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_bfda3a4bac71ba049ea9cf4bb4c8f057 = L.circleMarker(
+                [11.708182, 39.543456],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#66b366ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_c2c91f8d5c187b5269eef013baf88c28 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_0521691c6ca145cac12a0010307d47ee = $(`<div id=&quot;html_0521691c6ca145cac12a0010307d47ee&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/amha1245&quot; onclick=&quot;this.target='_blank';&quot;>Amharic</a><br></div>`)[0];
+                popup_c2c91f8d5c187b5269eef013baf88c28.setContent(html_0521691c6ca145cac12a0010307d47ee);
+            
+        
+
+        circle_marker_bfda3a4bac71ba049ea9cf4bb4c8f057.bindPopup(popup_c2c91f8d5c187b5269eef013baf88c28)
+        ;
+
+        
+    
+    
+            circle_marker_bfda3a4bac71ba049ea9cf4bb4c8f057.bindTooltip(
+                `<div>
+                     30
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_a30bcd6f19de3be9c3ebca48b451643c = L.circleMarker(
+                [59.4447, -135.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#239223ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_949facd4506864b60e14556fe9d00465 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_a2b150b58bcb1ca624352e6b71694fca = $(`<div id=&quot;html_a2b150b58bcb1ca624352e6b71694fca&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/tlin1245&quot; onclick=&quot;this.target='_blank';&quot;>Tlingit</a><br></div>`)[0];
+                popup_949facd4506864b60e14556fe9d00465.setContent(html_a2b150b58bcb1ca624352e6b71694fca);
+            
+        
+
+        circle_marker_a30bcd6f19de3be9c3ebca48b451643c.bindPopup(popup_949facd4506864b60e14556fe9d00465)
+        ;
+
+        
+    
+    
+            circle_marker_a30bcd6f19de3be9c3ebca48b451643c.bindTooltip(
+                `<div>
+                     43
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_3af0abb300c7b3b6e8995171a80f2cbb = L.circleMarker(
+                [-5.26918, 35.4808],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#0f880fff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_4d3add9be97a6c33c4b403ff6c15535a);
+        
+    
+        var popup_92048ce80756e7a185d296ae1ffe6fef = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_542700958d3d2b9ed74e8c227cc619c6 = $(`<div id=&quot;html_542700958d3d2b9ed74e8c227cc619c6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/sand1273&quot; onclick=&quot;this.target='_blank';&quot;>Sandawe</a><br></div>`)[0];
+                popup_92048ce80756e7a185d296ae1ffe6fef.setContent(html_542700958d3d2b9ed74e8c227cc619c6);
+            
+        
+
+        circle_marker_3af0abb300c7b3b6e8995171a80f2cbb.bindPopup(popup_92048ce80756e7a185d296ae1ffe6fef)
+        ;
+
+        
+    
+    
+            circle_marker_3af0abb300c7b3b6e8995171a80f2cbb.bindTooltip(
+                `<div>
+                     47
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+</script>
+</html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
+</div>
+</div>
+</section>
+<section id="母音數目分佈" class="slide level2">
+<h2>母音數目分佈</h2>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>m.legend_title <span class="op">=</span> <span class="st">'Vowels'</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>m.legend_position <span class="op">=</span> <span class="st">'bottomright'</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>m.add_tooltips(data.vowels)</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#If numeric is True, it will look like this</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>m.add_features(data.vowels, numeric<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>m.create_map()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
+    <script src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;></script>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
+    
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
+            <style>
+                #map_3b5cae19cc4a18d73204801ecc7c84ce {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_3b5cae19cc4a18d73204801ecc7c84ce&quot; ></div>
+        
+    
+<!-- Based on the template from here: https://nbviewer.jupyter.org/gist/talbertc-usgs/18f8901fc98f109f2b71156cf3ac81cd -->
+<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css&quot;>
+
+  <script src=&quot;https://code.jquery.com/jquery-1.12.4.js&quot;></script>
+  <script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;></script>
+  
+  <script>
+    $(function(){
+        $(&quot;#maplegend1&quot;).draggable({
+            start: function (event, ui) {
+                $(this).css({
+                    right: &quot;auto&quot;,
+                    top: &quot;auto&quot;,
+                    bottom: &quot;auto&quot;
+                });
+            }
+        });
+    });
+  </script>
+</head>
+<body>
+
+ 
+<div id='maplegend1' class='maplegend' 
+    style='position: absolute; z-index:9999; border:2px solid grey; background-color:rgba(255, 255, 255, 0.8);
+     border-radius:6px; padding: 10px; font-size:14px; right: 20px; bottom: 20px;'>
+
+
+<div class='legend-title'>Vowels</div>
+
+<div class='legend-scale'>
+  <ul class='legend-labels'>
+
+    <svg height=&quot;169&quot; width=&quot;20&quot;><line x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;20&quot; y2=&quot;0&quot;style=&quot;stroke:#ffffffff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;2&quot; x2=&quot;20&quot; y2=&quot;2&quot;style=&quot;stroke:#fefffeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;3&quot; x2=&quot;20&quot; y2=&quot;3&quot;style=&quot;stroke:#fdfefdff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;4&quot; x2=&quot;20&quot; y2=&quot;4&quot;style=&quot;stroke:#fcfefcff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;5&quot; x2=&quot;20&quot; y2=&quot;5&quot;style=&quot;stroke:#fafdfaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;6&quot; x2=&quot;20&quot; y2=&quot;6&quot;style=&quot;stroke:#f9fcf9ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;7&quot; x2=&quot;20&quot; y2=&quot;7&quot;style=&quot;stroke:#f8fcf8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;8&quot; x2=&quot;20&quot; y2=&quot;8&quot;style=&quot;stroke:#f7fbf7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;9&quot; x2=&quot;20&quot; y2=&quot;9&quot;style=&quot;stroke:#f5faf5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;10&quot; x2=&quot;20&quot; y2=&quot;10&quot;style=&quot;stroke:#f4faf4ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;11&quot; x2=&quot;20&quot; y2=&quot;11&quot;style=&quot;stroke:#f3f9f3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;12&quot; x2=&quot;20&quot; y2=&quot;12&quot;style=&quot;stroke:#f1f8f1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;13&quot; x2=&quot;20&quot; y2=&quot;13&quot;style=&quot;stroke:#f0f8f0ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;14&quot; x2=&quot;20&quot; y2=&quot;14&quot;style=&quot;stroke:#eff7efff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;15&quot; x2=&quot;20&quot; y2=&quot;15&quot;style=&quot;stroke:#eef7eeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;16&quot; x2=&quot;20&quot; y2=&quot;16&quot;style=&quot;stroke:#ecf6ecff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;17&quot; x2=&quot;20&quot; y2=&quot;17&quot;style=&quot;stroke:#ebf5ebff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;18&quot; x2=&quot;20&quot; y2=&quot;18&quot;style=&quot;stroke:#eaf5eaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;18&quot; x2=&quot;20&quot; y2=&quot;18&quot;style=&quot;stroke:#e6f3e6ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;20&quot; x2=&quot;20&quot; y2=&quot;20&quot;style=&quot;stroke:#e5f2e5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;21&quot; x2=&quot;20&quot; y2=&quot;21&quot;style=&quot;stroke:#e3f1e3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;22&quot; x2=&quot;20&quot; y2=&quot;22&quot;style=&quot;stroke:#e2f1e2ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;23&quot; x2=&quot;20&quot; y2=&quot;23&quot;style=&quot;stroke:#e1f0e1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;24&quot; x2=&quot;20&quot; y2=&quot;24&quot;style=&quot;stroke:#dff0dfff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;25&quot; x2=&quot;20&quot; y2=&quot;25&quot;style=&quot;stroke:#deefdeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;26&quot; x2=&quot;20&quot; y2=&quot;26&quot;style=&quot;stroke:#ddeeddff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;27&quot; x2=&quot;20&quot; y2=&quot;27&quot;style=&quot;stroke:#dceedcff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;28&quot; x2=&quot;20&quot; y2=&quot;28&quot;style=&quot;stroke:#daeddaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;29&quot; x2=&quot;20&quot; y2=&quot;29&quot;style=&quot;stroke:#d9ecd9ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;30&quot; x2=&quot;20&quot; y2=&quot;30&quot;style=&quot;stroke:#d8ecd8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;31&quot; x2=&quot;20&quot; y2=&quot;31&quot;style=&quot;stroke:#d7ebd7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;32&quot; x2=&quot;20&quot; y2=&quot;32&quot;style=&quot;stroke:#d5ead5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;33&quot; x2=&quot;20&quot; y2=&quot;33&quot;style=&quot;stroke:#d4ead4ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;34&quot; x2=&quot;20&quot; y2=&quot;34&quot;style=&quot;stroke:#d3e9d3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;35&quot; x2=&quot;20&quot; y2=&quot;35&quot;style=&quot;stroke:#d1e9d1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;36&quot; x2=&quot;20&quot; y2=&quot;36&quot;style=&quot;stroke:#d0e8d0ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;36&quot; x2=&quot;20&quot; y2=&quot;36&quot;style=&quot;stroke:#cce6ccff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;38&quot; x2=&quot;20&quot; y2=&quot;38&quot;style=&quot;stroke:#cbe5cbff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;39&quot; x2=&quot;20&quot; y2=&quot;39&quot;style=&quot;stroke:#cae5caff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;40&quot; x2=&quot;20&quot; y2=&quot;40&quot;style=&quot;stroke:#c8e4c8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;41&quot; x2=&quot;20&quot; y2=&quot;41&quot;style=&quot;stroke:#c7e3c7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;42&quot; x2=&quot;20&quot; y2=&quot;42&quot;style=&quot;stroke:#c6e3c6ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;43&quot; x2=&quot;20&quot; y2=&quot;43&quot;style=&quot;stroke:#c5e2c5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;44&quot; x2=&quot;20&quot; y2=&quot;44&quot;style=&quot;stroke:#c3e2c3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;45&quot; x2=&quot;20&quot; y2=&quot;45&quot;style=&quot;stroke:#c2e1c2ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;46&quot; x2=&quot;20&quot; y2=&quot;46&quot;style=&quot;stroke:#c1e0c1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;47&quot; x2=&quot;20&quot; y2=&quot;47&quot;style=&quot;stroke:#bfe0bfff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;48&quot; x2=&quot;20&quot; y2=&quot;48&quot;style=&quot;stroke:#bedfbeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;49&quot; x2=&quot;20&quot; y2=&quot;49&quot;style=&quot;stroke:#bddebdff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;50&quot; x2=&quot;20&quot; y2=&quot;50&quot;style=&quot;stroke:#bcdebcff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;51&quot; x2=&quot;20&quot; y2=&quot;51&quot;style=&quot;stroke:#baddbaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;52&quot; x2=&quot;20&quot; y2=&quot;52&quot;style=&quot;stroke:#b9dcb9ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;53&quot; x2=&quot;20&quot; y2=&quot;53&quot;style=&quot;stroke:#b8dcb8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;54&quot; x2=&quot;20&quot; y2=&quot;54&quot;style=&quot;stroke:#b7dbb7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;55&quot; x2=&quot;20&quot; y2=&quot;55&quot;style=&quot;stroke:#b5dbb5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;55&quot; x2=&quot;20&quot; y2=&quot;55&quot;style=&quot;stroke:#b3d9b3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;57&quot; x2=&quot;20&quot; y2=&quot;57&quot;style=&quot;stroke:#b1d9b1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;58&quot; x2=&quot;20&quot; y2=&quot;58&quot;style=&quot;stroke:#b0d8b0ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;59&quot; x2=&quot;20&quot; y2=&quot;59&quot;style=&quot;stroke:#afd7afff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;60&quot; x2=&quot;20&quot; y2=&quot;60&quot;style=&quot;stroke:#aed7aeff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;61&quot; x2=&quot;20&quot; y2=&quot;61&quot;style=&quot;stroke:#acd6acff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;62&quot; x2=&quot;20&quot; y2=&quot;62&quot;style=&quot;stroke:#abd5abff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;63&quot; x2=&quot;20&quot; y2=&quot;63&quot;style=&quot;stroke:#aad5aaff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;64&quot; x2=&quot;20&quot; y2=&quot;64&quot;style=&quot;stroke:#a8d4a8ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;65&quot; x2=&quot;20&quot; y2=&quot;65&quot;style=&quot;stroke:#a7d4a7ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;66&quot; x2=&quot;20&quot; y2=&quot;66&quot;style=&quot;stroke:#a6d3a6ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;67&quot; x2=&quot;20&quot; y2=&quot;67&quot;style=&quot;stroke:#a5d2a5ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;68&quot; x2=&quot;20&quot; y2=&quot;68&quot;style=&quot;stroke:#a3d2a3ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;69&quot; x2=&quot;20&quot; y2=&quot;69&quot;style=&quot;stroke:#a2d1a2ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;70&quot; x2=&quot;20&quot; y2=&quot;70&quot;style=&quot;stroke:#a1d0a1ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;71&quot; x2=&quot;20&quot; y2=&quot;71&quot;style=&quot;stroke:#9fd09fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;72&quot; x2=&quot;20&quot; y2=&quot;72&quot;style=&quot;stroke:#9ecf9eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;73&quot; x2=&quot;20&quot; y2=&quot;73&quot;style=&quot;stroke:#9dce9dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;74&quot; x2=&quot;20&quot; y2=&quot;74&quot;style=&quot;stroke:#9cce9cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;74&quot; x2=&quot;20&quot; y2=&quot;74&quot;style=&quot;stroke:#99cd99ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;76&quot; x2=&quot;20&quot; y2=&quot;76&quot;style=&quot;stroke:#98cc98ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;77&quot; x2=&quot;20&quot; y2=&quot;77&quot;style=&quot;stroke:#97cb97ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;78&quot; x2=&quot;20&quot; y2=&quot;78&quot;style=&quot;stroke:#95cb95ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;79&quot; x2=&quot;20&quot; y2=&quot;79&quot;style=&quot;stroke:#94ca94ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;80&quot; x2=&quot;20&quot; y2=&quot;80&quot;style=&quot;stroke:#93c993ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;81&quot; x2=&quot;20&quot; y2=&quot;81&quot;style=&quot;stroke:#91c991ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;82&quot; x2=&quot;20&quot; y2=&quot;82&quot;style=&quot;stroke:#90c890ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;83&quot; x2=&quot;20&quot; y2=&quot;83&quot;style=&quot;stroke:#8fc78fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;84&quot; x2=&quot;20&quot; y2=&quot;84&quot;style=&quot;stroke:#8ec78eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;85&quot; x2=&quot;20&quot; y2=&quot;85&quot;style=&quot;stroke:#8cc68cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;86&quot; x2=&quot;20&quot; y2=&quot;86&quot;style=&quot;stroke:#8bc58bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;87&quot; x2=&quot;20&quot; y2=&quot;87&quot;style=&quot;stroke:#8ac58aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;88&quot; x2=&quot;20&quot; y2=&quot;88&quot;style=&quot;stroke:#88c488ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;89&quot; x2=&quot;20&quot; y2=&quot;89&quot;style=&quot;stroke:#87c487ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;90&quot; x2=&quot;20&quot; y2=&quot;90&quot;style=&quot;stroke:#86c386ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;91&quot; x2=&quot;20&quot; y2=&quot;91&quot;style=&quot;stroke:#85c285ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;92&quot; x2=&quot;20&quot; y2=&quot;92&quot;style=&quot;stroke:#83c283ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;93&quot; x2=&quot;20&quot; y2=&quot;93&quot;style=&quot;stroke:#82c182ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;93&quot; x2=&quot;20&quot; y2=&quot;93&quot;style=&quot;stroke:#7fc07fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;95&quot; x2=&quot;20&quot; y2=&quot;95&quot;style=&quot;stroke:#7ebf7eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;96&quot; x2=&quot;20&quot; y2=&quot;96&quot;style=&quot;stroke:#7dbe7dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;97&quot; x2=&quot;20&quot; y2=&quot;97&quot;style=&quot;stroke:#7cbe7cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;98&quot; x2=&quot;20&quot; y2=&quot;98&quot;style=&quot;stroke:#7abd7aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;99&quot; x2=&quot;20&quot; y2=&quot;99&quot;style=&quot;stroke:#79bd79ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;100&quot; x2=&quot;20&quot; y2=&quot;100&quot;style=&quot;stroke:#78bc78ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;101&quot; x2=&quot;20&quot; y2=&quot;101&quot;style=&quot;stroke:#77bb77ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;102&quot; x2=&quot;20&quot; y2=&quot;102&quot;style=&quot;stroke:#75bb75ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;103&quot; x2=&quot;20&quot; y2=&quot;103&quot;style=&quot;stroke:#74ba74ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;104&quot; x2=&quot;20&quot; y2=&quot;104&quot;style=&quot;stroke:#73b973ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;105&quot; x2=&quot;20&quot; y2=&quot;105&quot;style=&quot;stroke:#71b971ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;106&quot; x2=&quot;20&quot; y2=&quot;106&quot;style=&quot;stroke:#70b870ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;107&quot; x2=&quot;20&quot; y2=&quot;107&quot;style=&quot;stroke:#6fb76fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;108&quot; x2=&quot;20&quot; y2=&quot;108&quot;style=&quot;stroke:#6eb76eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;109&quot; x2=&quot;20&quot; y2=&quot;109&quot;style=&quot;stroke:#6cb66cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;110&quot; x2=&quot;20&quot; y2=&quot;110&quot;style=&quot;stroke:#6bb66bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;111&quot; x2=&quot;20&quot; y2=&quot;111&quot;style=&quot;stroke:#6ab56aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;112&quot; x2=&quot;20&quot; y2=&quot;112&quot;style=&quot;stroke:#68b468ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;112&quot; x2=&quot;20&quot; y2=&quot;112&quot;style=&quot;stroke:#66b366ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;114&quot; x2=&quot;20&quot; y2=&quot;114&quot;style=&quot;stroke:#65b265ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;115&quot; x2=&quot;20&quot; y2=&quot;115&quot;style=&quot;stroke:#63b263ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;116&quot; x2=&quot;20&quot; y2=&quot;116&quot;style=&quot;stroke:#62b162ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;117&quot; x2=&quot;20&quot; y2=&quot;117&quot;style=&quot;stroke:#61b061ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;118&quot; x2=&quot;20&quot; y2=&quot;118&quot;style=&quot;stroke:#5fb05fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;119&quot; x2=&quot;20&quot; y2=&quot;119&quot;style=&quot;stroke:#5eaf5eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;120&quot; x2=&quot;20&quot; y2=&quot;120&quot;style=&quot;stroke:#5daf5dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;121&quot; x2=&quot;20&quot; y2=&quot;121&quot;style=&quot;stroke:#5cae5cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;122&quot; x2=&quot;20&quot; y2=&quot;122&quot;style=&quot;stroke:#5aad5aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;123&quot; x2=&quot;20&quot; y2=&quot;123&quot;style=&quot;stroke:#59ad59ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;124&quot; x2=&quot;20&quot; y2=&quot;124&quot;style=&quot;stroke:#58ac58ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;125&quot; x2=&quot;20&quot; y2=&quot;125&quot;style=&quot;stroke:#57ab57ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;126&quot; x2=&quot;20&quot; y2=&quot;126&quot;style=&quot;stroke:#55ab55ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;127&quot; x2=&quot;20&quot; y2=&quot;127&quot;style=&quot;stroke:#54aa54ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;128&quot; x2=&quot;20&quot; y2=&quot;128&quot;style=&quot;stroke:#53a953ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;129&quot; x2=&quot;20&quot; y2=&quot;129&quot;style=&quot;stroke:#51a951ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;130&quot; x2=&quot;20&quot; y2=&quot;130&quot;style=&quot;stroke:#50a850ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;131&quot; x2=&quot;20&quot; y2=&quot;131&quot;style=&quot;stroke:#4fa84fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;131&quot; x2=&quot;20&quot; y2=&quot;131&quot;style=&quot;stroke:#4ca64cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;133&quot; x2=&quot;20&quot; y2=&quot;133&quot;style=&quot;stroke:#4ba64bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;134&quot; x2=&quot;20&quot; y2=&quot;134&quot;style=&quot;stroke:#4aa54aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;135&quot; x2=&quot;20&quot; y2=&quot;135&quot;style=&quot;stroke:#48a448ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;136&quot; x2=&quot;20&quot; y2=&quot;136&quot;style=&quot;stroke:#47a447ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;137&quot; x2=&quot;20&quot; y2=&quot;137&quot;style=&quot;stroke:#46a346ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;138&quot; x2=&quot;20&quot; y2=&quot;138&quot;style=&quot;stroke:#45a245ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;139&quot; x2=&quot;20&quot; y2=&quot;139&quot;style=&quot;stroke:#43a243ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;140&quot; x2=&quot;20&quot; y2=&quot;140&quot;style=&quot;stroke:#42a142ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;141&quot; x2=&quot;20&quot; y2=&quot;141&quot;style=&quot;stroke:#41a141ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;142&quot; x2=&quot;20&quot; y2=&quot;142&quot;style=&quot;stroke:#3fa03fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;143&quot; x2=&quot;20&quot; y2=&quot;143&quot;style=&quot;stroke:#3e9f3eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;144&quot; x2=&quot;20&quot; y2=&quot;144&quot;style=&quot;stroke:#3d9f3dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;145&quot; x2=&quot;20&quot; y2=&quot;145&quot;style=&quot;stroke:#3c9e3cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;146&quot; x2=&quot;20&quot; y2=&quot;146&quot;style=&quot;stroke:#3a9d3aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;147&quot; x2=&quot;20&quot; y2=&quot;147&quot;style=&quot;stroke:#399d39ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;148&quot; x2=&quot;20&quot; y2=&quot;148&quot;style=&quot;stroke:#389c38ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;149&quot; x2=&quot;20&quot; y2=&quot;149&quot;style=&quot;stroke:#379b37ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;150&quot; x2=&quot;20&quot; y2=&quot;150&quot;style=&quot;stroke:#359b35ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;150&quot; x2=&quot;20&quot; y2=&quot;150&quot;style=&quot;stroke:#339a33ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;152&quot; x2=&quot;20&quot; y2=&quot;152&quot;style=&quot;stroke:#319931ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;153&quot; x2=&quot;20&quot; y2=&quot;153&quot;style=&quot;stroke:#309830ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;154&quot; x2=&quot;20&quot; y2=&quot;154&quot;style=&quot;stroke:#2f982fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;155&quot; x2=&quot;20&quot; y2=&quot;155&quot;style=&quot;stroke:#2e972eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;156&quot; x2=&quot;20&quot; y2=&quot;156&quot;style=&quot;stroke:#2c962cff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;157&quot; x2=&quot;20&quot; y2=&quot;157&quot;style=&quot;stroke:#2b962bff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;158&quot; x2=&quot;20&quot; y2=&quot;158&quot;style=&quot;stroke:#2a952aff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;159&quot; x2=&quot;20&quot; y2=&quot;159&quot;style=&quot;stroke:#289428ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;160&quot; x2=&quot;20&quot; y2=&quot;160&quot;style=&quot;stroke:#279427ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;161&quot; x2=&quot;20&quot; y2=&quot;161&quot;style=&quot;stroke:#269326ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;162&quot; x2=&quot;20&quot; y2=&quot;162&quot;style=&quot;stroke:#259225ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;163&quot; x2=&quot;20&quot; y2=&quot;163&quot;style=&quot;stroke:#239223ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;164&quot; x2=&quot;20&quot; y2=&quot;164&quot;style=&quot;stroke:#229122ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;165&quot; x2=&quot;20&quot; y2=&quot;165&quot;style=&quot;stroke:#219121ff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;166&quot; x2=&quot;20&quot; y2=&quot;166&quot;style=&quot;stroke:#1f901fff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;167&quot; x2=&quot;20&quot; y2=&quot;167&quot;style=&quot;stroke:#1e8f1eff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;168&quot; x2=&quot;20&quot; y2=&quot;168&quot;style=&quot;stroke:#1d8f1dff;stroke-width:3;&quot; /><line x1=&quot;0&quot; y1=&quot;168&quot; x2=&quot;20&quot; y2=&quot;168&quot;style=&quot;stroke:#198d19ff;stroke-width:3;&quot; /></svg><svg height=&quot;169&quot; width=&quot;50&quot;><text x=&quot;5&quot; y=&quot;19&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 2</text><text x=&quot;5&quot; y=&quot;37&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 4</text><text x=&quot;5&quot; y=&quot;56&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 6</text><text x=&quot;5&quot; y=&quot;75&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 8</text><text x=&quot;5&quot; y=&quot;94&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 10</text><text x=&quot;5&quot; y=&quot;113&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 12</text><text x=&quot;5&quot; y=&quot;132&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 14</text><text x=&quot;5&quot; y=&quot;151&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 16</text><text x=&quot;5&quot; y=&quot;169&quot; dx=&quot;0&quot; dy=&quot;0ex&quot;>- 18</text></svg>
+
+  </ul>
+</div>
+</div>
+
+</body>
+</html>
+
+<style type='text/css'>
+  .maplegend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .maplegend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .maplegend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+  .maplegend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    
+    border: 1px solid #999;
+    
+    }
+  .maplegend .legend-source {
+    font-size: 80%;
+    color: #777;
+    clear: both;
+    }
+  .maplegend a {
+    color: #777;
+    }
+</style>
+</body>
+<script>
+    
+    
+            var map_3b5cae19cc4a18d73204801ecc7c84ce = L.map(
+                &quot;map_3b5cae19cc4a18d73204801ecc7c84ce&quot;,
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_3b5cae19cc4a18d73204801ecc7c84ce);
+
+            
+
+        
+    
+            var tile_layer_33d3630c2cbf80402cabad78ce1119d7 = L.tileLayer(
+                &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {&quot;attribution&quot;: &quot;Data by \u0026copy; \u003ca target=\&quot;_blank\&quot; href=\&quot;http://openstreetmap.org\&quot;\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\&quot;_blank\&quot; href=\&quot;http://www.openstreetmap.org/copyright\&quot;\u003eODbL\u003c/a\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
+            ).addTo(map_3b5cae19cc4a18d73204801ecc7c84ce);
+        
+    
+            var feature_group_0866e450384700a832bba84c8536e39f = L.featureGroup(
+                {}
+            ).addTo(map_3b5cae19cc4a18d73204801ecc7c84ce);
+        
+    
+            var circle_marker_4e81c5de9e5877b4540bc314e824a827 = L.circleMarker(
+                [-11.6308, 130.94899999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_1c1c5ee44b42f847ede2d1bf41865b2e = L.circleMarker(
+                [35.0, 135.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_0b536ea7f2e80e6d58ba679bba294fd6 = L.circleMarker(
+                [19.6297, -155.43],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_fb1a2995bc075293790f7117c84502c0 = L.circleMarker(
+                [59.4447, -135.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_9421ccd5abb07abf1bfc8c949cf9adf1 = L.circleMarker(
+                [-38.7392, -71.277],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_87dba4f0a0776b9baf1681c9029a1f28 = L.circleMarker(
+                [41.850396999999994, 43.78613],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_eade5c7b3137ec447a5ade9a1f87e9f3 = L.circleMarker(
+                [11.708182, 39.543456],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_61f8e0477d4d2c2d92519273f0e9bea6 = L.circleMarker(
+                [-5.26918, 35.4808],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_e7fae3ae3a165601029b9485ce6a616c = L.circleMarker(
+                [39.8667, 32.8667],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_7eff4c840ed83105c508fcbafbd022a9 = L.circleMarker(
+                [64.7628, 25.5577],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_65e9d5fa8bdbe0ca5fa0ce477fbcaaf0 = L.circleMarker(
+                [46.3699, -103.95],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_dccf793d876b2f4e81c189705f82cfe7 = L.circleMarker(
+                [18.7757, -88.9567],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_a4d25c64d5d19ef0026b3c0332a2210f = L.circleMarker(
+                [37.5, 128.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_29e9e95910b5a7e923114fa16d1c898d = L.circleMarker(
+                [7.15345, 3.67225],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_c5b2603bf1ec3d0ce971a6cac070dfcc = L.circleMarker(
+                [6.92048, -9.96128],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_164abace555d3eee653269d7d987c5eb = L.circleMarker(
+                [-25.60551, -57.088159999999995],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_99b6997e4e56e1e4e4bd1fc4acf8ccf7 = L.circleMarker(
+                [12.8114, 75.2651],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_8d9ba6cd8c0671c871b62b3f927be1f9 = L.circleMarker(
+                [46.9068585714, 19.6555271429],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_ff14c2e50dd3b4323bfa59514c7160cb = L.circleMarker(
+                [34.9403, -98.9042],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#000000&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 8.049999999999999, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+            var circle_marker_0502b395176986459928e753f1cab387 = L.circleMarker(
+                [-11.6308, 130.94899999999998],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#cce6ccff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_1c36a4b78640db382e7f774d1274003e = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_0339407ed4854a675baf535906182b41 = $(`<div id=&quot;html_0339407ed4854a675baf535906182b41&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/tiwi1244&quot; onclick=&quot;this.target='_blank';&quot;>Tiwi</a><br></div>`)[0];
+                popup_1c36a4b78640db382e7f774d1274003e.setContent(html_0339407ed4854a675baf535906182b41);
+            
+        
+
+        circle_marker_0502b395176986459928e753f1cab387.bindPopup(popup_1c36a4b78640db382e7f774d1274003e)
+        ;
+
+        
+    
+    
+            circle_marker_0502b395176986459928e753f1cab387.bindTooltip(
+                `<div>
+                     4
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_a30ff2b1cf5d598a58eedc43c93a1351 = L.circleMarker(
+                [35.0, 135.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#bfe0bfff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_4633d5e4168092ba17788da89f9c4c98 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_31718db603fa1d34f2e4ae4b4e129b62 = $(`<div id=&quot;html_31718db603fa1d34f2e4ae4b4e129b62&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/nucl1643&quot; onclick=&quot;this.target='_blank';&quot;>Japanese</a><br></div>`)[0];
+                popup_4633d5e4168092ba17788da89f9c4c98.setContent(html_31718db603fa1d34f2e4ae4b4e129b62);
+            
+        
+
+        circle_marker_a30ff2b1cf5d598a58eedc43c93a1351.bindPopup(popup_4633d5e4168092ba17788da89f9c4c98)
+        ;
+
+        
+    
+    
+            circle_marker_a30ff2b1cf5d598a58eedc43c93a1351.bindTooltip(
+                `<div>
+                     5
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_26b7743f5aeaa05db7c5df702c1e9797 = L.circleMarker(
+                [19.6297, -155.43],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#bfe0bfff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_d26e9686a6601f827d68daa334ab042a = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_632175b113aa1012dc20b34965dc57ca = $(`<div id=&quot;html_632175b113aa1012dc20b34965dc57ca&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/hawa1245&quot; onclick=&quot;this.target='_blank';&quot;>Hawaiian</a><br></div>`)[0];
+                popup_d26e9686a6601f827d68daa334ab042a.setContent(html_632175b113aa1012dc20b34965dc57ca);
+            
+        
+
+        circle_marker_26b7743f5aeaa05db7c5df702c1e9797.bindPopup(popup_d26e9686a6601f827d68daa334ab042a)
+        ;
+
+        
+    
+    
+            circle_marker_26b7743f5aeaa05db7c5df702c1e9797.bindTooltip(
+                `<div>
+                     5
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_8b5e9dec32fab8967ac5b73780e166d8 = L.circleMarker(
+                [59.4447, -135.29],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#bfe0bfff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_49e3fa7d600daeb63e85091a510b4184 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_f69ea5aa31356e5f1c12fa90575594c4 = $(`<div id=&quot;html_f69ea5aa31356e5f1c12fa90575594c4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/tlin1245&quot; onclick=&quot;this.target='_blank';&quot;>Tlingit</a><br></div>`)[0];
+                popup_49e3fa7d600daeb63e85091a510b4184.setContent(html_f69ea5aa31356e5f1c12fa90575594c4);
+            
+        
+
+        circle_marker_8b5e9dec32fab8967ac5b73780e166d8.bindPopup(popup_49e3fa7d600daeb63e85091a510b4184)
+        ;
+
+        
+    
+    
+            circle_marker_8b5e9dec32fab8967ac5b73780e166d8.bindTooltip(
+                `<div>
+                     5
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_f2c25744f094926fc719eb363801796d = L.circleMarker(
+                [-38.7392, -71.277],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#b3d9b3ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_6fb9fb831e03f358c5384cc5e421dfad = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_a984a7b02b11a3a2dccfce0417f51fab = $(`<div id=&quot;html_a984a7b02b11a3a2dccfce0417f51fab&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/mapu1245&quot; onclick=&quot;this.target='_blank';&quot;>Mapudungun</a><br></div>`)[0];
+                popup_6fb9fb831e03f358c5384cc5e421dfad.setContent(html_a984a7b02b11a3a2dccfce0417f51fab);
+            
+        
+
+        circle_marker_f2c25744f094926fc719eb363801796d.bindPopup(popup_6fb9fb831e03f358c5384cc5e421dfad)
+        ;
+
+        
+    
+    
+            circle_marker_f2c25744f094926fc719eb363801796d.bindTooltip(
+                `<div>
+                     6
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_af1023c57ae9be86dc8d8c339726ddab = L.circleMarker(
+                [41.850396999999994, 43.78613],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#b3d9b3ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_af770b0e57816e866a9fc5b58b83b825 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_b7195292c5d848925ce836c4fb7de301 = $(`<div id=&quot;html_b7195292c5d848925ce836c4fb7de301&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/nucl1302&quot; onclick=&quot;this.target='_blank';&quot;>Georgian</a><br></div>`)[0];
+                popup_af770b0e57816e866a9fc5b58b83b825.setContent(html_b7195292c5d848925ce836c4fb7de301);
+            
+        
+
+        circle_marker_af1023c57ae9be86dc8d8c339726ddab.bindPopup(popup_af770b0e57816e866a9fc5b58b83b825)
+        ;
+
+        
+    
+    
+            circle_marker_af1023c57ae9be86dc8d8c339726ddab.bindTooltip(
+                `<div>
+                     6
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_d25921eb383c10cad856cb7b6f7f73e0 = L.circleMarker(
+                [11.708182, 39.543456],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#a6d3a6ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_bed4bbdfacc8c90582c2f1a030d6b9b2 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_06c2536d3f6edc6c3d50396658ac6aff = $(`<div id=&quot;html_06c2536d3f6edc6c3d50396658ac6aff&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/amha1245&quot; onclick=&quot;this.target='_blank';&quot;>Amharic</a><br></div>`)[0];
+                popup_bed4bbdfacc8c90582c2f1a030d6b9b2.setContent(html_06c2536d3f6edc6c3d50396658ac6aff);
+            
+        
+
+        circle_marker_d25921eb383c10cad856cb7b6f7f73e0.bindPopup(popup_bed4bbdfacc8c90582c2f1a030d6b9b2)
+        ;
+
+        
+    
+    
+            circle_marker_d25921eb383c10cad856cb7b6f7f73e0.bindTooltip(
+                `<div>
+                     7
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_d1e007edb2cbef4b13dbc2f83f6cc873 = L.circleMarker(
+                [-5.26918, 35.4808],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#a6d3a6ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_3e21fc699863585507dcc4016c12ae43 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_c49fd42e71fa083d695c084275e89705 = $(`<div id=&quot;html_c49fd42e71fa083d695c084275e89705&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/sand1273&quot; onclick=&quot;this.target='_blank';&quot;>Sandawe</a><br></div>`)[0];
+                popup_3e21fc699863585507dcc4016c12ae43.setContent(html_c49fd42e71fa083d695c084275e89705);
+            
+        
+
+        circle_marker_d1e007edb2cbef4b13dbc2f83f6cc873.bindPopup(popup_3e21fc699863585507dcc4016c12ae43)
+        ;
+
+        
+    
+    
+            circle_marker_d1e007edb2cbef4b13dbc2f83f6cc873.bindTooltip(
+                `<div>
+                     7
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_372e2a369fc2bbe0fdf5ea9a3cf8b284 = L.circleMarker(
+                [39.8667, 32.8667],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#99cd99ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_25927c879a31fefc2c2a031e5970d014 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_dfb8898a52213b847f3f1f87b441bb79 = $(`<div id=&quot;html_dfb8898a52213b847f3f1f87b441bb79&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/nucl1301&quot; onclick=&quot;this.target='_blank';&quot;>Turkish</a><br></div>`)[0];
+                popup_25927c879a31fefc2c2a031e5970d014.setContent(html_dfb8898a52213b847f3f1f87b441bb79);
+            
+        
+
+        circle_marker_372e2a369fc2bbe0fdf5ea9a3cf8b284.bindPopup(popup_25927c879a31fefc2c2a031e5970d014)
+        ;
+
+        
+    
+    
+            circle_marker_372e2a369fc2bbe0fdf5ea9a3cf8b284.bindTooltip(
+                `<div>
+                     8
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_2477f8012b283831c10ff458bd6df993 = L.circleMarker(
+                [64.7628, 25.5577],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#99cd99ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_dfd2b5771570788147043f5e85a08bf8 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_64acd37c230e946481edcb1a726681e9 = $(`<div id=&quot;html_64acd37c230e946481edcb1a726681e9&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/finn1318&quot; onclick=&quot;this.target='_blank';&quot;>Finnish</a><br></div>`)[0];
+                popup_dfd2b5771570788147043f5e85a08bf8.setContent(html_64acd37c230e946481edcb1a726681e9);
+            
+        
+
+        circle_marker_2477f8012b283831c10ff458bd6df993.bindPopup(popup_dfd2b5771570788147043f5e85a08bf8)
+        ;
+
+        
+    
+    
+            circle_marker_2477f8012b283831c10ff458bd6df993.bindTooltip(
+                `<div>
+                     8
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_8e52fca1ecca097db44a91581f5f1757 = L.circleMarker(
+                [46.3699, -103.95],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#99cd99ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_d3d298cfbb25e022f4a4708a5e490f0a = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_a5a07954504b81617c3d8548a44b7019 = $(`<div id=&quot;html_a5a07954504b81617c3d8548a44b7019&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/lako1247&quot; onclick=&quot;this.target='_blank';&quot;>Lakota</a><br></div>`)[0];
+                popup_d3d298cfbb25e022f4a4708a5e490f0a.setContent(html_a5a07954504b81617c3d8548a44b7019);
+            
+        
+
+        circle_marker_8e52fca1ecca097db44a91581f5f1757.bindPopup(popup_d3d298cfbb25e022f4a4708a5e490f0a)
+        ;
+
+        
+    
+    
+            circle_marker_8e52fca1ecca097db44a91581f5f1757.bindTooltip(
+                `<div>
+                     8
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_779d02feb9e8c40b8c3381104121ea28 = L.circleMarker(
+                [18.7757, -88.9567],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#7fc07fff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_5cf34072ced7c9d45def89ed446339ed = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_b529fe619f98827e48d54985ab77e122 = $(`<div id=&quot;html_b529fe619f98827e48d54985ab77e122&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/yuca1254&quot; onclick=&quot;this.target='_blank';&quot;>Yucatec Maya</a><br></div>`)[0];
+                popup_5cf34072ced7c9d45def89ed446339ed.setContent(html_b529fe619f98827e48d54985ab77e122);
+            
+        
+
+        circle_marker_779d02feb9e8c40b8c3381104121ea28.bindPopup(popup_5cf34072ced7c9d45def89ed446339ed)
+        ;
+
+        
+    
+    
+            circle_marker_779d02feb9e8c40b8c3381104121ea28.bindTooltip(
+                `<div>
+                     10
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_bbc0f54f75c35fc5c50be250d6295b70 = L.circleMarker(
+                [37.5, 128.0],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#73b973ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_f8f7752b82f6e0b0879f48554b4bbceb = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_8d6d9cd8aab49be6a03bf9cb2ef3c633 = $(`<div id=&quot;html_8d6d9cd8aab49be6a03bf9cb2ef3c633&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/kore1280&quot; onclick=&quot;this.target='_blank';&quot;>Korean</a><br></div>`)[0];
+                popup_f8f7752b82f6e0b0879f48554b4bbceb.setContent(html_8d6d9cd8aab49be6a03bf9cb2ef3c633);
+            
+        
+
+        circle_marker_bbc0f54f75c35fc5c50be250d6295b70.bindPopup(popup_f8f7752b82f6e0b0879f48554b4bbceb)
+        ;
+
+        
+    
+    
+            circle_marker_bbc0f54f75c35fc5c50be250d6295b70.bindTooltip(
+                `<div>
+                     11
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_1a37e54c231cf9fa1a42567fdffd6e78 = L.circleMarker(
+                [7.15345, 3.67225],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#73b973ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_30fb520060d4c04fcb51b12652673e9c = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_d70d6dabb82a1f1d2fda1636585b30bb = $(`<div id=&quot;html_d70d6dabb82a1f1d2fda1636585b30bb&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/yoru1245&quot; onclick=&quot;this.target='_blank';&quot;>Yoruba</a><br></div>`)[0];
+                popup_30fb520060d4c04fcb51b12652673e9c.setContent(html_d70d6dabb82a1f1d2fda1636585b30bb);
+            
+        
+
+        circle_marker_1a37e54c231cf9fa1a42567fdffd6e78.bindPopup(popup_30fb520060d4c04fcb51b12652673e9c)
+        ;
+
+        
+    
+    
+            circle_marker_1a37e54c231cf9fa1a42567fdffd6e78.bindTooltip(
+                `<div>
+                     11
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_4de1172770e9db3d057be8cbe9e2eaf1 = L.circleMarker(
+                [6.92048, -9.96128],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#66b366ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_7e49e70036c952dbf6deea5989c77211 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_64d85c5f77a8dbd47a4483fbd60261b6 = $(`<div id=&quot;html_64d85c5f77a8dbd47a4483fbd60261b6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/libe1247&quot; onclick=&quot;this.target='_blank';&quot;>Liberia Kpelle</a><br></div>`)[0];
+                popup_7e49e70036c952dbf6deea5989c77211.setContent(html_64d85c5f77a8dbd47a4483fbd60261b6);
+            
+        
+
+        circle_marker_4de1172770e9db3d057be8cbe9e2eaf1.bindPopup(popup_7e49e70036c952dbf6deea5989c77211)
+        ;
+
+        
+    
+    
+            circle_marker_4de1172770e9db3d057be8cbe9e2eaf1.bindTooltip(
+                `<div>
+                     12
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_b6b2952bd279af036aa0cdddf8d0f880 = L.circleMarker(
+                [-25.60551, -57.088159999999995],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#66b366ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_a38f89d1e74f4669224a3d0fab89ae01 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_6450babe1f249e8a8f52d8cd6d368728 = $(`<div id=&quot;html_6450babe1f249e8a8f52d8cd6d368728&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/para1311&quot; onclick=&quot;this.target='_blank';&quot;>Paraguayan Guaraní</a><br></div>`)[0];
+                popup_a38f89d1e74f4669224a3d0fab89ae01.setContent(html_6450babe1f249e8a8f52d8cd6d368728);
+            
+        
+
+        circle_marker_b6b2952bd279af036aa0cdddf8d0f880.bindPopup(popup_a38f89d1e74f4669224a3d0fab89ae01)
+        ;
+
+        
+    
+    
+            circle_marker_b6b2952bd279af036aa0cdddf8d0f880.bindTooltip(
+                `<div>
+                     12
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_e456c2d0b1347d6dd9eff1d50eedfd91 = L.circleMarker(
+                [12.8114, 75.2651],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#59ad59ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_476b1055b81933b89e51ca8128597abc = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_e5b5398375a98ed75cd5180aa5a90042 = $(`<div id=&quot;html_e5b5398375a98ed75cd5180aa5a90042&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/tulu1258&quot; onclick=&quot;this.target='_blank';&quot;>Tulu</a><br></div>`)[0];
+                popup_476b1055b81933b89e51ca8128597abc.setContent(html_e5b5398375a98ed75cd5180aa5a90042);
+            
+        
+
+        circle_marker_e456c2d0b1347d6dd9eff1d50eedfd91.bindPopup(popup_476b1055b81933b89e51ca8128597abc)
+        ;
+
+        
+    
+    
+            circle_marker_e456c2d0b1347d6dd9eff1d50eedfd91.bindTooltip(
+                `<div>
+                     13
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_fb1928a780a96e4b4876e20b17e492bc = L.circleMarker(
+                [46.9068585714, 19.6555271429],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#4ca64cff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_46a7112adc9091240c47b53eb8003b18 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_cf7608d86954402eb779c440349a35f2 = $(`<div id=&quot;html_cf7608d86954402eb779c440349a35f2&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/hung1274&quot; onclick=&quot;this.target='_blank';&quot;>Hungarian</a><br></div>`)[0];
+                popup_46a7112adc9091240c47b53eb8003b18.setContent(html_cf7608d86954402eb779c440349a35f2);
+            
+        
+
+        circle_marker_fb1928a780a96e4b4876e20b17e492bc.bindPopup(popup_46a7112adc9091240c47b53eb8003b18)
+        ;
+
+        
+    
+    
+            circle_marker_fb1928a780a96e4b4876e20b17e492bc.bindTooltip(
+                `<div>
+                     14
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+    
+            var circle_marker_413bd08b1875b52d246b8666cc08a5b3 = L.circleMarker(
+                [34.9403, -98.9042],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#000000&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#008000ff&quot;, &quot;fillOpacity&quot;: 1, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 7, &quot;stroke&quot;: false, &quot;weight&quot;: 1}
+            ).addTo(feature_group_0866e450384700a832bba84c8536e39f);
+        
+    
+        var popup_b3c87a41b029bb45d4f50eae433fe291 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
+
+        
+            
+                var html_d1c3da508a6134c4f451fecddbd318b0 = $(`<div id=&quot;html_d1c3da508a6134c4f451fecddbd318b0&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><a href=&quot;https://glottolog.org/resource/languoid/id/kiow1266&quot; onclick=&quot;this.target='_blank';&quot;>Kiowa</a><br></div>`)[0];
+                popup_b3c87a41b029bb45d4f50eae433fe291.setContent(html_d1c3da508a6134c4f451fecddbd318b0);
+            
+        
+
+        circle_marker_413bd08b1875b52d246b8666cc08a5b3.bindPopup(popup_b3c87a41b029bb45d4f50eae433fe291)
+        ;
+
+        
+    
+    
+            circle_marker_413bd08b1875b52d246b8666cc08a5b3.bindTooltip(
+                `<div>
+                     20
+                 </div>`,
+                {&quot;sticky&quot;: true}
+            );
+        
+</script>
+</html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
+</div>
+</div>
+</section></section>
+<section id="如何紀錄與分析語音" class="title-slide slide level1 center">
+<h1>如何紀錄與分析語音</h1>
+<ul>
+<li><p>辨音能力 ([挑戰]: <a href="https://ioling.org/booklets/iol-2016-team-prob.en.pdf">IOL 2016 team contest</a>)</p></li>
+<li><p>語音轉寫架構與工具</p></li>
+<li><p>語音參考資料庫與參考語法</p></li>
+<li><p>文化人類知識背景</p></li>
+</ul>
+</section>
+
+<section id="語音轉寫與挑戰" class="title-slide slide level1 center">
+<h1>語音轉寫與挑戰</h1>
+<p>以布農語爲例</p>
+
+<img data-src="./pics/bunun.png" class="r-stretch"></section>
+
+<section>
+<section id="辨音練習" class="title-slide slide level1 center">
+<h1>辨音練習</h1>
+<ul>
+<li>以團體討論方式，來練習 <strong>Turkish Bird Languages</strong> (kuş dili) 的辨音能力。（請關掉電腦，只用耳朵）</li>
+</ul>
+<blockquote>
+<p>Turkish bird language is a <a href="https://www.wikiwand.com/en/Whistled_language">whistled</a> register of Turkish, which is currently used by around 10,000 people in the mountainous regions of Turkey.<a href="https://youtu.be/l117wfB0g3o?t=14">介紹</a></p>
+</blockquote>
+<iframe src="https://www.youtube.com/embed/l117wfB0g3o" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><a href="https://onling.org/contests/2021/online/eng/">題目展延</a></p>
+</section></section>
+<section id="本週作業在-ntu-cool-上請同時做兩件事" class="title-slide slide level1 center">
+<h1>本週作業在 <strong>NTU COOL</strong> 上，請同時做兩件事：</h1>
+<ul>
+<li>瞭解 <code>IPA</code>。</li>
+<li>安裝 <a href="https://www.fon.hum.uva.nl/praat/"><code>Praat</code> 軟體</a>。</li>
+</ul>
+<!-- ## 語音轉寫 -->
+
+
+<img src="./pics/logo_round.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
+  <script src="site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'multiplex': {"secret":"16781769496441901399","id":"3cd7279135af3ca2","url":"https://reveal-multiplex.glitch.me/"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

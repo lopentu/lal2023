@@ -9,6 +9,7 @@ project:
       - week1.qmd
       - week2.qmd
       - session1-get-started.qmd
+      - week3.qmd
       # - session2a-tables-and-arrow.qmd
       # - session2b-interval-overlap.qmd
       # - session2b-alt.qmd
@@ -41,6 +42,7 @@ website:
       - week1.qmd
       - week2.qmd
       - session1-get-started.qmd
+      - week3.qmd
       # - session2a-tables-and-arrow.qmd
       # - session2b-interval-overlap.qmd
       # - session2b-alt.qmd
@@ -64,4 +66,4 @@ date: today
 date-format: iso
 
 from: markdown+emoji
-# jupyter: julia-1.8
+# jupyter: python3
