@@ -36,10 +36,10 @@ subtitle: "LING5503 Logical Analysis of Language"
 
 | 時間           | 主題                                     | 課堂練習                   | TOL training            |
 |:-------------:|:----------------------------------------:|:--------------------------:|:--------------|
-| W1: 02/22  | 課程介紹             |          |  2/25-26 [歷史語言、語言變異（林智凱教授）](https://us06web.zoom.us/rec/share/eT6L_GHK7bjXaP1_QrLD_ZH6nqrp8DsbEN4hBJstZYvdQgJmgghEBlm2q02N6R7Z.KYF2zsmQA5nN1U0l)|
-| W2: 03/01 | 語言類型與文化邏輯     |                 | 3/4-5 類型學與南島語言（江豪文博士）|
-| W3: 03/08  | 語音               |               |3/11-12 阿爾泰語系（蕭素英教授） |
-| W4: 03/15   | 語音 |                             |3/18-19 語音變化（郭貞秀教授） |
+| W1: 02/22  | 課程介紹             |          |  2/25-26 歷史語言、語言變異（林智凱教授）[1](https://us06web.zoom.us/rec/share/B7QwLX3oZrhgt5UycXI3LBlW6P2TlZEFcdNxvJg4xdJAbI1bsER71DEz8-pib2xr.xuTckkmXs0VahC4p) [2](https://us06web.zoom.us/rec/share/motucLx9m21QQpqp-qpVmYSVPIw87C5I5VFEpxbi6bIlvSFDfkYrIJNAXJg0qTYM.Duytvj9sAjX1DxBz)|
+| W2: 03/01 | 語言類型與文化邏輯     |                 | 3/4-5 類型學與南島語言（江豪文博士）[1](https://us06web.zoom.us/rec/share/GeULivnzdImlRXy4zGNj0eKvlChggEZROt0gvh0ZjKFdH9P2kQFvmYix1WZVPDXR.2A9vBOw8wYwS8rbQ) [2](https://us06web.zoom.us/rec/share/waKM_IPgxpQkS6JG7z5mjLPOiRsXB6CzSrwfCdADZ5X4Ulohrdo67Tyh9rDvJBRX.D4v3QVTa-jwCIfeO)|
+| W3: 03/08  | 語音的世界               |               |3/11-12 世界文字系統與阿爾泰語系（蕭素英教授） |
+| W4: 03/15   | 語音的世界 |                             |3/18-19 語音變化（郭貞秀教授） |
 | W5: 03/22   | 構詞與句法 |                |3/25-26 構詞句法（許展嘉教授）|
 | W6: 03/29   | 構詞與句法           |        | 4/1-2 語意與文化想像（謝舒凱教授）|
 | W7: 04/05  | 清明節放假                |  ||
