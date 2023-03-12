@@ -1,15 +1,14 @@
 ---
 title: "Week 2 語言類型與文化邏輯"
 author: "謝舒凱 台大語言所"
-format: 
+format:
     revealjs:
-      slide-number: true
-      preview-links: true
-      chalkboard: true
-      multiplex: true
-      logo: /pics/logo_round.png
+        slide-number: true
+        preview-links: true
+        chalkboard: true
+        # multiplex: true
+        logo: /pics/logo_round.png
 bibliography: tol.bib
-
 ---
 
 

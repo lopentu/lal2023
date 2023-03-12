@@ -3,13 +3,16 @@ title: "Week 3 語音的世界 (1) "
 author: "謝舒凱 台大語言所"
 format: 
     revealjs:
-      slide-number: true
-      preview-links: true
-      chalkboard: true
-      multiplex: true
-      logo: /pics/logo_round.png
+        slide-number: true
+        preview-links: true
+        chalkboard: true
+        # multiplex: true
+        logo: /pics/logo_round.png
     html:
-      code-fold: true        
+        code-fold: true
+execute:
+    cache: true
+jupyter: python3        
 bibliography: tol.bib
 ---
 
@@ -168,10 +171,7 @@ In 1888 the International Phonetic Alphabet (IPA) was invented in order to have 
 ![](./pics/korean.png)
 
 
-
-
-
-
+ 
 
 ## 語言系譜資料 
 
@@ -216,7 +216,10 @@ m.add_tooltips(data.vowels)
 #If numeric is True, it will look like this
 m.add_features(data.vowels, numeric=True)
 m.create_map()
-```
+``` 
+
+
+
 
 # 如何紀錄與分析語音
 
@@ -260,7 +263,7 @@ m.create_map()
 - 安裝 [`Praat` 軟體](https://www.fon.hum.uva.nl/praat/)。
 
 
-<!-- ## 語音轉寫 -->
+
 
 
 

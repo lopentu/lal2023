@@ -10,18 +10,10 @@ project:
       - week2.qmd
       - session1-get-started.qmd
       - week3.qmd
-      # - session2a-tables-and-arrow.qmd
-      # - session2b-interval-overlap.qmd
-      # - session2b-alt.qmd
-      # - session3a-linear-mixed-effects.qmd
-      # - session3b-glmm.qmd
-      # - session4-exercise.qmd
-      # - session5-other-tools.qmd
-      # - session6-conclusions.qmd
+      
 
 website:
   title: "語言的邏輯分析"
-  # subtitle: "ISCB 2022, Madison"
   site-url: https://lopentu.github.io/lal/
   repo-url: https://github.com/lopentu
   repo-actions: [issue]
@@ -30,7 +22,8 @@ website:
     left:
       - href: index.qmd
         text: 首頁
-      - about.qmd
+      - href: about.qmd
+        text: 關於
     right:
       - icon: github
         href: https://github.com/lopentu
@@ -43,14 +36,7 @@ website:
       - week2.qmd
       - session1-get-started.qmd
       - week3.qmd
-      # - session2a-tables-and-arrow.qmd
-      # - session2b-interval-overlap.qmd
-      # - session2b-alt.qmd
-      # - session3a-linear-mixed-effects.qmd
-      # - session3b-glmm.qmd
-      # - session4-exercise.qmd
-      # - session5-other-tools.qmd
-      # - session6-conclusions.qmd
+      
   page-navigation: true
 
 
@@ -66,4 +52,4 @@ date: today
 date-format: iso
 
 from: markdown+emoji
-# jupyter: python3
+jupyter: python3

@@ -1,0 +1,359 @@
+[
+  {
+    "objectID": "week3.html",
+    "href": "week3.html",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "",
+    "text": "上次的題目討論\n語音學入門"
+  },
+  {
+    "objectID": "week3.html#聲音三要素",
+    "href": "week3.html#聲音三要素",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "聲音三要素",
+    "text": "聲音三要素\nSound is a physical phenomenon that can be described in terms of three properties 物理上來說：\n\n音量 (大小) loudness 《》 振幅大小\n音調 (高低) pitch 《》振動頻率高低\n音色 (差異) quality 《》許多正弦波疊合而成的複雜波形"
+  },
+  {
+    "objectID": "week3.html#聲音無所不在",
+    "href": "week3.html#聲音無所不在",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "聲音無所不在",
+    "text": "聲音無所不在\n\n(Human) sounds of the world\nSound and Geography"
+  },
+  {
+    "objectID": "week3.html#語音聲音是什麼",
+    "href": "week3.html#語音聲音是什麼",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "語音（聲音）是什麼？",
+    "text": "語音（聲音）是什麼？\nSpeech Sounds\n\n聲音是一種(縱)波：聲帶震動發出聲響，發音位置修飾在口／鼻腔產生共鳴，以空氣為介質，以波的形式傳遞，在耳中的鼓膜震動，訊號傳入大腦解析。"
+  },
+  {
+    "objectID": "week3.html#speech-sounds-phonemes",
+    "href": "week3.html#speech-sounds-phonemes",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Speech Sounds: Phonemes",
+    "text": "Speech Sounds: Phonemes\n\n音位（英語：Phoneme），又譯音素，是人類語言中能夠區別意義的最小聲音單位。傳統上用 Minimal pair (最小音對) 方法來辨認。\n人類語言中平均的音素數目（大約）是 30（ranging from 141 phonemes in !Xū to 11 phonemes in Pirahā）"
+  },
+  {
+    "objectID": "week3.html#speech-sounds-some-interesting-facts",
+    "href": "week3.html#speech-sounds-some-interesting-facts",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Speech Sounds: Some (Interesting) Facts",
+    "text": "Speech Sounds: Some (Interesting) Facts\n\nVowelless word/sentence in Bella coola (Nuxalk): 聽看看"
+  },
+  {
+    "objectID": "week3.html#speech-sounds-applications",
+    "href": "week3.html#speech-sounds-applications",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Speech Sounds: Applications",
+    "text": "Speech Sounds: Applications\n\n語音辨識 Speech-to-Text\n語音合成 Text-to-Speech\n多模態 AI 的時代，Speech 可以跟 XXX (melody, emoji, …) 各種互動轉換"
+  },
+  {
+    "objectID": "week3.html#linguistic-approach",
+    "href": "week3.html#linguistic-approach",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Linguistic approach",
+    "text": "Linguistic approach\n\n語音學 (Phonetics)\n\n發音學 (Articulatory Phonetics)\n語音聲學 (Acoustic Phonetics)\n語音聽覺學 (Auditory Phonetics)\n\n音韻學 (Phonology)\n\n\n\n\n\n\n\n聲與音的詞彙語意差異，已經透漏了古人的語音學觀念。"
+  },
+  {
+    "objectID": "week3.html#sound-segments",
+    "href": "week3.html#sound-segments",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Sound Segments",
+    "text": "Sound Segments\n\nKnowing a language includes knowing the sounds of that language\nPhonetics is the study of speech sounds\nWe are able to segment a continuous stream of speech into distinct parts and recognize the parts in other words"
+  },
+  {
+    "objectID": "week3.html#identity-of-speech-sounds",
+    "href": "week3.html#identity-of-speech-sounds",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Identity of Speech Sounds",
+    "text": "Identity of Speech Sounds\n\nOur linguistic knowledge allows us to ignore nonlinguistic differences in speech (such as individual pitch levels, rates of speed, coughs)\nWe are capable of making sounds that are not speech sounds in English (but are in other languages)\n\nThe click tsk that signals disapproval in English is a speech sound in languages such as Zulu."
+  },
+  {
+    "objectID": "week3.html#identity-of-speech-sounds-1",
+    "href": "week3.html#identity-of-speech-sounds-1",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Identity of Speech Sounds",
+    "text": "Identity of Speech Sounds\nThe science of phonetics aims to describe all the sounds of all the world’s languages\n\nAcoustic phonetics: focuses on the physical properties of the sounds of language\nAuditory phonetics: focuses on how listeners perceive the sounds of language\nArticulatory phonetics: focuses on how the vocal tract produces the sounds of language"
+  },
+  {
+    "objectID": "week3.html#圖示",
+    "href": "week3.html#圖示",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "圖示",
+    "text": "圖示"
+  },
+  {
+    "objectID": "week3.html#representing-sounds",
+    "href": "week3.html#representing-sounds",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Representing Sounds",
+    "text": "Representing Sounds\n怎麼（科學的）描述/表示/轉寫語音？\n\nSpelling, or orthography, does not consistently represent the sounds of language. Why?"
+  },
+  {
+    "objectID": "week3.html#some-problems",
+    "href": "week3.html#some-problems",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Some Problems",
+    "text": "Some Problems"
+  },
+  {
+    "objectID": "week3.html#some-problems-1",
+    "href": "week3.html#some-problems-1",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Some Problems",
+    "text": "Some Problems"
+  },
+  {
+    "objectID": "week3.html#the-phonetic-alphabet-ipa",
+    "href": "week3.html#the-phonetic-alphabet-ipa",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "The Phonetic Alphabet (IPA)",
+    "text": "The Phonetic Alphabet (IPA)\nIn 1888 the International Phonetic Alphabet (IPA) was invented in order to have a system in which there was a one-to-one correspondence between each sound in language and each phonetic symbol\n\nSomeone who knows the IPA knows (basically) how to pronounce any word in any language"
+  },
+  {
+    "objectID": "week3.html#practice-with-ipa-值得的投資",
+    "href": "week3.html#practice-with-ipa-值得的投資",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Practice with IPA (值得的投資)",
+    "text": "Practice with IPA (值得的投資)\nIPA Chart \n\nMimic method 用英文來想像發音的位置\n照表發音 是推薦的學習法，但是要先學會表格的意義\n如果妳對發音生理也有興趣，可以參考 Articulatory information with ULTRASOUND-enhanced videos and animations"
+  },
+  {
+    "objectID": "week3.html#in-class-exercise-1-german",
+    "href": "week3.html#in-class-exercise-1-german",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "In-class Exercise [1]: German",
+    "text": "In-class Exercise [1]: German\nGerman IPA -enhanced Pronunciation 101"
+  },
+  {
+    "objectID": "week3.html#in-class-exercise-2-korean",
+    "href": "week3.html#in-class-exercise-2-korean",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "In-class Exercise [2]: Korean",
+    "text": "In-class Exercise [2]: Korean\n從微量數據先來試著推敲韓語的發音"
+  },
+  {
+    "objectID": "week3.html#語言系譜資料",
+    "href": "week3.html#語言系譜資料",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "語言系譜資料",
+    "text": "語言系譜資料\n\n世界語言結構地圖集 (WALS) 涵蓋 2662 種語言、192 種結構特徵\nlingtypology (Python 與 R 皆有套件)\n\n\n\nCode\nimport lingtypology\nfrom pycldf import Dataset\nimport pandas as pd\npd.options.plotting.backend = \"plotly\""
+  },
+  {
+    "objectID": "week3.html#子音數目分佈",
+    "href": "week3.html#子音數目分佈",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "子音數目分佈",
+    "text": "子音數目分佈\n\n\nCode\ndata = pd.read_csv(\n    'https://raw.githubusercontent.com/ropensci/lingtypology/master/database_creation/ejective_and_n_consonants.csv',\n    delimiter=',',\n    header=0,\n)\nm = lingtypology.LingMap(data.language)\nm.legend_title = 'Consonants'\nm.legend_position = 'bottomleft'\nm.add_tooltips(data.consonants)\n#If numeric is True, it will look like this\nm.add_features(data.consonants, numeric=True)\nm.create_map()\n\n\nMake this Notebook Trusted to load map: File -> Trust Notebook"
+  },
+  {
+    "objectID": "week3.html#母音數目分佈",
+    "href": "week3.html#母音數目分佈",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "母音數目分佈",
+    "text": "母音數目分佈\n\n\nCode\nm.legend_title = 'Vowels'\nm.legend_position = 'bottomright'\nm.add_tooltips(data.vowels)\n#If numeric is True, it will look like this\nm.add_features(data.vowels, numeric=True)\nm.create_map()\n\n\nMake this Notebook Trusted to load map: File -> Trust Notebook"
+  },
+  {
+    "objectID": "week3.html#section",
+    "href": "week3.html#section",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "",
+    "text": "題目"
+  },
+  {
+    "objectID": "week2.html",
+    "href": "week2.html",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "",
+    "text": "所謂的語言的邏輯分析是什麼？\n我們怎麼利用語言遊戲的設計與解謎來學習語言的邏輯分析？\n先備知識背景：語言類型與文化邏輯\n\n\n\n語言中的邏輯思考與分析力\n\n認知、判斷、察覺關聯、感知、同理與想像\n\n\n\n\n\n\n分類邏輯\n\n\n\n\n\n\n類比邏輯\n\n\n\n\n\n\n\n\n\n\n分別就前四類的題目 (文字與圖形的分類與類比)，你可以綜合整理出什麼樣的分析模式（與題型）呢？\n\n\n\n\n\n\n\n\n\n\n\n\n是綜合性的語言、文字與邏輯運算\n文化數學\n\n\n\n\nThe power of computational thinking\n兩位倫敦皇后大學的資訊科學教授出版了一本計算思維的入門書（The power of computational thinking，台灣中譯：「思考的演算」），介紹了在 AI 時代需要的思考能力訓練，包括了\n\n\n\n\n\n邏輯思考 》 能夠考慮所有的可能性，因而也能有效率的推導與解決問題。\n模型比對 》能觀察到問題／數據本質上的相似性\n捷徑思考 》不保證最佳解，但追求在合理時間內的合理解。\n資料表徵法 》 能夠抽象化與通化所觀察到的資料\n對人有所瞭解 》理解人，才知道問題皆有脈絡，才能對症下藥。\n\n\n\n\n\n\n\n計算思維的概念，勢必要往更多元的方向發展。單從資訊科學的角度出發，可能難以套解不同領域或是跨領域的問題。此外，計算思維與想像力、創造力如何結合是個有趣的教育議題。>> 語言、認知與文化\n新世代帶來新問題。要面臨的複雜情境必然地跨越了傳統的學門邊界。也就是說，問題常常是以「主題」、「任務導向」的面貌出現，而我們傳統學校教育設計恐怕來不及因應這個趨勢。\n用「遊戲」「解謎」等思考娛樂的方式，可能是補足教育的一個趨勢。\n\n\n\n\n\nUniversity with Diversity\n\n跨文化、跨世紀、跨物種的語言想像力\n\n\n\n\nThe Waste Isolation Pilot Plant (WIPP) is designed as the final resting place for ‘transuranic’ waste, consisting mostly of items rendered radioactive during the production of nuclear weapons.\n\n- 位於新墨西哥州境內的地下核廢料永久儲存場「核廢料隔離先導場」 從 1999 年起，便儲存來自全美核武實驗室與核武設施的超鈾核廢料，該核廢場每年須處理的核廢料高達數千桶。The US. has produced 55,000 tons of this waste, and continues to produce about 2,000 tons annually. It's highly toxic and will remain toxic for app. 10,000 years. (FYI:  twice as long as all of recorded histoty!)\n\nhow do we set up a waning signs? (Sproat, 2010)"
+  },
+  {
+    "objectID": "week2.html#我們怎麼利用語言遊戲的設計與解謎來學習語言的邏輯分析",
+    "href": "week2.html#我們怎麼利用語言遊戲的設計與解謎來學習語言的邏輯分析",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "我們怎麼利用語言遊戲的設計與解謎來學習語言的邏輯分析？",
+    "text": "我們怎麼利用語言遊戲的設計與解謎來學習語言的邏輯分析？\n語言遊戲是什麼？能做什麼？"
+  },
+  {
+    "objectID": "week2.html#section-3",
+    "href": "week2.html#section-3",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "",
+    "text": "抒發情緒\n學習工具\nGame as a language resource / Game with a purpose"
+  },
+  {
+    "objectID": "week2.html#an-example-sementria",
+    "href": "week2.html#an-example-sementria",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "An example: Sementria",
+    "text": "An example: Sementria\n\n語意經驗 (semantic experience) 字詞聯想遊戲 semantris\n\n\n\n隨著 AR/VR 技術的快速發展，加上與 AI/IOT 的結合，可以想像一個有趣的人類意識的轉化。虛實難分的景況，人生如戲，戲如人生。遊戲產生了新的哲學高度。而遊戲所產生的人類反應資料，也成了機器學習的材料。以 Google 公開的「語意經驗」字詞聯想遊戲 semantris 為例，我們在玩遊戲中輸入的「答案」，正足以訓練與增強機器逼近人類的支持語意相似度判斷準確能力。\n\n\n\n語言遊戲，在 AI - 自然語言處理的需求之下可以預見的將成為重要的一種「語言資源」。我們在遊戲中留下的邏輯推理軌跡，除了訓練人類，也訓練機器。語言分析與解碼作為一種有趣但尚未普及的語言遊戲。"
+  },
+  {
+    "objectID": "week2.html#多看看各種-ai-相關的遊戲設計可以嗅出一些端倪",
+    "href": "week2.html#多看看各種-ai-相關的遊戲設計可以嗅出一些端倪",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "多看看各種 AI 相關的遊戲設計可以嗅出一些端倪",
+    "text": "多看看各種 AI 相關的遊戲設計可以嗅出一些端倪\n\nCreatability"
+  },
+  {
+    "objectID": "week2.html#語言謎題題目類型",
+    "href": "week2.html#語言謎題題目類型",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "語言謎題題目類型",
+    "text": "語言謎題題目類型\n\n\nword play? 回文構詞 (anagrams)? 繞口令？文字接龍？猜字推理？\nIOL (Rosetta Stone Linguistic Problems (Bozhanov and Derzhanski 2013))"
+  },
+  {
+    "objectID": "week2.html#problem-solving-in-iol",
+    "href": "week2.html#problem-solving-in-iol",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "Problem Solving in IOL",
+    "text": "Problem Solving in IOL\n\nTime and memory “complexity”\n\n為何需要解碼時間限制\n為何需要團隊合作 （Check team contest IOL）\n\nEssentialism, minimalism\n\n最少的步驟\n最少的假說\n最大IOL"
+  },
+  {
+    "objectID": "week2.html#機器解題的意義",
+    "href": "week2.html#機器解題的意義",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "機器解題的意義",
+    "text": "機器解題的意義\nrule-based to in-context learning"
+  },
+  {
+    "objectID": "week2.html#從-conlang-來想也可以更難一點",
+    "href": "week2.html#從-conlang-來想也可以更難一點",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "從 ConLang 來想也可以，更難一點",
+    "text": "從 ConLang 來想也可以，更難一點\n\n人造語言/constructed languages: a gateway to the complexity and creativity of 【LANGUAGE】\nCMU course : ConLanging: Learning about linguistics and language technologies through construction of artificial languages"
+  },
+  {
+    "objectID": "week2.html#創造遊戲而不要被遊戲制約",
+    "href": "week2.html#創造遊戲而不要被遊戲制約",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "創造遊戲，而不要被遊戲制約",
+    "text": "創造遊戲，而不要被遊戲制約\nAn interactive guide to the game theory of cooperation\n\n短期來講，遊戲決定玩家，但是長期來說，決定遊戲的正是我們這些玩家。"
+  },
+  {
+    "objectID": "week2.html#語料-language-and-linguistic-data",
+    "href": "week2.html#語料-language-and-linguistic-data",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "語料 (language and linguistic data)",
+    "text": "語料 (language and linguistic data)"
+  },
+  {
+    "objectID": "week2.html#語言類型學-linguistic-typology",
+    "href": "week2.html#語言類型學-linguistic-typology",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "語言類型學 | Linguistic typology",
+    "text": "語言類型學 | Linguistic typology\n\nto find similarities among languages that are independent of genetic origin, areal influence, and shared environment conditions. (Moravcsik 2012)\nlexical, syntactic, morphological, phonological typology"
+  },
+  {
+    "objectID": "week2.html#lexical-typology",
+    "href": "week2.html#lexical-typology",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "Lexical Typology",
+    "text": "Lexical Typology\n各種語言的詞彙在以下的幾個層面上有什麼 相同/不同的特徵？\n\nbody parts, kinship terms, personal pronouns, numerals, antonymic adjectives, and color terms, etc."
+  },
+  {
+    "objectID": "week2.html#syntactic-typology",
+    "href": "week2.html#syntactic-typology",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "Syntactic Typology",
+    "text": "Syntactic Typology\nchoice of words, word forms and orders\n\n\n\n\n\n\nout of 1228 languages\n\n\nSOV: 497  SVO: 435  VSO: 85  VOS: 26  OVS: 9  OSV: 4  Lacking a dominant order: 172"
+  },
+  {
+    "objectID": "week2.html#世界語言與文字地圖",
+    "href": "week2.html#世界語言與文字地圖",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "世界語言與文字地圖",
+    "text": "世界語言與文字地圖"
+  },
+  {
+    "objectID": "week2.html#跨模態推理練習",
+    "href": "week2.html#跨模態推理練習",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "跨模態推理練習",
+    "text": "跨模態推理練習"
+  },
+  {
+    "objectID": "week2.html#計算思維練習",
+    "href": "week2.html#計算思維練習",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "計算思維練習",
+    "text": "計算思維練習"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "LING5503 語言的邏輯分析",
+    "section": "",
+    "text": "Room: 綜 603 (部分內容剪輯上線)\nOffice hours: By appointment\nEmail: shukaihsieh@ntu.edu.tw\nTime: 14:20-17:10, Wed.\n\n\n\n\nNTU COOL：指定教材、作業繳交\n課程網站\n\n\n\n\n\n瞭解語言分析的方式\n認識世界語言的多樣性\n學習不插電的計算語言思維\n\n\n\n\n\n\n\n時間\n主題\n課堂練習\nTOL training\n\n\n\n\nW1: 02/22\n課程介紹\n\n2/25-26 歷史語言、語言變異（林智凱教授）1 2\n\n\nW2: 03/01\n語言類型與文化邏輯\n\n3/4-5 類型學與南島語言（江豪文博士）1 2\n\n\nW3: 03/08\n語音的世界\n\n3/11-12 世界文字系統與阿爾泰語系（蕭素英教授）\n\n\nW4: 03/15\n語音的世界\n\n3/18-19 語音變化（郭貞秀教授）\n\n\nW5: 03/22\n構詞與句法\n\n3/25-26 構詞句法（許展嘉教授）\n\n\nW6: 03/29\n構詞與句法\n\n4/1-2 語意與文化想像（謝舒凱教授）\n\n\nW7: 04/05\n清明節放假\n\n\n\n\nW8: 04/12\n期中考**\n\n\n\n\nW9: 04/19\n構詞句法\n\n\n\n\nW10: 04/26\n語意與文化\n\n\n\n\nW11: 05/03\n語意與文化：數字\n\n二階國手培訓互動\n\n\nW12: 05/10\n語意與文化：關係\n\n二階國手培訓互動\n\n\nW13: 05/17\n世界文字系統\n\n二階國手培訓互動\n\n\nW14: 05/24\n世界文字系統\n\n二階國手培訓互動/中小學生語言解謎鐵人賽（林口康橋，5/28）\n\n\nW15: 05/31\n語言謎題設計\n\n國際語奧命題委員會演講\n\n\nW16: 06/07\n期末專題報告\n\n二階國手培訓互動 (6:30-8:30)\n\n\n\n\n\n\n\n\n\nAPLO (https://aplo.asia/) Asia Pacific Linguistics Olympiad (APLO)\n\n\n\na regional linguistics olympiad with the aim of escalating attention to language and linguistics in the Asia Pacific region. The upcoming APLO will be held on April 9th, 2023.\n\n\n\n\n\n\n\n\n爲了培訓臺灣選手參加亞太語奧決選，同時安排了週末日線上課程。課堂同學有興趣者可以登記加入旁聽。5 月份有機會與決選出之臺灣代表隊互動。\n\n\n\n\n\n\n\n\n原則上第二週開始有一份課後練習作業 (見網站)，截止日爲隔週一晚上12:00， 上傳至 NTU COOL。\n4/12 有期中考。(從 APLO 2023 挑一題，可以團體形式進行答題。)\n除閱讀指定閱讀之外，須完成一個期末報告或專案。\n\n\n\n\n\n\n課堂參與 | Participation: 10%\n平時作業 | Assignments: 30%\n期中考 | Midterm: 20%\n期末專題與發表 | Final Project/Presentation: 40%\n\n遲交作業處理\n截止時間起，每天扣 5% 。有特殊事宜應該事先告知老師或助教。\n\n\n\n請大家自重自愛，不用別人要求。\n\n\n\n\n可以個人或團體完成 (3 人以內)\n\n設計類似語奧題目，並附上清楚的語料來源與解題說明。\n設計與實作語言遊戲，不拘形式。"
+  },
+  {
+    "objectID": "week2.html#語言的邏輯分析",
+    "href": "week2.html#語言的邏輯分析",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "語言的邏輯分析",
+    "text": "語言的邏輯分析\n語言中的邏輯思考與分析力\n\n認知、判斷、察覺關聯、感知、同理與想像"
+  },
+  {
+    "objectID": "week2.html#先來一點語言智力測驗",
+    "href": "week2.html#先來一點語言智力測驗",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "先來一點(語言)智力測驗",
+    "text": "先來一點(語言)智力測驗\n\n分類邏輯"
+  },
+  {
+    "objectID": "week2.html#課堂練習-1",
+    "href": "week2.html#課堂練習-1",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "課堂練習 [1]",
+    "text": "課堂練習 [1]\n\n分別就前四類的題目 (文字與圖形的分類與類比)，你可以綜合整理出什麼樣的分析模式（與題型）呢？"
+  },
+  {
+    "objectID": "week2.html#語言學家的解碼工作",
+    "href": "week2.html#語言學家的解碼工作",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "語言學家的解碼工作",
+    "text": "語言學家的解碼工作"
+  },
+  {
+    "objectID": "week2.html#section",
+    "href": "week2.html#section",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "",
+    "text": "是綜合性的語言、文字與邏輯運算\n文化數學"
+  },
+  {
+    "objectID": "week2.html#思考的演算",
+    "href": "week2.html#思考的演算",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "思考的演算",
+    "text": "思考的演算\nThe power of computational thinking\n兩位倫敦皇后大學的資訊科學教授出版了一本計算思維的入門書（The power of computational thinking，台灣中譯：「思考的演算」），介紹了在 AI 時代需要的思考能力訓練，包括了"
+  },
+  {
+    "objectID": "week2.html#section-1",
+    "href": "week2.html#section-1",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "",
+    "text": "邏輯思考 》 能夠考慮所有的可能性，因而也能有效率的推導與解決問題。\n模型比對 》能觀察到問題／數據本質上的相似性\n捷徑思考 》不保證最佳解，但追求在合理時間內的合理解。\n資料表徵法 》 能夠抽象化與通化所觀察到的資料\n對人有所瞭解 》理解人，才知道問題皆有脈絡，才能對症下藥。"
+  },
+  {
+    "objectID": "week2.html#rethinking-computational-thinking",
+    "href": "week2.html#rethinking-computational-thinking",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "Rethinking “computational thinking”",
+    "text": "Rethinking “computational thinking”\n\n\n計算思維的概念，勢必要往更多元的方向發展。單從資訊科學的角度出發，可能難以套解不同領域或是跨領域的問題。此外，計算思維與想像力、創造力如何結合是個有趣的教育議題。>> 語言、認知與文化\n新世代帶來新問題。要面臨的複雜情境必然地跨越了傳統的學門邊界。也就是說，問題常常是以「主題」、「任務導向」的面貌出現，而我們傳統學校教育設計恐怕來不及因應這個趨勢。\n用「遊戲」「解謎」等思考娛樂的方式，可能是補足教育的一個趨勢。"
+  },
+  {
+    "objectID": "week2.html#什麼是語言的文化想像",
+    "href": "week2.html#什麼是語言的文化想像",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "什麼是語言的文化想像",
+    "text": "什麼是語言的文化想像\nUniversity with Diversity\n\n跨文化、跨世紀、跨物種的語言想像力"
+  },
+  {
+    "objectID": "week2.html#核廢料隔離先導場標語設計",
+    "href": "week2.html#核廢料隔離先導場標語設計",
+    "title": "Week 2 語言類型與文化邏輯",
+    "section": "核廢料隔離先導場標語設計",
+    "text": "核廢料隔離先導場標語設計\nThe Waste Isolation Pilot Plant (WIPP) is designed as the final resting place for ‘transuranic’ waste, consisting mostly of items rendered radioactive during the production of nuclear weapons.\n\n- 位於新墨西哥州境內的地下核廢料永久儲存場「核廢料隔離先導場」 從 1999 年起，便儲存來自全美核武實驗室與核武設施的超鈾核廢料，該核廢場每年須處理的核廢料高達數千桶。The US. has produced 55,000 tons of this waste, and continues to produce about 2,000 tons annually. It's highly toxic and will remain toxic for app. 10,000 years. (FYI:  twice as long as all of recorded histoty!)\n\nhow do we set up a waning signs? (Sproat, 2010)"
+  }
+]
