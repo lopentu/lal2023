@@ -9,7 +9,8 @@ project:
       - week1.qmd
       - week2.qmd
       - session1-get-started.qmd
-      - week3.qmd
+      # - week3.qmd
+      - week4.qmd
       
 
 website:
