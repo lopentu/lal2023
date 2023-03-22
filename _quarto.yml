@@ -9,8 +9,9 @@ project:
       - week1.qmd
       - week2.qmd
       - session1-get-started.qmd
-      # - week3.qmd
+      - week3.qmd
       - week4.qmd
+      - week5.qmd
       
 
 website:
@@ -37,6 +38,8 @@ website:
       - week2.qmd
       - session1-get-started.qmd
       - week3.qmd
+      - week4.qmd
+      - week5.qmd
       
   page-navigation: true
 
@@ -44,7 +47,7 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: [styles.css,q-theme.scss]
     toc: true
 
 callout-appearance: simple
