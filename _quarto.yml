@@ -12,7 +12,7 @@ project:
       - week3.qmd
       - week4.qmd
       - week5.qmd
-      
+      - week6.qmd      
 
 website:
   title: "語言的邏輯分析"
@@ -40,6 +40,7 @@ website:
       - week3.qmd
       - week4.qmd
       - week5.qmd
+      - week6.qmd
       
   page-navigation: true
 
