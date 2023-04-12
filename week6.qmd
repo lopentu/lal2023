@@ -12,7 +12,7 @@ format:
         code-fold: true
 execute:
     cache: true
-jupyter: python3        
+# jupyter: python3        
 bibliography: tol.bib
 ---
 
@@ -25,10 +25,26 @@ bibliography: tol.bib
 
 ## Syntax vs Grammar
 
-- 句法（syntax）是語言學中研究句子結構的學科。構詞語法則較從世界語言的角度，探究 grammar 特徵 (構詞句法互動)。(注意這裏的 grammar 不是教學意義上的)
+- 句法（syntax）是語言學中研究句子結構的學科。構詞語法則較從世界語言的角度，探究 grammar 特徵 (構詞句法互動)。(注意這裏的 grammar 不是教學意義上的教學文法，而是一個整體語言系統)
 
+- Subject and Object; Word order
+- Argument: argument, complement (non-subject, obligatory argument), adjunct (optional argument)
+- Agreement
 
+:::{.callout-note}
+- (a). The painting resembles *a flower*. 
+- (b). The painting was stolen *from the museumr*.
 
+:::
+
+- Constituent: a unit of syntactic structure, such as a phrase or a clause.
+- Syntactic categories: N, V, Noun Phrase, Verb Phrase, Preopositional Phrase, etc.
+
+## Constructing a grammar
+`(形式) 語言學向來的主流假說`
+- 一個語言的 grammar 由一系列的規則+詞庫組成，這些規則可以用來描述語言的結構。
+
+- Phrase structure rule and Recursion
 
 # Grammatical Features of Languages
 `grammatical features` $\approxeq$ `grammatical categories`

@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "week3.html",
+    "href": "week3.html",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "",
+    "text": "上次的題目討論\n語音學入門"
+  },
+  {
+    "objectID": "week3.html#聲音三要素",
+    "href": "week3.html#聲音三要素",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "聲音三要素",
+    "text": "聲音三要素\nSound is a physical phenomenon that can be described in terms of three properties 物理上來說：\n\n音量 (大小) loudness 《》 振幅大小\n音調 (高低) pitch 《》振動頻率高低\n音色 (差異) quality 《》許多正弦波疊合而成的複雜波形"
+  },
+  {
+    "objectID": "week3.html#聲音無所不在",
+    "href": "week3.html#聲音無所不在",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "聲音無所不在",
+    "text": "聲音無所不在\n\n(Human) sounds of the world\nSound and Geography"
+  },
+  {
+    "objectID": "week3.html#語音聲音是什麼",
+    "href": "week3.html#語音聲音是什麼",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "語音（聲音）是什麼？",
+    "text": "語音（聲音）是什麼？\nSpeech Sounds\n\n聲音是一種(縱)波：聲帶震動發出聲響，發音位置修飾在口／鼻腔產生共鳴，以空氣為介質，以波的形式傳遞，在耳中的鼓膜震動，訊號傳入大腦解析。"
+  },
+  {
+    "objectID": "week3.html#speech-sounds-phonemes",
+    "href": "week3.html#speech-sounds-phonemes",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Speech Sounds: Phonemes",
+    "text": "Speech Sounds: Phonemes\n\n音位（英語：Phoneme），又譯音素，是人類語言中能夠區別意義的最小聲音單位。傳統上用 Minimal pair (最小音對) 方法來辨認。\n人類語言中平均的音素數目（大約）是 30（ranging from 141 phonemes in !Xū to 11 phonemes in Pirahā）"
+  },
+  {
+    "objectID": "week3.html#speech-sounds-some-interesting-facts",
+    "href": "week3.html#speech-sounds-some-interesting-facts",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Speech Sounds: Some (Interesting) Facts",
+    "text": "Speech Sounds: Some (Interesting) Facts\n\nVowelless word/sentence in Bella coola (Nuxalk): 聽看看"
+  },
+  {
+    "objectID": "week3.html#speech-sounds-applications",
+    "href": "week3.html#speech-sounds-applications",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Speech Sounds: Applications",
+    "text": "Speech Sounds: Applications\n\n語音辨識 Speech-to-Text\n語音合成 Text-to-Speech\n多模態 AI 的時代，Speech 可以跟 XXX (melody, emoji, …) 各種互動轉換"
+  },
+  {
+    "objectID": "week3.html#linguistic-approach",
+    "href": "week3.html#linguistic-approach",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Linguistic approach",
+    "text": "Linguistic approach\n\n語音學 (Phonetics)\n\n發音學 (Articulatory Phonetics)\n語音聲學 (Acoustic Phonetics)\n語音聽覺學 (Auditory Phonetics)\n\n音韻學 (Phonology)\n\n\n\n\n\n\n\n聲與音的詞彙語意差異，已經透漏了古人的語音學觀念。"
+  },
+  {
+    "objectID": "week3.html#sound-segments",
+    "href": "week3.html#sound-segments",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Sound Segments",
+    "text": "Sound Segments\n\nKnowing a language includes knowing the sounds of that language\nPhonetics is the study of speech sounds\nWe are able to segment a continuous stream of speech into distinct parts and recognize the parts in other words"
+  },
+  {
+    "objectID": "week3.html#identity-of-speech-sounds",
+    "href": "week3.html#identity-of-speech-sounds",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Identity of Speech Sounds",
+    "text": "Identity of Speech Sounds\n\nOur linguistic knowledge allows us to ignore nonlinguistic differences in speech (such as individual pitch levels, rates of speed, coughs)\nWe are capable of making sounds that are not speech sounds in English (but are in other languages)\n\nThe click tsk that signals disapproval in English is a speech sound in languages such as Zulu."
+  },
+  {
+    "objectID": "week3.html#identity-of-speech-sounds-1",
+    "href": "week3.html#identity-of-speech-sounds-1",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Identity of Speech Sounds",
+    "text": "Identity of Speech Sounds\nThe science of phonetics aims to describe all the sounds of all the world’s languages\n\nAcoustic phonetics: focuses on the physical properties of the sounds of language\nAuditory phonetics: focuses on how listeners perceive the sounds of language\nArticulatory phonetics: focuses on how the vocal tract produces the sounds of language"
+  },
+  {
+    "objectID": "week3.html#圖示",
+    "href": "week3.html#圖示",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "圖示",
+    "text": "圖示"
+  },
+  {
+    "objectID": "week3.html#representing-sounds",
+    "href": "week3.html#representing-sounds",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Representing Sounds",
+    "text": "Representing Sounds\n怎麼（科學的）描述/表示/轉寫語音？\n\nSpelling, or orthography, does not consistently represent the sounds of language. Why?"
+  },
+  {
+    "objectID": "week3.html#some-problems",
+    "href": "week3.html#some-problems",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Some Problems",
+    "text": "Some Problems"
+  },
+  {
+    "objectID": "week3.html#some-problems-1",
+    "href": "week3.html#some-problems-1",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Some Problems",
+    "text": "Some Problems"
+  },
+  {
+    "objectID": "week3.html#the-phonetic-alphabet-ipa",
+    "href": "week3.html#the-phonetic-alphabet-ipa",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "The Phonetic Alphabet (IPA)",
+    "text": "The Phonetic Alphabet (IPA)\nIn 1888 the International Phonetic Alphabet (IPA) was invented in order to have a system in which there was a one-to-one correspondence between each sound in language and each phonetic symbol\n\nSomeone who knows the IPA knows (basically) how to pronounce any word in any language"
+  },
+  {
+    "objectID": "week3.html#practice-with-ipa-值得的投資",
+    "href": "week3.html#practice-with-ipa-值得的投資",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "Practice with IPA (值得的投資)",
+    "text": "Practice with IPA (值得的投資)\nIPA Chart \n\nMimic method 用英文來想像發音的位置\n照表發音 是推薦的學習法，但是要先學會表格的意義\n如果妳對發音生理也有興趣，可以參考 Articulatory information with ULTRASOUND-enhanced videos and animations"
+  },
+  {
+    "objectID": "week3.html#in-class-exercise-1-german",
+    "href": "week3.html#in-class-exercise-1-german",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "In-class Exercise [1]: German",
+    "text": "In-class Exercise [1]: German\nGerman IPA -enhanced Pronunciation 101"
+  },
+  {
+    "objectID": "week3.html#in-class-exercise-2-korean",
+    "href": "week3.html#in-class-exercise-2-korean",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "In-class Exercise [2]: Korean",
+    "text": "In-class Exercise [2]: Korean\n從微量數據先來試著推敲韓語的發音"
+  },
+  {
+    "objectID": "week3.html#語言系譜資料",
+    "href": "week3.html#語言系譜資料",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "語言系譜資料",
+    "text": "語言系譜資料\n\n世界語言結構地圖集 (WALS) 涵蓋 2662 種語言、192 種結構特徵\nlingtypology (Python 與 R 皆有套件)\n\n\n\nCode\nimport lingtypology\nfrom pycldf import Dataset\nimport pandas as pd\npd.options.plotting.backend = \"plotly\""
+  },
+  {
+    "objectID": "week3.html#子音數目分佈",
+    "href": "week3.html#子音數目分佈",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "子音數目分佈",
+    "text": "子音數目分佈\n\n\nCode\ndata = pd.read_csv(\n    'https://raw.githubusercontent.com/ropensci/lingtypology/master/database_creation/ejective_and_n_consonants.csv',\n    delimiter=',',\n    header=0,\n)\nm = lingtypology.LingMap(data.language)\nm.legend_title = 'Consonants'\nm.legend_position = 'bottomleft'\nm.add_tooltips(data.consonants)\n#If numeric is True, it will look like this\nm.add_features(data.consonants, numeric=True)\nm.create_map()\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+  },
+  {
+    "objectID": "week3.html#母音數目分佈",
+    "href": "week3.html#母音數目分佈",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "母音數目分佈",
+    "text": "母音數目分佈\n\n\nCode\nm.legend_title = 'Vowels'\nm.legend_position = 'bottomright'\nm.add_tooltips(data.vowels)\n#If numeric is True, it will look like this\nm.add_features(data.vowels, numeric=True)\nm.create_map()\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+  },
+  {
+    "objectID": "week3.html#section",
+    "href": "week3.html#section",
+    "title": "Week 3 語音的世界 (1)",
+    "section": "",
+    "text": "題目"
+  }
+]
