@@ -13,7 +13,7 @@ project:
       - week4.qmd
       - week5.qmd
       - week6.qmd      
-
+      - week10.qmd
 website:
   title: "語言的邏輯分析"
   site-url: https://lopentu.github.io/lal/
@@ -41,6 +41,7 @@ website:
       - week4.qmd
       - week5.qmd
       - week6.qmd
+      - week10.qmd
       
   page-navigation: true
 
