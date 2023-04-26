@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.306">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="謝舒凱 台大語言所">
+<meta name="dcterms.date" content="2023-04-26">
+
+<title>語言的邏輯分析 - Week 5 構詞</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week6.html" rel="next">
+<link href="./week4.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="q-theme.scss">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">語言的邏輯分析</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">首頁</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">關於</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lopentu" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week5.html">Week 5 構詞</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LING5503 語言的邏輯分析</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week1 Orientation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2 語言類型與文化邏輯</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./session1-get-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab1: 暖身練習</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3 語音的世界 (1)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4 語音的世界 (2)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 5 構詞</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6 構詞句法</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10 語意與文化</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#本週主題" id="toc-本週主題" class="nav-link active" data-scroll-target="#本週主題">本週主題</a>
+  <ul class="collapse">
+  <li><a href="#語言結構" id="toc-語言結構" class="nav-link" data-scroll-target="#語言結構">語言結構</a></li>
+  <li><a href="#注意界面問題" id="toc-注意界面問題" class="nav-link" data-scroll-target="#注意界面問題">注意【界面】問題</a></li>
+  </ul></li>
+  <li><a href="#構詞學" id="toc-構詞學" class="nav-link" data-scroll-target="#構詞學">構詞學</a>
+  <ul class="collapse">
+  <li><a href="#word" id="toc-word" class="nav-link" data-scroll-target="#word">Word</a></li>
+  <li><a href="#岔開做一個實驗" id="toc-岔開做一個實驗" class="nav-link" data-scroll-target="#岔開做一個實驗">岔開做一個實驗</a></li>
+  <li><a href="#morpheme" id="toc-morpheme" class="nav-link" data-scroll-target="#morpheme">Morpheme</a></li>
+  <li><a href="#morphemes-bound-and-free" id="toc-morphemes-bound-and-free" class="nav-link" data-scroll-target="#morphemes-bound-and-free">Morphemes: Bound and Free</a></li>
+  <li><a href="#english-morpheme" id="toc-english-morpheme" class="nav-link" data-scroll-target="#english-morpheme">English morpheme</a></li>
+  <li><a href="#infix" id="toc-infix" class="nav-link" data-scroll-target="#infix">Infix</a></li>
+  <li><a href="#exercise-expletive-infixation" id="toc-exercise-expletive-infixation" class="nav-link" data-scroll-target="#exercise-expletive-infixation">Exercise: Expletive Infixation</a></li>
+  <li><a href="#morphemes-identification" id="toc-morphemes-identification" class="nav-link" data-scroll-target="#morphemes-identification">Morphemes identification</a></li>
+  <li><a href="#練習" id="toc-練習" class="nav-link" data-scroll-target="#練習">練習</a></li>
+  <li><a href="#構詞與詞義的界面" id="toc-構詞與詞義的界面" class="nav-link" data-scroll-target="#構詞與詞義的界面">構詞與詞義的界面</a></li>
+  <li><a href="#不可解的還是可解的" id="toc-不可解的還是可解的" class="nav-link" data-scroll-target="#不可解的還是可解的">不可解的還是可解的</a></li>
+  <li><a href="#歧義練習" id="toc-歧義練習" class="nav-link" data-scroll-target="#歧義練習">歧義練習</a></li>
+  <li><a href="#中文詞彙網路" id="toc-中文詞彙網路" class="nav-link" data-scroll-target="#中文詞彙網路">中文詞彙網路</a></li>
+  <li><a href="#basic-categories" id="toc-basic-categories" class="nav-link" data-scroll-target="#basic-categories">Basic categories</a></li>
+  </ul></li>
+  <li><a href="#語奧必考知識" id="toc-語奧必考知識" class="nav-link" data-scroll-target="#語奧必考知識">語奧必考知識</a>
+  <ul class="collapse">
+  <li><a href="#morphological-processes" id="toc-morphological-processes" class="nav-link" data-scroll-target="#morphological-processes">Morphological Processes</a></li>
+  <li><a href="#morphological-typology" id="toc-morphological-typology" class="nav-link" data-scroll-target="#morphological-typology">Morphological Typology</a></li>
+  <li><a href="#synthetic-language-再分三類" id="toc-synthetic-language-再分三類" class="nav-link" data-scroll-target="#synthetic-language-再分三類">Synthetic language 再分三類</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#練習這是什麼類型的語言" id="toc-練習這是什麼類型的語言" class="nav-link" data-scroll-target="#練習這是什麼類型的語言">練習：這是什麼類型的語言？</a></li>
+  <li><a href="#challenging-yet-unresolved-morphological-issue-wordwordhood" id="toc-challenging-yet-unresolved-morphological-issue-wordwordhood" class="nav-link" data-scroll-target="#challenging-yet-unresolved-morphological-issue-wordwordhood">Challenging yet unresolved morphological issue: Word/Wordhood</a></li>
+  <li><a href="#what-about-chinese" id="toc-what-about-chinese" class="nav-link" data-scroll-target="#what-about-chinese">What about Chinese?</a></li>
+  <li><a href="#以下句子中有幾個字" id="toc-以下句子中有幾個字" class="nav-link" data-scroll-target="#以下句子中有幾個字">以下句子中有幾個字</a></li>
+  <li><a href="#繼續玩一下" id="toc-繼續玩一下" class="nav-link" data-scroll-target="#繼續玩一下">繼續玩一下</a></li>
+  <li><a href="#word-segmentation" id="toc-word-segmentation" class="nav-link" data-scroll-target="#word-segmentation">Word segmentation</a></li>
+  <li><a href="#applying-morphology-emoticon" id="toc-applying-morphology-emoticon" class="nav-link" data-scroll-target="#applying-morphology-emoticon">Applying Morphology: Emoticon</a></li>
+  <li><a href="#顏文字" id="toc-顏文字" class="nav-link" data-scroll-target="#顏文字">顏文字</a></li>
+  <li><a href="#迷因" id="toc-迷因" class="nav-link" data-scroll-target="#迷因">迷因</a></li>
+  <li><a href="#applying-morphology-neologism" id="toc-applying-morphology-neologism" class="nav-link" data-scroll-target="#applying-morphology-neologism">Applying Morphology: Neologism</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lopentu/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week5.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 5 構詞</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>謝舒凱 台大語言所 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023-04-26</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="本週主題" class="level1">
+<h1>本週主題</h1>
+<ul>
+<li>Morphology</li>
+</ul>
+<section id="語言結構" class="level2">
+<h2 class="anchored" data-anchor-id="語言結構">語言結構</h2>
+<ul>
+<li><p>構詞學 (<em>Morphology</em>) the analysis of internal structure of words</p></li>
+<li><p>句法 (<em>Syntax</em>) the analysis of the internal structure of sentences/utterances</p></li>
+</ul>
+</section>
+<section id="注意界面問題" class="level2">
+<h2 class="anchored" data-anchor-id="注意界面問題">注意【界面】問題</h2>
+<p>題型設計上（語言使用上也是），常常放在一起討論。</p>
+<ul>
+<li>構詞句法 (<em>Morphosyntax</em>) the analysis of the internal structure of utterances, both above the word level and below it.</li>
+</ul>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+例子：<span class="blue-text">English Numeral Modification</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>one tree, two trees, three trees</code>, etc.</p>
+<p>同時涉及句法 (名詞於數量詞的次序) 和 構詞 (名詞的單複數變化)。</p>
+</div>
+</div>
+</section>
+</section>
+<section id="構詞學" class="level1">
+<h1>構詞學</h1>
+<p><strong>Morphology</strong></p>
+<ul>
+<li>The study of word-making, morphological process and morphological types of world Languages.</li>
+<li>Rules underlying our knowledge of structured of words.</li>
+</ul>
+<section id="word" class="level2">
+<h2 class="anchored" data-anchor-id="word">Word</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/word.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">knowing a word</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="岔開做一個實驗" class="level2">
+<h2 class="anchored" data-anchor-id="岔開做一個實驗">岔開做一個實驗</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Content words (open class) vs function words (closed class).
+<ul class="incremental">
+<li>Any psychological or neurological evidence? (count the number of F’s in the following text)</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>有幾個 F 字母？</strong></p>
+<p><span class="blue-text">FINISHED FILES ARE THE RESULT OF YEARS OF SCIENTIFIC STUDY COMBINED WITH THE EXPERIENCE OF YEARS</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="morpheme" class="level2">
+<h2 class="anchored" data-anchor-id="morpheme">Morpheme</h2>
+<ul>
+<li>The minimal units of Meaning (a linguistic hypothesis)
+<ul>
+<li>one morpheme: boy</li>
+<li>two morphemes: boy-ish</li>
+<li>three morphemes: boy-ish-ness</li>
+<li>four morphemes: gentle-man-li-ness</li>
+<li>five morphemes: un-gentle-man-li-ness</li>
+</ul></li>
+<li>not to confuse morphemes with syllables
+<ul>
+<li><em>Mississippi</em> has more than one syllable but is only a single morpheme <!-- - 鄒語的 amo「爸爸」 --></li>
+</ul></li>
+<li>Every word in every language is composed of one or more morphemes (bold hypothesis of discreteness!)</li>
+</ul>
+</section>
+<section id="morphemes-bound-and-free" class="level2">
+<h2 class="anchored" data-anchor-id="morphemes-bound-and-free">Morphemes: Bound and Free</h2>
+<ul>
+<li>can be used alone (i.e., as a word) or not.</li>
+<li>Affix (prefix, suffix, infix, circumfix,…)</li>
+<li>Morphologically complex words consist of a root and one or more affixes.
+<ul>
+<li>A root is a lexical content morphemes that cannot be analyzed into small parts.</li>
+<li>When a root morpheme is combined with an affix, it forms a stem, which may or may not be a word.</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/semitic.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">semitic</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="english-morpheme" class="level2">
+<h2 class="anchored" data-anchor-id="english-morpheme">English morpheme</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/morpheme.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">English morphology</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="infix" class="level2">
+<h2 class="anchored" data-anchor-id="infix">Infix</h2>
+<ul>
+<li><p>The Inuktitut language of Western Canada, a member of the Eskimo-Aleut language family, has an infix, <span class="red">-pallia-</span>, which must be inserted into a verb root, resulting in a distinct form of the verb.</p>
+<ul>
+<li><code>nungup + pallia + jut  = nungupalliajut</code> (“They are gradually disappearing”)</li>
+<li><code>ilinniaq + pallia + jugut = ilinniapalliajugut</code> (“We are gradually learning”)</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise-expletive-infixation" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-expletive-infixation">Exercise: Expletive Infixation</h2>
+<ul>
+<li><p>The most common infix in America is the word fuckin’ and all the euphemisms for it, such as friggin, freakin, flippin, and fuggin, as in in-fuggin-credible, un-fuckin-believable. In Britain, a common infix is bloody, an obscene term in British English, and its euphemisms, such as bloomin’. (as in the movie and stage musical My Fair Lady, the word abso + bloomin + lutely)</p></li>
+<li><p>Native speakers (with some dialectal variations) have intuitions about where to insert the (expletive) infix.</p></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>absolutely ?</p>
+<p>basketball ?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="morphemes-identification" class="level2">
+<h2 class="anchored" data-anchor-id="morphemes-identification">Morphemes identification</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/mor_id.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Flowchart for identifying morphemes</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="練習" class="level2">
+<h2 class="anchored" data-anchor-id="練習">練習</h2>
+</section>
+<section id="構詞與詞義的界面" class="level2">
+<h2 class="anchored" data-anchor-id="構詞與詞義的界面">構詞與詞義的界面</h2>
+<blockquote class="blockquote">
+<p>why is ‘unlockable’ ambiguous?</p>
+</blockquote>
+</section>
+<section id="不可解的還是可解的" class="level2">
+<h2 class="anchored" data-anchor-id="不可解的還是可解的">不可解的還是可解的</h2>
+<p><img src="pics/unlockable.png" class="img-fluid"></p>
+</section>
+<section id="歧義練習" class="level2">
+<h2 class="anchored" data-anchor-id="歧義練習">歧義練習</h2>
+<ul>
+<li>歧義 (ambiguity) is a property of language that arises when a word or phrase can be interpreted in more than one way.</li>
+<li>types of ambiguity:
+<ul>
+<li>lexical ambiguity</li>
+<li>syntactic ambiguity</li>
+</ul></li>
+</ul>
+</section>
+<section id="中文詞彙網路" class="level2">
+<h2 class="anchored" data-anchor-id="中文詞彙網路">中文詞彙網路</h2>
+</section>
+<section id="basic-categories" class="level2">
+<h2 class="anchored" data-anchor-id="basic-categories">Basic categories</h2>
+<p>(NOUN): Number, Gender, Case, (VERB): Tempus, Modus, Genus verbi,..</p>
+</section>
+</section>
+<section id="語奧必考知識" class="level1">
+<h1>語奧必考知識</h1>
+<p><a href="https://www.wikiwand.com/en/Grammatical_category">Grammatical Category</a> 或 <a href="https://www.wikiwand.com/en/Grammatical_category">Grammatical features</a></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>推薦語奧推廣影片</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/sw2qxRPzKWU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+</div>
+</div>
+<section id="morphological-processes" class="level2">
+<h2 class="anchored" data-anchor-id="morphological-processes">Morphological Processes</h2>
+<ul>
+<li>The (main) process of forming words
+<ul>
+<li>Affixation</li>
+<li>Compounding</li>
+<li>Reduplication</li>
+<li>Alternation</li>
+<li>Suppletion</li>
+<li>….</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Sign languages make use of affixation as well.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="morphological-typology" class="level2">
+<h2 class="anchored" data-anchor-id="morphological-typology">Morphological Typology</h2>
+<p>用構詞特徵來把人類語言分成兩大類</p>
+<ul>
+<li><strong>Analytic language</strong>: made up of sequences of free morphemes. Each word consists of a single morpheme, used by itself with meaning and function intact.
+<ul>
+<li>Purely analytic languages, also called isolating languages, do not use affixes to compose words.</li>
+<li>E.g., Chinese has a highly analytic structure.</li>
+</ul></li>
+</ul>
+<!-- language in which syntactic relations are expressed primarily by word order rather than by in ectional morphemes attached to words. (e.g, ?) -->
+<ul>
+<li><p><strong>Synthetic language</strong>: made up of sequences of bound morphemes.</p>
+<img src="pics/synthetic.png" class="img-fluid" style="width:80.0%" alt="Hungarian"></li>
+</ul>
+</section>
+<section id="synthetic-language-再分三類" class="level2">
+<h2 class="anchored" data-anchor-id="synthetic-language-再分三類">Synthetic language 再分三類</h2>
+<ul>
+<li><strong>Agglutinative language</strong>: have several morphemes that attach to a root morpheme, and each morpheme has only one meaning that is clearly distinct. (e.g., Turkish, Swahili, Japanese).</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/swahili.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">swahili</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<ul>
+<li><strong>Fusional language</strong>
+<ul>
+<li>words are formed by adding bound morphemes to stems, just as in agglutinating languages, but in fusional languages the affixes may not be easy to separate from the stem.</li>
+<li>in fusional languages a single affix more frequently conveys several meanings simultaneously. (e.g., the following sentence in Russian, the suffix [-l] means singular, masculine, and past tense, simultaneously.)</li>
+</ul>
+<code>[[ʧital]</code> &nbsp;`he was reading’</li>
+</ul>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
+<ul>
+<li><p><strong>Polysynthetic language</strong></p>
+<ul>
+<li><p>highly complex words may be formed by combining several stems and affixes; this is usually a matter of making nouns (subjects, objects, etc.) into parts of the verb forms.</p></li>
+<li><p>e.g., Sora, a language spoken in India, allows such incorporation of objects (subjects, instruments, etc.) into verbs</p></li>
+</ul>
+<img src="pics/sora.png" class="img-fluid" style="width:80.0%" alt="sora"></li>
+</ul>
+</section>
+<section id="練習這是什麼類型的語言" class="level2">
+<h2 class="anchored" data-anchor-id="練習這是什麼類型的語言">練習：這是什麼類型的語言？</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/kaipiallrulliniuk.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Yup’ik</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="challenging-yet-unresolved-morphological-issue-wordwordhood" class="level2">
+<h2 class="anchored" data-anchor-id="challenging-yet-unresolved-morphological-issue-wordwordhood">Challenging yet unresolved morphological issue: Word/Wordhood</h2>
+<ul>
+<li>What are words / lexicon (a mental dictionary you store your ‘words’) like?
+<ul>
+<li>the lack of pauses between ‘words’ in speech</li>
+<li>the lack of boundary between ‘words’ in (some) writing systems</li>
+<li>note that no spaces when we speak</li>
+</ul></li>
+</ul>
+<p><code>Iwonderifyoucanreadthiswithoutspacesaseasilyasyoucanwhentherearespacesbetweenthewords.</code></p>
+</section>
+<section id="what-about-chinese" class="level2">
+<h2 class="anchored" data-anchor-id="what-about-chinese">What about Chinese?</h2>
+<ul>
+<li>less than 80% agreement in word counts experiment</li>
+<li>Character = morpheme = syllable ???</li>
+</ul>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The indeterminacy of word boundaries shows that “word” is far from a simple concept, and possibly not possible to define in a consistent way cross-linguistically. (Haspelmath, 2011)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="以下句子中有幾個字" class="level2">
+<h2 class="anchored" data-anchor-id="以下句子中有幾個字">以下句子中有幾個字</h2>
+<p>(今天聯合報即時新聞)</p>
+<p><span class="blue-text">柯文哲說，他卸任這一陣子，就是當老百姓，每天坐公車、騎YouBike，不過柯也忍不住抱怨，在台北市騎 YouBike真危險，「騎人行道怕撞到人，騎到慢車道怕被車撞」，</span></p>
+</section>
+<section id="繼續玩一下" class="level2">
+<h2 class="anchored" data-anchor-id="繼續玩一下">繼續玩一下</h2>
+<p>(隨機在 Dcard 上選了這篇) <img src="pics/dcard.png" class="img-fluid"></p>
+</section>
+<section id="word-segmentation" class="level2">
+<h2 class="anchored" data-anchor-id="word-segmentation">Word segmentation</h2>
+<p>對「正規」文本看似沒事，但問題很大。（不是新詞表、停用詞表可以解決的）</p>
+<ul>
+<li>ptt、社會媒體</li>
+<li>口語對話</li>
+<li>語言障礙</li>
+</ul>
+</section>
+<section id="applying-morphology-emoticon" class="level2">
+<h2 class="anchored" data-anchor-id="applying-morphology-emoticon">Applying Morphology: Emoticon</h2>
+<pre><code>       http://emojitracker.com/</code></pre>
+</section>
+<section id="顏文字" class="level2">
+<h2 class="anchored" data-anchor-id="顏文字">顏文字</h2>
+<p>◢▆▅▄▃崩╰(〒皿〒)╯溃▃▄▅▇◣</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/emoji.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">emoji</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="迷因" class="level2">
+<h2 class="anchored" data-anchor-id="迷因">迷因</h2>
+<p><img src="pics/meme.gif" class="img-fluid"></p>
+</section>
+<section id="applying-morphology-neologism" class="level2">
+<h2 class="anchored" data-anchor-id="applying-morphology-neologism">Applying Morphology: Neologism</h2>
+<ul>
+<li><p>what is the underlying word formation process?</p></li>
+<li><p>productivity? chance of survival?</p></li>
+</ul>
+<p><img src="pics/neologism.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 4 語音的世界 (2)</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./week6.html" class="pagination-link">
+        <span class="nav-page-text">Week 6 構詞句法</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
