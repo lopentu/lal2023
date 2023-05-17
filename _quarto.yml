@@ -42,6 +42,8 @@ website:
       - week5.qmd
       - week6.qmd
       - week10.qmd
+      - week12.qmd
+      - week13.qmd
       
   page-navigation: true
 
