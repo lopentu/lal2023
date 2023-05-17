@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="謝舒凱 台大語言所">
+<meta name="dcterms.date" content="2023-05-17">
 
-<title>Week 13 文字系統</title>
+<title>語言的邏輯分析 - Week 13 文字系統</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,25 +31,222 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="week13_files/libs/clipboard/clipboard.min.js"></script>
-<script src="week13_files/libs/quarto-html/quarto.js"></script>
-<script src="week13_files/libs/quarto-html/popper.min.js"></script>
-<script src="week13_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="week13_files/libs/quarto-html/anchor.min.js"></script>
-<link href="week13_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="week13_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="week13_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="week13_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="week13_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week12.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="q-theme.scss">
 </head>
 
-<body>
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week13.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">語言的邏輯分析</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">首頁</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">關於</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lopentu" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week13.html">Week 13 文字系統</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LING5503 語言的邏輯分析</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week1 Orientation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2 語言類型與文化邏輯</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./session1-get-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab1: 暖身練習</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3 語音的世界 (1)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4 語音的世界 (2)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5 構詞</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6 構詞句法</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10 語意與文化</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12 語意與文化</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week13.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 13 文字系統</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#文字系統-writing-systems" id="toc-文字系統-writing-systems" class="nav-link active" data-scroll-target="#文字系統-writing-systems">文字系統 | Writing Systems</a>
+  <ul class="collapse">
+  <li><a href="#結繩記事" id="toc-結繩記事" class="nav-link" data-scroll-target="#結繩記事">結繩記事</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#representing-languages" id="toc-representing-languages" class="nav-link" data-scroll-target="#representing-languages">Representing Languages</a></li>
+  <li><a href="#文字系統的成分" id="toc-文字系統的成分" class="nav-link" data-scroll-target="#文字系統的成分">文字系統的成分</a></li>
+  <li><a href="#自由與黏着" id="toc-自由與黏着" class="nav-link" data-scroll-target="#自由與黏着">自由與黏着</a></li>
+  <li><a href="#文字簡史" id="toc-文字簡史" class="nav-link" data-scroll-target="#文字簡史">文字簡史</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  </ul></li>
+  <li><a href="#文字系統分類與分布" id="toc-文字系統分類與分布" class="nav-link" data-scroll-target="#文字系統分類與分布">文字系統：分類與分布</a>
+  <ul class="collapse">
+  <li><a href="#從表達的功能來看" id="toc-從表達的功能來看" class="nav-link" data-scroll-target="#從表達的功能來看">從表達的功能來看</a></li>
+  <li><a href="#logograms-語素文字" id="toc-logograms-語素文字" class="nav-link" data-scroll-target="#logograms-語素文字">Logograms 語素文字</a></li>
+  <li><a href="#the-rebus-principle-假借" id="toc-the-rebus-principle-假借" class="nav-link" data-scroll-target="#the-rebus-principle-假借">The Rebus Principle (「假借」)</a></li>
+  <li><a href="#漢字系統" id="toc-漢字系統" class="nav-link" data-scroll-target="#漢字系統">漢字系統</a></li>
+  <li><a href="#練習" id="toc-練習" class="nav-link" data-scroll-target="#練習">練習</a></li>
+  <li><a href="#logograms-and-phonograms" id="toc-logograms-and-phonograms" class="nav-link" data-scroll-target="#logograms-and-phonograms">Logograms and Phonograms</a></li>
+  <li><a href="#音節文字-syllabic-system-和-短音節文字-moraic-system" id="toc-音節文字-syllabic-system-和-短音節文字-moraic-system" class="nav-link" data-scroll-target="#音節文字-syllabic-system-和-短音節文字-moraic-system">音節文字 Syllabic system 和 短音節文字 (moraic system)</a></li>
+  <li><a href="#注音符號" id="toc-注音符號" class="nav-link" data-scroll-target="#注音符號">注音符號</a></li>
+  </ul></li>
+  <li><a href="#phonographic-phonemic-alphabetic-c-v" id="toc-phonographic-phonemic-alphabetic-c-v" class="nav-link" data-scroll-target="#phonographic-phonemic-alphabetic-c-v">Phonographic &gt; phonemic &gt; alphabetic (C, V)</a>
+  <ul class="collapse">
+  <li><a href="#alphabetic" id="toc-alphabetic" class="nav-link" data-scroll-target="#alphabetic">Alphabetic</a></li>
+  <li><a href="#alphabetic-1" id="toc-alphabetic-1" class="nav-link" data-scroll-target="#alphabetic-1">Alphabetic</a></li>
+  <li><a href="#alphabetic-2" id="toc-alphabetic-2" class="nav-link" data-scroll-target="#alphabetic-2">Alphabetic</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#特殊的-abuigida-canadian-aboriginal-syllabics" id="toc-特殊的-abuigida-canadian-aboriginal-syllabics" class="nav-link" data-scroll-target="#特殊的-abuigida-canadian-aboriginal-syllabics">特殊的 Abuigida: Canadian Aboriginal Syllabics</a></li>
+  <li><a href="#以下文字如何分類" id="toc-以下文字如何分類" class="nav-link" data-scroll-target="#以下文字如何分類">以下文字如何分類？</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lopentu/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week13.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -61,6 +265,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023-05-17</p>
+    </div>
+  </div>
   
     
   </div>
@@ -128,7 +338,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><p><strong>graphemes</strong> vs <strong>allograph</strong> 的問題；異體字。</p></li>
 </ul>
-<div class="callout callout-style-default callout-warning callout-titled" title="ligature">
+<div class="callout callout-style-simple callout-warning callout-titled" title="ligature">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -206,7 +416,7 @@ ligature
 <li><p>語素文字或音節文字？</p></li>
 <li><p>漢語的大量同音現象導致了漢字的「同音字」現象。(所以纔有<code>石室詩士施氏嗜獅</code> 這樣的文字遊戲。)</p></li>
 </ul>
-<div class="callout callout-style-default callout-warning callout-titled" title="同音字">
+<div class="callout callout-style-simple callout-warning callout-titled" title="同音字">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -266,17 +476,14 @@ ligature
 <li><p>A true alphabet is a writing system with symbols that mean all sorts of individual sounds, both consonants and vowels.</p></li>
 <li><p>e.g., Roman alphabet, which is used in large parts of the world, the Greek alphabet, which is used in Greece and Cyprus, and the Cyrillic alphabet, which is used in many countries in Eastern Europe and Central Asia, where Russia had a major influence during the days of the Soviet Union.</p></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>音素文字系統的結構符號（子音和母音）通常被稱爲<strong>字母 (letter)</strong>，而這些字母排列在一起就形成了<strong>字母表 (alphabet)</strong>。</p>
+</div>
 </div>
 </div>
 </section>
@@ -309,7 +516,7 @@ Tip
 <h2 class="anchored" data-anchor-id="特殊的-abuigida-canadian-aboriginal-syllabics">特殊的 Abuigida: Canadian Aboriginal Syllabics</h2>
 <p>(子音會旋轉！)</p>
 <p><img src="../pics/abuigida1.png" class="img-fluid"> <img src="../pics/abuigida2.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-tip callout-titled" title="只要涉及分類，都是權宜性 ">
+<div class="callout callout-style-simple callout-tip callout-titled" title="只要涉及分類，都是權宜性 ">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -325,7 +532,7 @@ Tip
 </section>
 <section id="以下文字如何分類" class="level2">
 <h2 class="anchored" data-anchor-id="以下文字如何分類">以下文字如何分類？</h2>
-<div class="callout callout-style-default callout-tip callout-titled" title="練習">
+<div class="callout callout-style-simple callout-tip callout-titled" title="練習">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -347,11 +554,12 @@ Tip
 <figcaption class="figure-caption">Complexities of Writing Systems</figcaption>
 </figure>
 </div>
+
+
 </section>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -585,6 +793,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week12.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 12 語意與文化</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
