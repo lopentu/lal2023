@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "week13.html",
+    "href": "week13.html",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "文字發明前，人所使用的一種記事方法。即在一條繩子上打結。上古時期的中原地區及秘魯印地安人皆有此習慣\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n【昔者倉頡作書而天雨粟，鬼夜哭。】《淮南子·本經訓》\n\n\n\n\n雙瞳四目\n\n\n\n\n\n\n探問紀錄與表達語言的文字符號系統\n\n‘spoken language’ vs ‘written language’ (note: writing is a fairly recent invention) 語言「也許」始於 300 -400 萬年前的直立人；文字則「相對確定」約在 1 萬年前萌芽於新石器時代的刻符與岩畫。\n文字嘗試再現語言，但不是語言 Only 25% of the world’s languages have written forms.\n\n人類文字系統\n\n\n\n\n\n文字系統需要至少包含甚麼?\n\n\nA script: a set of graphic symbols used to represent the units of a writing system.\nOrthography: a set of rules and conventions for using a writing system to represent a language in a readable and understandable manner.\n\n\n\n\n\nfree grapheme and bound grapheme (e.g. 變音符號 diacritic marks 只能和其他字素結合出現。法文的 `)\n\n梵文中的變音符號 （黏着字素） 出現在輔音的位置各不同（上、下、前、後） क &lt;k&gt;: को &lt;ke&gt; का &lt;kā&gt; कि &lt;ki&gt; की &lt;kī&gt; कु &lt;ku&gt; कू &lt;kū&gt;\n\ngraphemes vs allograph 的問題；異體字。\n\n\n\n\n\n\n\nligature\n\n\n\n連字（ligature） 是由兩個或多個字素合在一起的符號單位，並且在書寫時以一個單一的字形出現。例如，丹麥語的字母æ 是字母 a 和 e 的連字；英文ﬁ是字母f和i的連字。(但這僅僅是出於印刷審美考慮，或是書寫效率，在書寫時減少抬筆的次數。)\n\n\n\n\n\n\n原始文字時期\n\n文字源於圖畫 (picture writing)\n\n古典文字時期\n\n3200 BC 西亞兩河流域的蘇美人創造「楔形文字」。\n北非尼羅河流域的古埃及人創造「聖書字」(hieroglyphics)，使用了三千多年。\n1300 BC 中國黃河流域殷商帝國創立「甲骨文」\n其他：2000 BC 中美洲的「馬雅」、中國「彞文」\n\n字母文字時期\n\n1500 開始因應貿易需求的字母文字\nlinear-B / Byblos /\n腓尼基、希臘、拉丁字母\n\n\n\n\n\n\n\n一個名爲「鼈隨妻」(turtle-following-his-wife) 的人給他的兒子（小子’little man’）捎信要他回家，並隨信附上 53 元作爲盤纏。"
+  },
+  {
+    "objectID": "week13.html#結繩記事",
+    "href": "week13.html#結繩記事",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "文字發明前，人所使用的一種記事方法。即在一條繩子上打結。上古時期的中原地區及秘魯印地安人皆有此習慣"
+  },
+  {
+    "objectID": "week13.html#section",
+    "href": "week13.html#section",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "【昔者倉頡作書而天雨粟，鬼夜哭。】《淮南子·本經訓》\n\n\n\n\n雙瞳四目"
+  },
+  {
+    "objectID": "week13.html#representing-languages",
+    "href": "week13.html#representing-languages",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "探問紀錄與表達語言的文字符號系統\n\n‘spoken language’ vs ‘written language’ (note: writing is a fairly recent invention) 語言「也許」始於 300 -400 萬年前的直立人；文字則「相對確定」約在 1 萬年前萌芽於新石器時代的刻符與岩畫。\n文字嘗試再現語言，但不是語言 Only 25% of the world’s languages have written forms.\n\n人類文字系統"
+  },
+  {
+    "objectID": "week13.html#文字系統的成分",
+    "href": "week13.html#文字系統的成分",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "文字系統需要至少包含甚麼?\n\n\nA script: a set of graphic symbols used to represent the units of a writing system.\nOrthography: a set of rules and conventions for using a writing system to represent a language in a readable and understandable manner."
+  },
+  {
+    "objectID": "week13.html#自由與黏着",
+    "href": "week13.html#自由與黏着",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "free grapheme and bound grapheme (e.g. 變音符號 diacritic marks 只能和其他字素結合出現。法文的 `)\n\n梵文中的變音符號 （黏着字素） 出現在輔音的位置各不同（上、下、前、後） क &lt;k&gt;: को &lt;ke&gt; का &lt;kā&gt; कि &lt;ki&gt; की &lt;kī&gt; कु &lt;ku&gt; कू &lt;kū&gt;\n\ngraphemes vs allograph 的問題；異體字。\n\n\n\n\n\n\n\nligature\n\n\n\n連字（ligature） 是由兩個或多個字素合在一起的符號單位，並且在書寫時以一個單一的字形出現。例如，丹麥語的字母æ 是字母 a 和 e 的連字；英文ﬁ是字母f和i的連字。(但這僅僅是出於印刷審美考慮，或是書寫效率，在書寫時減少抬筆的次數。)"
+  },
+  {
+    "objectID": "week13.html#文字簡史",
+    "href": "week13.html#文字簡史",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "原始文字時期\n\n文字源於圖畫 (picture writing)\n\n古典文字時期\n\n3200 BC 西亞兩河流域的蘇美人創造「楔形文字」。\n北非尼羅河流域的古埃及人創造「聖書字」(hieroglyphics)，使用了三千多年。\n1300 BC 中國黃河流域殷商帝國創立「甲骨文」\n其他：2000 BC 中美洲的「馬雅」、中國「彞文」\n\n字母文字時期\n\n1500 開始因應貿易需求的字母文字\nlinear-B / Byblos /\n腓尼基、希臘、拉丁字母"
+  },
+  {
+    "objectID": "week13.html#section-1",
+    "href": "week13.html#section-1",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "一個名爲「鼈隨妻」(turtle-following-his-wife) 的人給他的兒子（小子’little man’）捎信要他回家，並隨信附上 53 元作爲盤纏。"
+  },
+  {
+    "objectID": "week13.html#從表達的功能來看",
+    "href": "week13.html#從表達的功能來看",
+    "title": "Week 13 文字系統",
+    "section": "從表達的功能來看",
+    "text": "從表達的功能來看"
+  },
+  {
+    "objectID": "week13.html#logograms-語素文字",
+    "href": "week13.html#logograms-語素文字",
+    "title": "Week 13 文字系統",
+    "section": "Logograms 語素文字",
+    "text": "Logograms 語素文字\n\na logogram, or logograph, is a symbol that represents a word or a morpheme. [表達想法]\ntwo subtypes of logographic system:\n\npictograms: pictures or symbols that represent an object or idea and may communicate a message, but they are not direct representations of speech.\nideograms: symbols that communicate or represent an idea, though they are not necessarily pictures of actual objects or events. When a picture becomes conventionalized, it may be an ideogram, like the peace sign."
+  },
+  {
+    "objectID": "week13.html#the-rebus-principle-假借",
+    "href": "week13.html#the-rebus-principle-假借",
+    "title": "Week 13 文字系統",
+    "section": "The Rebus Principle (「假借」)",
+    "text": "The Rebus Principle (「假借」)\n但是，所有已知的 logographic writing system 都含有一些語音成分(常來自 “假借”：the use of existing symbols, purely for their sounds regardless of their meaning, to represent new words)\n\nWhen a graphic sign no longer has a visual connection to the word it represents, it becomes a phonographic symbol, standing for the sounds that represent the word.\nA single sign can then be used to represent all words with the same sound (同音字). e.g, My 曰 is a teacher."
+  },
+  {
+    "objectID": "week13.html#漢字系統",
+    "href": "week13.html#漢字系統",
+    "title": "Week 13 文字系統",
+    "section": "漢字系統",
+    "text": "漢字系統\n\n語素文字或音節文字？\n漢語的大量同音現象導致了漢字的「同音字」現象。(所以纔有石室詩士施氏嗜獅 這樣的文字遊戲。)\n\n\n\n\n\n\n\n同音字\n\n\n\n現代漢語常用的 1359 個音節形式（含聲調）中，每一個都是以平均 11 個漢字作爲其不同的書寫形式。\n\n\n\n\n六書：（造字法）象形 (pictography)、指事 (abstract pictograms)。(組字法) 會意 (semantic extension)、形聲 (semantic-phonetic compound)。(用字法？) 假借 、轉注"
+  },
+  {
+    "objectID": "week13.html#練習",
+    "href": "week13.html#練習",
+    "title": "Week 13 文字系統",
+    "section": "練習",
+    "text": "練習\n以【口】爲例，請列出有口參與的字，並說明其造字法。"
+  },
+  {
+    "objectID": "week13.html#logograms-and-phonograms",
+    "href": "week13.html#logograms-and-phonograms",
+    "title": "Week 13 文字系統",
+    "section": "Logograms and Phonograms",
+    "text": "Logograms and Phonograms\n\nPictograms and ideograms are not complete writing systems for any (sound-based) language.\nPhonogram is a symbol based on sound rather than meaning. Phonographic systems include:\n\nsyllabary (syllabic)\nalphabets (phonemic)"
+  },
+  {
+    "objectID": "week13.html#音節文字-syllabic-system-和-短音節文字-moraic-system",
+    "href": "week13.html#音節文字-syllabic-system-和-短音節文字-moraic-system",
+    "title": "Week 13 文字系統",
+    "section": "音節文字 Syllabic system 和 短音節文字 (moraic system)",
+    "text": "音節文字 Syllabic system 和 短音節文字 (moraic system)\n\n書寫單位對應的是一個音節 (CV; CVC; V)\n大部分的音節文字其實是短音節文字（onset-nucleus or coda only）。"
+  },
+  {
+    "objectID": "week13.html#注音符號",
+    "href": "week13.html#注音符號",
+    "title": "Week 13 文字系統",
+    "section": "注音符號",
+    "text": "注音符號"
+  },
+  {
+    "objectID": "week13.html#alphabetic",
+    "href": "week13.html#alphabetic",
+    "title": "Week 13 文字系統",
+    "section": "Alphabetic",
+    "text": "Alphabetic\nTrue Alphabets\n\nA true alphabet is a writing system with symbols that mean all sorts of individual sounds, both consonants and vowels.\ne.g., Roman alphabet, which is used in large parts of the world, the Greek alphabet, which is used in Greece and Cyprus, and the Cyrillic alphabet, which is used in many countries in Eastern Europe and Central Asia, where Russia had a major influence during the days of the Soviet Union.\n\n\n\n\n\n\n\n音素文字系統的結構符號（子音和母音）通常被稱爲字母 (letter)，而這些字母排列在一起就形成了字母表 (alphabet)。"
+  },
+  {
+    "objectID": "week13.html#alphabetic-1",
+    "href": "week13.html#alphabetic-1",
+    "title": "Week 13 文字系統",
+    "section": "Alphabetic",
+    "text": "Alphabetic\nAbjads 子音文字 (Consonantal alphabets)\n\nY cn stll rd wtht vwls.\n\n\nabjad /ˈæbdʒæd/ (輔音音素文字)特點是每個符號都代表輔音，沒有元音字母。 Alphabets that do not show vowels but only consonants are called abjads.\n「完全」的輔音音素文字是指文字完全沒有元音標示，如古腓尼基語 (Phoenician)。然而大部分現代的輔音音素文字，如阿拉伯文 (Arabic)、希伯萊文 (Hebrew)都「不完全」。它們可能有一 些附加元音符號。 Examples of abjads are the Arabic alphabet, which is used in much of the Muslim world, and the Hebrew alphabet used for Jewish languages like Hebrew and Yiddish. Both of these abjads are written in lines that run from right to left."
+  },
+  {
+    "objectID": "week13.html#alphabetic-2",
+    "href": "week13.html#alphabetic-2",
+    "title": "Week 13 文字系統",
+    "section": "Alphabetic",
+    "text": "Alphabetic\nAbugidas : 母音副標文字\n\nabugida /ɑːbʊˈɡiːdə, ˈæb-/, alphasyllabary (母音附標文字) 是一類以輔音字母為主體、母音以附加符號形式標出的表音文字。\n該書寫系統的主要特點是：子音字母本身即有元音,一般是/a/，構成一個音節；其它母音字母一般附加在子音字母的周圍 (前後上下均有可能) 替代預設母音，以改變音節的讀音。\n南亞和東南亞的梵文文化圈普遍使用abugida作為其書寫形式。 \n\nAbugidas are alphabets where sequences of consonant+vowel are written as a unit based on the consonant letter, and one of the vowels is never written but understood by the consonant letter if no other vowel is written. Examples of abugidas are writing systems of India and Southeast Asia like Devanagari used for Hindi and Sanskrit."
+  },
+  {
+    "objectID": "week13.html#特殊的-abuigida-canadian-aboriginal-syllabics",
+    "href": "week13.html#特殊的-abuigida-canadian-aboriginal-syllabics",
+    "title": "Week 13 文字系統",
+    "section": "特殊的 Abuigida: Canadian Aboriginal Syllabics",
+    "text": "特殊的 Abuigida: Canadian Aboriginal Syllabics\n(子音會旋轉！)\n \n\n\n\n\n\n\n只要涉及分類，都是權宜性\n\n\n\nMost writing systems are not purely one type."
+  },
+  {
+    "objectID": "week13.html#以下文字如何分類",
+    "href": "week13.html#以下文字如何分類",
+    "title": "Week 13 文字系統",
+    "section": "以下文字如何分類？",
+    "text": "以下文字如何分類？\n\n\n\n\n\n\n練習\n\n\n\n東巴文字 蒙古文字 楔形文字 喃字 狀字 女真文字 女書 韓國諺文 藏文 維吾爾文字 馬雅文字"
+  },
+  {
+    "objectID": "week13.html#section-3",
+    "href": "week13.html#section-3",
+    "title": "Week 13 文字系統",
+    "section": "",
+    "text": "Complexities of Writing Systems"
+  }
+]
