@@ -1,18 +1,15 @@
 ---
 title: "Week 3 語音的世界 (1) "
 author: "謝舒凱 台大語言所"
-format: 
+format:
     revealjs:
         slide-number: true
         preview-links: true
         chalkboard: true
         # multiplex: true
         logo: /pics/logo_round.png
-    html:
-        code-fold: true
-execute:
-    cache: true
-jupyter: python3        
+
+jupyter: python3
 bibliography: tol.bib
 ---
 
@@ -179,7 +176,6 @@ In 1888 the International Phonetic Alphabet (IPA) was invented in order to have 
 - [世界語言結構地圖集 (WALS)](https://wals.info/) 涵蓋 2662 種語言、192 種結構特徵
 
 - `lingtypology` (`Python` 與 `R` 皆有套件)
-
 ```{python}
 import lingtypology
 from pycldf import Dataset

@@ -1,18 +1,15 @@
 ---
 title: "Week 4 語音的世界 (2) "
 author: "謝舒凱 台大語言所"
-format: 
+format:
     revealjs:
         slide-number: true
         preview-links: true
         chalkboard: true
         # multiplex: true
         logo: /pics/logo_round.png
-    html:
-        code-fold: true
-execute:
-    cache: true
-jupyter: python3        
+
+jupyter: python3
 bibliography: tol.bib
 ---
 

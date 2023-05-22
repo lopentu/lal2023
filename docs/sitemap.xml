@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lopentu.github.io/lal/index.html</loc>
+    <lastmod>2023-05-22T02:36:30.706Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/about.html</loc>
+    <lastmod>2023-05-22T02:36:31.118Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week1.html</loc>
+    <lastmod>2023-05-22T02:36:31.832Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week10.html</loc>
+    <lastmod>2023-05-22T02:36:36.333Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week12.html</loc>
+    <lastmod>2023-05-22T02:36:40.731Z</lastmod>
+  </url>
+  <url>
     <loc>https://lopentu.github.io/lal/week13.html</loc>
-    <lastmod>2023-05-17T06:00:06.875Z</lastmod>
+    <lastmod>2023-05-22T02:36:45.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week2.html</loc>
+    <lastmod>2023-05-22T02:36:49.506Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week3.html</loc>
+    <lastmod>2023-05-22T02:36:55.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week4.html</loc>
+    <lastmod>2023-05-22T02:36:58.921Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week5.html</loc>
+    <lastmod>2023-05-22T02:37:03.520Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lopentu.github.io/lal/week6.html</loc>
+    <lastmod>2023-05-22T02:37:08.249Z</lastmod>
   </url>
 </urlset>

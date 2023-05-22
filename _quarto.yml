@@ -1,21 +1,21 @@
 project:
   type: website
-  title: "Logical analysis of Language"
+  title: "Logical Analysis of Language"
   execute-dir: project
   output-dir: docs
   render: 
       - index.qmd
       - about.qmd
-      - week1.qmd
-      - week2.qmd
-      - session1-get-started.qmd
-      - week3.qmd
-      - week4.qmd
-      - week5.qmd
-      - week6.qmd      
-      - week10.qmd
-      - week12.qmd
-      - week13.qmd
+      - week*.qmd
+      # - week1.qmd
+      # - week2.qmd
+      # - week3.qmd
+      # - week4.qmd
+      # - week5.qmd
+      # - week6.qmd      
+      # - week10.qmd
+      # - week12.qmd
+      # - week13.qmd
 website:
   title: "語言的邏輯分析"
   site-url: https://lopentu.github.io/lal/
@@ -38,7 +38,6 @@ website:
       - index.qmd
       - week1.qmd
       - week2.qmd
-      - session1-get-started.qmd
       - week3.qmd
       - week4.qmd
       - week5.qmd
