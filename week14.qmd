@@ -1,0 +1,36 @@
+---
+title: "Week 14 人造語文系統"
+author: "謝舒凱 台大語言所"
+format:
+    revealjs:
+        slide-number: true
+        preview-links: true
+        # chalkboard: true
+        logo: /pics/logo_round.png
+
+jupyter: python3
+bibliography: tol.bib
+---
+
+# 暖身練習
+
+一個鐘頭內設計一個非常迷你而高效的人造語言與文字系統，可以產生一些簡單的句子，適用於在校園生活的情境。
+
+- Decide on the **sounds** of the language
+
+- Create the **lexicon**
+
+- Create the **grammar**
+
+- Design an **alphabet** / **writing system**
+
+
+
+[參考資源](https://www.zompist.com/resources/index.html)
+
+
+# 測試句子
+我會寫下幾個句子，看同學們是否可以利用這個語言或文字表達出來。
+
+
+
